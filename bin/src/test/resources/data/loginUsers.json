@@ -1,0 +1,14 @@
+{
+	"RfcCommonCodeAdminLogin": {
+		"userName": "admin",
+		"password": "Admin@12345"
+	},
+	"RfcStudentALogin": {
+		"userName": "232AT017",
+		"password": "admin@123"
+	},
+	"RfcStudentBLogin": {
+		"userName": "198021601001",
+		"password": "admin@123"
+	}
+}

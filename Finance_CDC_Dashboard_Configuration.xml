@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite"><!-- 13 --> <!--Admin - 6, Finance - 1,CDC - 3, Dashboard - 1 , configuration 
+		- 2 -->
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+	
+	<!-- Finance --><!-- 1 -->
+	<test name="1. AL_Finance_CreateCompanyTest">
+		<classes>
+			<class name="FinanceTest.AL_Finance_CreateCompanyTest"></class>
+		</classes>
+	</test>
+
+
+	<!-- CDC --><!-- 3 -->
+
+	<test name="1. AL_CDC_Reports_PlacedStudentReportTests">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_PlacedStudentReportTests"></class>
+		</classes>
+	</test>
+		<test name="2. AL_CDC_Reports_StudentCategoryReport_TPCR_PlacementReportTest">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_StudentCategoryReport_TPCR_PlacementReportTest"></class>
+		</classes>
+	</test>
+	<test name="3. AL_CDC_Reports_TPOStudentDetailReportTest">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_TPOStudentDetailReportTest"></class>
+		</classes>
+	</test>
+	<test name="4. AL_CDC_Reports_StudentCategoryReport_TPCR_EnterpreneurshipReportTest">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_StudentCategoryReport_TPCR_EnterpreneurshipReportTest"></class>
+		</classes>
+	</test>
+		<test name="5. AL_CDC_Reports_StudentCategoryReport_TPCR_HigherEducationTest">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_StudentCategoryReport_TPCR_HigherEducationTest"></class>
+		</classes>
+	</test>
+	<!-- Dash board --><!-- 1 -->
+	<test name="1. AL_Dashboard_Analytics_DashboardTest">
+		<classes>
+			<class
+				name="DashboardTest.AL_Dashboard_Analytics_DashboardTest"></class>
+		</classes>
+	</test>
+
+	<!-- Configuration Tests , Count - 2 -->
+	<test name="1. AL_Configuration_CreateNoticeNews">
+		<classes>
+			<class
+				name="ConfigurationTest.AL_Configuration_CreateNoticeNews" />
+		</classes>
+	</test>
+	<test name="2. AL_Configuration_UM_UpdateNewUserLinkTest">
+		<classes>
+			<class
+				name="ConfigurationTest.AL_Configuration_UM_UpdateNewUserLinkTest" />
+		</classes>
+	</test>
+
+</suite>

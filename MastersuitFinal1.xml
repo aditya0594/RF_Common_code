@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite" parallel="none">
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+	<!-- Store=38  Academic=128 Administrarion=31 -->
+	
+	<!-- Store=38 -->
+	
+	<test name="01. AL_Stores_Trans_DepartmentUserRequisitonReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_DepartmentUserRequisitonReportTest" />
+		</classes>
+	</test>
+
+	<test name="02. AL_Stores_Rpt_ItemSaleReportTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_ItemSaleReportTest" />
+		</classes>
+	</test>
+
+	<test name="03. AL_Stores_Rpt_ItemExpiryWarrantyReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_ItemExpiryWarrantyReportTest" />
+		</classes>
+	</test>
+
+	<test name="04. AL_Stores_Rpt_ItemWarrantyExpiredReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_ItemWarrantyExpiredReportTest" />
+		</classes>
+	</test>
+
+	<test name="05. AL_Stores_Rpt_DepartmentwiseIssueReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_DepartmentwiseIssueReportTest" />
+		</classes>
+	</test>
+
+	<test name="06. AL_Stores_Rpt_SearchRequisitionTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_SearchRequisitionTest" />
+		</classes>
+	</test>
+
+	<test name="07. AL_Stores_Rpt_PS_ItemMainGroupPerticularTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_PS_ItemMainGroupPerticularTest" />
+		</classes>
+	</test>
+
+	<test name="08. AL_Stores_Rpt_PS_ItemMainGroupAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemMainGroupAllTest" />
+		</classes>
+	</test>
+
+	<test name="09. AL_Stores_Rpt_PS_ItemSubGroupPerticularTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_PS_ItemSubGroupPerticularTest" />
+		</classes>
+	</test>
+
+	<test name="10. AL_Stores_Rpt_PS_ItemAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemAllTest" />
+		</classes>
+	</test>
+
+	<test name="11. AL_Stores_Rpt_PS_ItemSubGroupAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemSubGroupAllTest" />
+		</classes>
+	</test>
+
+	<test name="12. AL_Stores_Rpt_PS_ItemPerticularTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemPerticularTest" />
+		</classes>
+	</test>
+
+	<test name="13. AL_Stores_Rpt_PSR_AllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_AllTest" />
+		</classes>
+	</test>
+
+	<test name="14. AL_Stores_Rpt_PSR_DeliveredAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_DeliveredAllTest" />
+		</classes>
+	</test>
+
+	<test name="15. AL_Stores_Rpt_PSR_DeliveredAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_DeliveredAllTest" />
+		</classes>
+	</test>
+
+	<test name="16. AL_Stores_Rpt_PSR_NotDeliveredAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_NotDeliveredAllTest" />
+		</classes>
+	</test>
+
+	<test name="17. AL_Stores_Rpt_PSR_DeliveredDateCrossedTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_PSR_DeliveredDateCrossedTest" />
+		</classes>
+	</test>
+
+	<test name="18. AL_Stores_Rpt_PI_IteamMainGroupTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PI_IteamMainGroupTest" />
+		</classes>
+	</test>
+
+	<test name="19. AL_Stores_Rpt_PI_IteamSubGroupTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PI_IteamSubGroupTest" />
+		</classes>
+	</test>
+
+	<test name="20. AL_Stores_Rpt_CDWR_College_DetailedReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_College_DetailedReportTest" />
+		</classes>
+	</test>
+
+	<test name="21. AL_Stores_Rpt_CDWR_College_SummeryReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_College_SummeryReportTest" />
+		</classes>
+	</test>
+
+	<test name="22. AL_Stores_Rpt_FAR_SummeryTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_FAR_SummeryTest" />
+		</classes>
+	</test>
+
+	<test name="23. AL_Stores_Rpt_SER_VendorPaymentReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_SER_VendorPaymentReportTest" />
+		</classes>
+	</test>
+
+	<test name="24. AL_Stores_Rpt_SER_SecurityPassReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_SER_SecurityPassReportTest" />
+		</classes>
+	</test>
+
+	<test name="25. AL_Stores_Rpt_CDWR_MainStore_DetailReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_MainStore_DetailReportTest" />
+		</classes>
+	</test>
+
+	<test name="26. AL_Stores_Rpt_CDWR_MainStore_SummaryReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_MainStore_SummaryReportTest" />
+		</classes>
+	</test>
+	
+	<test name="27. AL_Stores_Trans_GenerateItemSerialNumberTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_GenerateItemSerialNumberTest" />
+		</classes>
+	</test>
+	
+	<test name="28. AL_Stores_Rpt_ItemMovementReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_ItemMovementReportTest" />
+		</classes>
+	</test>
+	
+	<test name="29. AL_Stores_Rpt_RequiredTotalItemTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_RequiredTotalItemTest" />
+		</classes>
+	</test>
+	
+	<test name="30. AL_Stores_Rpt_GoodsReceiptRegisterTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_GoodsReceiptRegisterTest" />
+		</classes>
+	</test>
+	
+	<test name="31. AL_Stores_Rpt_IIR_IndentSlipReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_IndentSlipReportTests" />
+		</classes>
+	</test>
+	
+	<test name="32. AL_Stores_Rpt_IIR_IssueSlipNoWiseReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_IssueSlipNoWiseReportTests" />
+		</classes>
+	</test>
+	
+	<test name="33. AL_Stores_Rpt_IIR_RequisitionWiseReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_RequisitionWiseReportTests" />
+		</classes>
+	</test>
+	
+	<test name="34. AL_Stores_Trans_ItemSale_Flow01_1_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_ItemSale_Flow01_1_Test" />
+		</classes>
+	</test>
+	
+	<test name="35. AL_Stores_Trans_ItemSaleApproval_Flow01_2_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_ItemSaleApproval_Flow01_2_Test" />
+		</classes>
+	</test>
+	
+	<test name="36. AL_Stores_Trans_DeadStockEntryTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_DeadStockEntryTest" />
+		</classes>
+	</test>
+	
+	<test name="37. AL_Stores_Rpt_StoreRegisterTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_StoreRegisterTest" />
+		</classes>
+	</test>
+		<test name="38. AL_Stores_Rpt_IIR_EmployeeIssuedItemsReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_EmployeeIssuedItemsReportTests" />
+		</classes>
+	</test>
+		<test name="39. AL_Stores_Trans_VendorPaymentEntry_Flow02_1_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_VendorPaymentEntry_Flow02_1_Test" />
+		</classes>
+	</test>	
+	<test name="40. AL_Stores_Trans_VendorPaymentApproval_Flow02_2_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_VendorPaymentApproval_Flow02_2_Test" />
+		</classes>
+	</test>	
+	
+	
+	<!--Academic 128-->
+
+	<test name="01. AL_Academic_FR_FeeCollectionTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FR_FeeCollectionTest" />
+		</classes>
+	</test>
+	<test name="02. AL_Academic_FRR_FeesReportTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FRR_FeesReportTest" />
+		</classes>
+	</test>
+	<test name="03. AL_Academic_DC_BulkDemandCreationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_DC_BulkDemandCreationTest" />
+		</classes>
+	</test>
+	<test name="04. AL_Academic_PA_DemandCreationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_DemandCreationTest" />
+		</classes>
+	</test>
+	<test name="05. AL_Academic_Feedback_FeedbackTypeMasterTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_Feedback_FeedbackTypeMasterTest" />
+		</classes>
+	</test>
+	<test name="06. AL_Academic_CR_OfferedCoursesTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_OfferedCoursesTest" />
+		</classes>
+	</test>
+	<test name="07. AL_Academic_FR_ReceiptTypeTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FR_ReceiptTypeTest" />
+		</classes>
+	</test>
+	<test name="08. AL_Academic_AP_ProspectusEntryTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_ProspectusEntryTest" />
+		</classes>
+	</test>
+	<test name="09. AL_Academic_FR_ReprintOrCancelReceiptTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_ReprintOrCancelReceiptTest" />
+		</classes>
+	</test>
+	<test name="10. AL_Academic_SR_StudentInformationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_SR_StudentInformationTest" />
+		</classes>
+	</test>
+
+	<test name="12. SL_Academic_SR_NEFTRTGSPaymentDetailTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.SL_Academic_SR_NEFTRTGSPaymentDetailTest" />
+		</classes>
+	</test>
+	<test name="13. AL_Academic_PA_AdmissionBatchTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_AdmissionBatchTest" />
+		</classes>
+	</test>
+	<test name="14. SL_Academic_SR_StudentCompleteDetailTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.SL_Academic_SR_StudentCompleteDetailTest" />
+		</classes>
+	</test>
+	<test name="15. SL_Academic_SR_UploadFitnessCertificateTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.SL_Academic_SR_UploadFitnessCertificateTest" />
+		</classes>
+	</test>
+	<test name="16. AL_Academic_AR_IdentityCardTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_AR_IdentityCardTest" />
+		</classes>
+	</test>
+	<test name="17. FL_Academic_FR_CreateTeachingPlanFlow01_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.FL_Academic_FR_CreateTeachingPlanFlow01_1Test" />
+		</classes>
+	</test>
+
+	<test name="18. FL_Academic_FR_CreateTeachingPlan_DeleteFlow01_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.FL_Academic_FR_CreateTeachingPlan_DeleteFlow01_2Test" />
+		</classes>
+	</test>
+
+	<test name="19. AL_Academic_AR_StudentAdmissionReportsTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_StudentAdmissionReportsTest" />
+		</classes>
+	</test>
+	<!-- <test name="20_FL_Academic_FR_BacklogRedoCourseRegApprovalTest"> <classes> 
+		<class name="RFCCAcademicTest.FL_Academic_FR_BacklogRedoCourseRegApprovalTest" 
+		/> </classes> </test> -->
+<!-- 		
+	<test name="21. FL_Academic_FR_AttendanceByFacultyTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.FL_Academic_FR_AttendanceByFacultyTest" />
+		</classes>
+	</test>
+	<test name="22. FL_Academic_FR_ExtraCurricularAttendanceTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.FL_Academic_FR_ExtraCurricularAttendanceTest" />
+		</classes>
+	</test>
+	 -->
+	<test name="23. AL_Academic_FRR_StudentLedgerReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_StudentLedgerReportTest" />
+		</classes>
+	</test>
+	<test name="24. AL_Academic_AP_NoDuesCollectionTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_NoDuesCollectionTest" />
+		</classes>
+	</test>
+	<test name="25. AL_Academic_AR_StudentAdmissionRegisterReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_StudentAdmissionRegisterReportTest" />
+		</classes>
+	</test>
+	<test name="26. AL_Academic_AP_NewStudentTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_AP_NewStudentTest" />
+		</classes>
+	</test>
+	<test name="27. AL_Academic_AR_CertificateTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_AR_CertificateTest" />
+		</classes>
+	</test>
+	<test name="28. AL_Academic_FR_FeesRefundTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FR_FeesRefundTest" />
+		</classes>
+	</test>
+	<test name="29. AL_Academic_FR_CancelFeesRefundTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_CancelFeesRefundTest" />
+		</classes>
+	</test>
+	<test name="30. AL_Academic_AR_CourseRegistrationReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_CourseRegistrationReportTest" />
+		</classes>
+	</test>
+	<test name="31. AL_Academic_MF_MiscellaneousFeesReportTests">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_MF_MiscellaneousFeesReportTests" />
+		</classes>
+	</test>
+	<test name="32. AL_Academic_CR_FacultyAdvisorAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_FacultyAdvisorAllotmentTest" />
+		</classes>
+	</test>
+	<test name="33. AL_Academic_FRR_FR_OverallOutstandingReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_OverallOutstandingReportTest" />
+		</classes>
+	</test>
+	<test name="34. AL_Academic_CR_ModifyCourseRegistrationFlow02_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ModifyCourseRegistrationFlow02_1Test" />
+		</classes>
+	</test>
+	<test name="35. AL_Academic_FR_LateFeesTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FR_LateFeesTest" />
+		</classes>
+	</test>
+	<test name="36. AL_Academic_PA_RegistrationNoTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_RegistrationNoTest" />
+		</classes>
+	</test>
+	<test name="37. AL_Academic_PA_SectionEnrollmentNoAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_SectionEnrollmentNoAllotmentTest" />
+		</classes>
+	</test>
+	<test name="38. AL_Academic_AM_FacultyAttendanceStatusTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_FacultyAttendanceStatusTest" />
+		</classes>
+	</test>
+	<test name="39. AL_Academic_FR_FeeInstallmentAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_FeeInstallmentAllotmentTest" />
+		</classes>
+	</test>
+	<test name="40. AL_Academic_Feedback_FeedbackQuestionTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_Feedback_FeedbackQuestionTest" />
+		</classes>
+	</test>
+	<test name="41. AL_Academic_AM_TimeTableReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_TimeTableReportTest" />
+		</classes>
+	</test>
+	<test name="42. AL_Academic_AM_RevisedTimeTableTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_RevisedTimeTableTest" />
+		</classes>
+	</test>
+	<test name="43. AL_Academic_CR_BulkCourseRegistrationFlow03_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_BulkCourseRegistrationFlow03_1Test" />
+		</classes>
+	</test>
+	<test name="44. AL_Academic_CR_CancelBulkCourseRegistrationFlow03_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CancelBulkCourseRegistrationFlow03_2Test" />
+		</classes>
+	</test>
+	<test name="45. AL_Academic_PA_BBYA_AcademicYearAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_BBYA_AcademicYearAllotmentTest" />
+		</classes>
+	</test>
+	<test name="46. AL_Academic_CR_CancelCourseRegistrationFlow02_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CancelCourseRegistrationFlow02_2Test" />
+		</classes>
+	</test>
+	<test name="47. AL_Academic_AR_BulkUpdateOfPhotoTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_BulkUpdateOfPhotoTest" />
+		</classes>
+	</test>
+	<test name="48. AL_Academic_FRR_RefunReportTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FRR_RefunReportTest" />
+		</classes>
+	</test>
+	<test name="49. AL_Academic_FB_CFR_FacultyFeedbackReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_FacultyFeedbackReportTest" />
+		</classes>
+	</test>
+	<test name="50. AL_Academic_FR_ChallanReconciliationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_ChallanReconciliationTest" />
+		</classes>
+	</test>
+	<test name="51. AL_Academic_PA_SD_SchemeTypeTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_PA_SD_SchemeTypeTest" />
+		</classes>
+	</test>
+	<test name="52. AL_Academic_PA_SD_SchemeCreationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_SD_SchemeCreationTest" />
+		</classes>
+	</test>
+	<test name="53. AL_Academic_PA_SD_CollegeSchemeConfigurationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_SD_CollegeSchemeConfigurationTest" />
+		</classes>
+	</test>
+	<test name="54. AL_Academic_PA_SD_SchemeAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_SD_SchemeAllotmentTest" />
+		</classes>
+	</test>
+	<test name="55. AL_Academic_CR_CourseTeacherAllotmentFlow04_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CourseTeacherAllotmentFlow04_1Test" />
+		</classes>
+	</test>
+	<test name="56. AL_Academic_CR_CancelCourseTeacherAllotmentFlow04_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CancelCourseTeacherAllotmentFlow04_2Test" />
+		</classes>
+	</test>
+	<test name="57_AL_Academic_CR_ClassAdvisorAllotmentTests">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ClassAdvisorAllotmentTests" />
+		</classes>
+	</test>
+	<test name="58_AL_Academic_CR_CourseCreationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CourseCreationTest" />
+		</classes>
+	</test>
+	<test name="59_AL_Academic_CR_OC_ElectiveCoursesIntakeTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_OC_ElectiveCoursesIntakeTest" />
+		</classes>
+	</test>
+	<test name="60 AL_Academics_FR_FIA_AmtSingleStudInstallmentFlow05_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academics_FR_FIA_AmtSingleStudInstallmentFlow05_1Test" />
+		</classes>
+	</test>
+	<test
+		name="61 AL_Academics_FR_FIA_CancelAmtSingleStudInstallmentFlow05_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academics_FR_FIA_CancelAmtSingleStudInstallmentFlow05_2Test" />
+		</classes>
+	</test>
+	<test name="62 AL_Academic_SR_OnlinePaymentFlow06_1Test">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_SR_OnlinePaymentFlow06_1Test" />
+		</classes>
+	</test>
+	<test name="63 AL_Academic_FR_CancelReceiptFlow06_2Test">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FR_CancelReceiptFlow06_2Test" />
+		</classes>
+	</test>
+	<test name="64 AL_Academic_CR_ElectiveCourseRegistrationFlow07_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ElectiveCourseRegistrationFlow07_1Test" />
+		</classes>
+	</test>
+	<test
+		name="65 AL_Academic_CR_CancelElectiveCourseRegistrationFlow07_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CancelElectiveCourseRegistrationFlow07_2Test" />
+		</classes>
+	</test>
+	<test name="66_AL_Academic_SR_UploadFitnessCertificateTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_SR_UploadFitnessCertificateTest" />
+		</classes>
+	</test>
+	<test name="67_AL_Academic_FR_FeeHeadCurrencyMappingTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_FeeHeadCurrencyMappingTest" />
+		</classes>
+	</test>
+	<test name="68_AL_Academic_FR_FeesHeadTest">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_FR_FeesHeadTest" />
+		</classes>
+	</test>
+	<test name="69_AL_Academic_FR_DefineFeesCounterTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_DefineFeesCounterTest" />
+		</classes>
+	</test>
+	<test name="70_AL_Academic_FR_BulkUpdatePaymentTypeTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_BulkUpdatePaymentTypeTest" />
+		</classes>
+	</test>
+	<test name="71_AL_Academic_FR_DemandModificationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_DemandModificationTest" />
+		</classes>
+	</test>
+	<test name="72_AL_Academic_FR_FeesReceiptDetailsTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_FeesReceiptDetailsTest" />
+		</classes>
+	</test>
+	<test name="73_AL_Academic_CR_BatchAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_BatchAllotmentTest" />
+		</classes>
+	</test>
+	<test name="74_AL_Academic_CR_ARM_FloorMasterTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ARM_FloorMasterTest" />
+		</classes>
+	</test>
+	<test name="75_AL_Academic_CR_ARM_BlockMasterTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ARM_BlockMasterTest" />
+		</classes>
+	</test>
+	<test name="76_AL_Academic_CR_ARM_RoomMasterTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ARM_RoomMasterTest" />
+		</classes>
+	</test>
+	<test name="77_AL_Academic_CR_CourseWiseSectionAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CourseWiseSectionAllotmentTest" />
+		</classes>
+	</test>
+	<test
+		name="78_AL_Academic_CR_StudentDisciplinaryAction_BulkStudentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_StudentDisciplinaryAction_BulkStudentTest" />
+		</classes>
+	</test>
+	<test name="79. AL_Academic_CR_StudentDisciplinaryAction_SingleStudentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_StudentDisciplinaryAction_SingleStudentTest" />
+		</classes>
+	</test>
+	<test name="80. AL_Academic_FR_BulkTransportHSU_BulkStudentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_BulkTransportHSU_BulkStudentTest" />
+
+		</classes>
+	</test>
+	<test name="81. AL_Academic_FR_BulkTransportHSU_SingleStudentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_BulkTransportHSU_SingleStudentTest" />
+
+		</classes>
+	</test>
+
+	<test name="82. AL_Academic_PA_BulkBatchAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_BulkBatchAllotmentTest" />
+		</classes>
+	</test>
+
+	<test name="83. AL_Academic_PA_BulkYearAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_BulkYearAllotmentTest" />
+		</classes>
+	</test>
+
+	<test name="84. AL_Academic_AR_AttendancePendingDashboardTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_AttendancePendingDashboardTest" />
+		</classes>
+	</test>
+
+	<test name="85. AL_Academic_AR_FacultywiseAttendanceReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_FacultywiseAttendanceReportTest" />
+		</classes>
+	</test>
+
+	<test name="86. AL_Academic_AP_StudentInformationVerificationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_StudentInformationVerificationTest" />
+		</classes>
+	</test>
+
+	<test name="87. AL_Academic_AP_DocumentListMasterTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_DocumentListMasterTest" />
+		</classes>
+	</test>
+	<test name="88. AL_Academic_AP_DocumentSubmissionReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_DocumentSubmissionReportTest" />
+		</classes>
+	</test>
+
+	<test name="89. AL_Academic_AP_NewAdmissionConsolidateReport_SendEmailTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_NewAdmissionConsolidateReport_SendEmailTest" />
+		</classes>
+	</test>
+
+	<test name="90. AL_Academic_AP_NewAdmissionConsolidateReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_NewAdmissionConsolidateReportTest" />
+		</classes>
+	</test>
+
+	<test name="91. AL_Academic_PA_AdmissionChangeActivitiesTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_AdmissionChangeActivitiesTest" />
+		</classes>
+	</test>
+	<test name="92. AL_Academic_PA_BulkSectionAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_BulkSectionAllotmentTest" />
+		</classes>
+	</test>
+
+	<test name="93. AL_Academic_AP_ImportStudentDataTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_ImportStudentDataTest" />
+		</classes>
+	</test>
+	<test name="94. AL_Academic_AM_AttendanceEmailTriggerTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_AttendanceEmailTriggerTest" />
+		</classes>
+	</test>
+
+	<test name="95. AL_Academic_CR_BacklogCourseTeacherAllotmentTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_BacklogCourseTeacherAllotmentTest" />
+		</classes>
+	</test>
+	<test name="96. AL_Academic_AR_TeacherNotAllotedTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AR_TeacherNotAllotedTest" />
+		</classes>
+	</test>
+
+	<test name="97. AL_Academic_AP_AdmissionApprovalByFinanceDeptTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_AdmissionApprovalByFinanceDeptTest" />
+		</classes>
+	</test>
+
+	<test name="98. AL_Academic_PA_ProgrammeOrBranchChangeTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_PA_ProgrammeOrBranchChangeTest" />
+		</classes>
+	</test>
+	<test name="99. AL_Academic_AM_StudentAttendanceReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_StudentAttendanceReportTest" />
+		</classes>
+	</test>
+
+	<test name="100. AL_Academic_CR_CourseLockUnlockTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CourseLockUnlockTest" />
+		</classes>
+	</test>
+	<test name="101. AL_Academic_FB_CFR_CourseTeacherFeedbackReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_CourseTeacherFeedbackReportTest" />
+		</classes>
+	</test>
+
+	<test name="102. AL_Academic_FB_CFR_GeneralQuestionResponseReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_GeneralQuestionResponseReportTest" />
+		</classes>
+	</test>
+
+	<test name="103. AL_Academic_FB_CFR_TeacherWiseFeedbackEvalutionTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_TeacherWiseFeedbackEvalutionTest" />
+		</classes>
+	</test>
+
+	<test name="104. AL_Academic_FB_CFR_HODFeedbackReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_HODFeedbackReportTest" />
+		</classes>
+	</test>
+
+	<test name="105. AL_Academic_FB_CFR_SurvayReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_SurvayReportTest" />
+		</classes>
+	</test>
+
+	<test name="106. AL_Academic_FB_CFR_QuestionWiseResponseReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FB_CFR_QuestionWiseResponseReportTest" />
+		</classes>
+	</test>
+
+	<test name="107. SL_Academics_SA_ClubRegistrationFormTests">
+		<classes>
+			<class
+				name="RFCCAcademicTest.SL_Academics_SA_ClubRegistrationFormTests" />
+		</classes>
+	</test>
+
+	<test name="108. AL_Academic_AM_TimeTableFlow08_1Test">
+		<classes>
+			<class name="RFCCAcademicTest.AL_Academic_AM_TimeTableFlow08_1Test" />
+		</classes>
+	</test>
+
+	<test name="109. AL_Academic_AM_CancelTimeTableFlow08_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_CancelTimeTableFlow08_2Test" />
+		</classes>
+	</test>
+	<test name="110. AL_Academic_AM_ScheduleAndRoomOccupancyTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_ScheduleAndRoomOccupancyTest" />
+		</classes>
+	</test>
+
+	<test name="111. AL_Academic_CR_ProvisionalDetentionFlow09_1Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_ProvisionalDetentionFlow09_1Test" />
+		</classes>
+	</test>
+
+	<test name="112. AL_Academic_CR_FinalDetentionFlow09_2Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_FinalDetentionFlow09_2Test" />
+		</classes>
+	</test>
+
+	<test name="113. AL_Academic_CR_CancelDetentionFlow09_3Test">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_CancelDetentionFlow09_3Test" />
+		</classes>
+	</test>
+
+	<test name="114. AL_Academic_CR_DetentionReportsTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_CR_DetentionReportsTest" />
+		</classes>
+	</test>
+
+	<test name="115. AL_Academic_FR_BillDeskPaymentVerificationTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FR_BillDeskPaymentVerificationTest" />
+		</classes>
+	</test>
+
+	<test name="116. AL_Academic_AP_AdmissionApprovalTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_AdmissionApprovalTest" />
+		</classes>
+	</test>
+	<test name="117. AL_Academic_FRR_FR_FeeCollectionSummaryReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_FeeCollectionSummaryReportTest" />
+		</classes>
+	</test>
+
+	<test name="118. AL_Academic_FRR_FR_DCRExcelReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_DCRExcelReportTest" />
+		</classes>
+	</test>
+
+	<test name="119. AL_Academic_FRR_FR_OnlineDCRExcelReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_OnlineDCRExcelReportTest" />
+		</classes>
+	</test>
+	<test name="120. AL_Academic_FRR_FR_CancelledReceiptReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_CancelledReceiptReportTest" />
+		</classes>
+	</test>
+	<test name="121. AL_Academic_FRR_FR_DailyFeeCollectionReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_DailyFeeCollectionReportTest" />
+		</classes>
+	</test>
+
+	<test name="122. AL_Academic_FRR_FR_FeesPaymentSummaryReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_FeesPaymentSummaryReportTest" />
+		</classes>
+	</test>
+	<test name="123. AL_Academic_FRR_FR_SFDR_DCRExcelReportTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_SFDR_DCRExcelReportTest" />
+		</classes>
+	</test>
+	<test name="124. AL_Academic_FRR_FR_SFDR_ReceiptwiseLedgerTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_SFDR_ReceiptwiseLedgerTest" />
+		</classes>
+	</test>
+
+	<test name="125. AL_Academic_FRR_FR_SFDR_RefundLedgerTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_FRR_FR_SFDR_RefundLedgerTest" />
+		</classes>
+	</test>
+
+	<test name="126. AL_Academic_AP_DocumentSubmissionTest">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AP_DocumentSubmissionTest" />
+		</classes>
+	</test>
+	<test name="127. AL_Academic_AM_TimeTableReportTest1">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_TimeTableReportTest1" />
+		</classes>
+	</test>
+
+	<test name="128. AL_Academic_AM_TimeTableReportTest2">
+		<classes>
+			<class
+				name="RFCCAcademicTest.AL_Academic_AM_TimeTableReportTest2" />
+		</classes>
+	</test>
+
+	<!-- HOSTEL -->
+	
+	<test name="1 SL_Hostel_FR_CreateStandardFeeTest">
+		<classes>
+			<class name="HostelTest.SL_Hostel_FR_CreateStandardFeeTest"></class>
+		</classes>
+	</test>
+
+	<test name="2 AL_Hostel_Transaction_HostelFineTests">
+		<classes>
+			<class name="HostelTest.AL_Hostel_Transaction_HostelFineTests"></class>
+		</classes>
+	</test>
+
+	<test name="3 AL_Hostel_Transaction_AssetAllotmentTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_AssetAllotmentTests"></class>
+		</classes>
+	</test>
+
+	<test name="4 AL_Hostel_Transaction_HostelRoomBookingFlow01_1Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_HostelRoomBookingFlow01_1Test"></class>
+		</classes>
+	</test>
+
+	<test name="5 AL_Hostel_Transaction_CancelRoomAllotmentFlow01_2Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_CancelRoomAllotmentFlow01_2Test"></class>
+		</classes>
+	</test>
+
+	<test
+		name="6 AL_Hostel_Transaction_ChangeHostelRoomAllotmentTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_ChangeHostelRoomAllotmentTests"></class>
+		</classes>
+	</test>
+
+	<test name="7 AL_Hostel_Report_AssetAllotmentReportTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_AssetAllotmentReportTests"></class>
+		</classes>
+	</test>
+
+	<test name="8 AL_Hostel_Report_HostelLeavingReportTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HostelLeavingReportTests"></class>
+		</classes>
+	</test>
+
+	<test name="9 AL_Hostel_Report_HostelStudentAddressTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HostelStudentAddressTests"></class>
+		</classes>
+	</test>
+
+	<test name="10 AL_Hostel_Report_HostelStudentInformationTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HostelStudentInformationTests"></class>
+		</classes>
+	</test>
+
+	<test name="11 AL_Hostel_Transaction_GuestRoomAllotmentTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_GuestRoomAllotmentTests"></class>
+		</classes>
+	</test>
+
+	<test name="12 AL_Hostel_HGP_PurposeMasterTest">
+		<classes>
+			<class name="HostelTest.AL_Hostel_HGP_PurposeMasterTest"></class>
+		</classes>
+	</test>
+
+	<test name="13 AL_Hostel_Report_HSI_StudentSearchTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HSI_StudentSearchTests"></class>
+		</classes>
+	</test>
+
+	<test name="14 AL_Hostel_Report_RAS_HostelVacantRoomsTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_RAS_HostelVacantRoomsTests"></class>
+		</classes>
+	</test>
+	<test name="15 AL_Hostel_Report_RAS_StudentListForHostelTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_RAS_StudentListForHostelTests"></class>
+		</classes>
+	</test>
+	<test name="16 AL_Hostel_Report_RoomAllotmentStatusTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_RoomAllotmentStatusTests"></class>
+		</classes>
+	</test>
+	<test name="17 AL_Hostel_Master_HostelAttendanceInchargeTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Master_HostelAttendanceInchargeTest"></class>
+		</classes>
+	</test>
+	<test
+		name="18 AL_Hostel_Report_PhysicallyHandicappedStudentListTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_PhysicallyHandicappedStudentListTest"></class>
+		</classes>
+	</test>
+
+	<test name="19 AL_Hostel_FR_CreateFeeDemandTest">
+		<classes>
+			<class name="HostelTest.AL_Hostel_FR_CreateFeeDemandTest" />
+		</classes>
+	</test>
+
+	<test name="20 AL_Hostel_FR_HostelDemandCancellationTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_FR_HostelDemandCancellationTest" />
+		</classes>
+	</test>
+	
+	<!-- Administration -->
+	<test name="01. AL_Administration_SRM_Trans_ServiceRegistrationTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_SRM_Trans_ServiceRegistrationTest"></class>
+		</classes>
+	</test>
+
+	<test name="02. AL_Administration_VM_Trans_RouteAllotmentTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_RouteAllotmentTest"></class>
+		</classes>
+	</test>
+<!-- 
+	<test name="03. AL_Administration_VM_Trans_FuelIndentEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_FuelIndentEntryTest"></class>
+		</classes>
+	</test>
+
+ -->	<test name="04. AL_Administration_VM_Trans_ItemPurchaseEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_ItemPurchaseEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="05. AL_Administration_SRM_Transaction_ServicestatusreportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_SRM_Transaction_ServicestatusreportTest"></class>
+		</classes>
+	</test>
+
+	<test name="06. AL_Administration_GR_Rpt_GSR_CompletedCGRTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_CompletedCGRTest"></class>
+		</classes>
+	</test>
+
+	<test name="07. AL_Administration_GR_Rpt_GSR_CompletedReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_CompletedReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="08. AL_Administration_GR_Rpt_GSR_InprocessCGRTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_InprocessCGRTest"></class>
+		</classes>
+	</test>
+
+	<test name="09. AL_Administration_GR_Rpt_GSR_PendingReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_PendingReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="10. AL_Administration_GR_Rpt_GSR_PendingCGRTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_PendingCGRTest"></class>
+		</classes>
+	</test>
+
+	<test name="11. AL_Administration_GR_Master_GrievanceTypeTest">
+		<classes>
+			<class name="AdministrationTest.AL_Administration_GR_Master_GrievanceTypeTest" />
+		</classes>
+	</test>
+
+	<test name="12. AL_Administration_GR_Rpt_GrievanceSummaryTest">
+		<classes>
+			<class name="AdministrationTest.AL_Administration_GR_Rpt_GrievanceSummaryTest" />
+		</classes>
+	</test>
+
+	<test name="13. AL_Administration_GR_Master_SubGrievanceTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Master_SubGrievanceTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="14. AL_Administration_GR_Master_RedressalCommitteeTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Master_RedressalCommitteeTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="15. AL_Administration_VM_Trans_VehicleServicingTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_VehicleServicingTest"></class>
+		</classes>
+	</test>
+
+	<test name="16. AL_Administration_VM_Trans_FitnessTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_FitnessTest"></class>
+		</classes>
+	</test>
+
+	<test name="17. AL_Administration_VM_Trans_RoadTaxTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_RoadTaxTest"></class>
+		</classes>
+	</test>
+
+	<test name="18. AL_Administration_VM_Trans_InsuranceTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_InsuranceTest"></class>
+		</classes>
+	</test>
+
+	<test name="19. AL_Administration_VM_Trans_LogbookEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_LogbookEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="20. AL_Administration_FM_Rpt_MR_ForwardReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_ForwardReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="21. AL_Administration_FM_Rpt_MR_PendingFilesReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_PendingFilesReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="22. AL_Administration_FM_Rpt_MR_CompleteFilesReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_CompleteFilesReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="23. AL_Administration_VM_Trans_ItemPurchaseEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_ItemPurchaseEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="24. AL_Administration_VM_Trans_ArrivalTimeEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_ArrivalTimeEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="25. AL_Administration_VM_Trans_IncidentRegisterTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_IncidentRegisterTest"></class>
+		</classes>
+	</test>
+
+	<test name="26. AL_Administration_VM_Trans_BusTokenIssueTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_BusTokenIssueTest"></class>
+		</classes>
+	</test>
+
+	<test name="27. AL_Administration_VM_Trans_CollegeVehicleDailyAttendanceTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_CollegeVehicleDailyAttendanceTest"></class>
+		</classes>
+	</test>
+
+	<test name="28. AL_Administration_VM_Trans_BusStructureMappingTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_BusStructureMappingTest"></class>
+		</classes>
+	</test>
+
+	<test name="29. AL_Administration_VM_Trans_CreateBusInchargeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_CreateBusInchargeTest"></class>
+		</classes>
+	</test>
+
+	<test name="30. AL_Administration_VM_Trans_TourEventDetailsTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_TourEventDetailsTest"></class>
+		</classes>
+	</test>
+
+	<test name="31. AL_Administration_FM_Rpt_MR_ReturnReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_ReturnReportTest"></class>
+		</classes>
+	</test>
+	<test name="32. AL_Administration_FM_Master_DocumentTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Master_DocumentTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="33. AL_Administration_FM_Master_DepartmentAuthorityMappingTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Master_DepartmentAuthorityMappingTest"></class>
+		</classes>
+	</test>
+
+	<test name="34. AL_Administration_FM_Rpt_MR_FileMovementDetailsReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_FileMovementDetailsReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="35. AL_Administration_FM_Master_RoleMasterTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Master_RoleMasterTest"></class>
+		</classes>
+	</test>
+
+	<test name="36. AL_Administration_FM_Rpt_SR_EmployeeListReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_EmployeeListReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="37. AL_Administration_FM_Rpt_SR_ERPAMCProppsalReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_ERPAMCProppsalReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="38. AL_Administration_FM_Rpt_SR_XYZReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_XYZReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="39. AL_Administration_FM_Rpt_SR_AttendanceListReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_AttendanceListReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="40. AL_Administration_FM_Rpt_SR_OfficeDocumentFilegReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_OfficeDocumentFilegReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="41. AL_Administration_FM_Rpt_SR_OfficeDocumentFileReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_OfficeDocumentFileReportTest"></class>
+		</classes>
+	</test>
+
+	<!-- Finance --><!-- 1 -->
+	<test name="AL_Finance_CreateCompanyTest">
+		<classes>
+			<class name="FinanceTest.AL_Finance_CreateCompanyTest"></class>
+		</classes>
+	</test><!-- 1 -->
+	
+	<!-- CDC --><!-- 3 -->
+	
+	<test name="1. AL_CDC_Reports_PlacedStudentReportTests">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_PlacedStudentReportTests"></class>
+		</classes>
+	</test>
+		<test name="2. AL_CDC_Reports_StudentCategoryReport_TPCR_PlacementReportTest">
+		<classes>
+			<class name="CDCTest.AL_CDC_Reports_StudentCategoryReport_TPCR_PlacementReportTest"></class>
+		</classes>
+	</test>
+	
+	<!-- Dash board --><!-- 1 -->
+	<test name="AL_Dashboard_Analytics_DashboardTest">
+		<classes>
+			<class
+				name="DashboardTest.AL_Dashboard_Analytics_DashboardTest"></class>
+		</classes>
+	</test><!-- 1 -->
+
+	<!-- Configuration Tests , Count - 2 -->
+	<test name="AL_Configuration_CreateNoticeNews">
+		<classes>
+			<class
+				name="ConfigurationTest.AL_Configuration_CreateNoticeNews" />
+		</classes>
+	</test><!-- 1 -->
+	<test name="AL_Configuration_UM_UpdateNewUserLinkTest">
+		<classes>
+			<class
+				name="ConfigurationTest.AL_Configuration_UM_UpdateNewUserLinkTest" />
+		</classes>
+	</test><!-- 2 -->
+
+
+</suite> 
+

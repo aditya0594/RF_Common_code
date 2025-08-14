@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [MasterSuite (1)]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.qa.listeners.ExtentListeners"/>
+    <listener class-name="com.qa.listeners.ExtentListeners"/>
+  </listeners>
+  <test thread-count="5" name="1_AL_Examination_ER_GradeCardTabulationReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_GradeCardTabulationReportTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="aL_Examination_ER_GradeCardTabulationReportTest"/>
+          <include name="afterTest"/>
+          <include name="configureReport"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_GradeCardTabulationReportTest -->
+    </classes>
+  </test> <!-- 1_AL_Examination_ER_GradeCardTabulationReportTest(failed) -->
+  <test thread-count="5" name="2_AL_Examination_PEA_ExamAdmitCardGenerationTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_PEA_ExamAdmitCardGenerationTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+          <include name="aL_Examination_PEA_ExamAdmitCardGenerationTest"/>
+          <include name="afterMethod"/>
+          <include name="configureReport"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_PEA_ExamAdmitCardGenerationTest -->
+    </classes>
+  </test> <!-- 2_AL_Examination_PEA_ExamAdmitCardGenerationTest(failed) -->
+  <test thread-count="5" name="4_AL_Examination_Results_PublishResultTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_Results_PublishResultTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="aL_Examination_Results_PublishResultTest"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_Results_PublishResultTest -->
+    </classes>
+  </test> <!-- 4_AL_Examination_Results_PublishResultTest(failed) -->
+  <test thread-count="5" name="5_AL_Examination_Results_ResultProccessingTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_Results_ResultProccessingTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="configureReport"/>
+          <include name="afterTest"/>
+          <include name="aL_Examination_Results_ResultProccessingTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_Results_ResultProccessingTest -->
+    </classes>
+  </test> <!-- 5_AL_Examination_Results_ResultProccessingTest(failed) -->
+  <test thread-count="5" name="8_AL_Examination_SA_RoomTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_SA_RoomTest">
+        <methods>
+          <include name="aL_Examination_SA_RoomTest"/>
+          <include name="launchBrowser"/>
+          <include name="afterTest"/>
+          <include name="configureReport"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_SA_RoomTest -->
+    </classes>
+  </test> <!-- 8_AL_Examination_SA_RoomTest(failed) -->
+  <test thread-count="5" name="9_AL_Examination_SA_RoomConfigurationTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_SA_RoomConfigurationTest">
+        <methods>
+          <include name="aL_Examination_SA_RoomConfigurationTest"/>
+          <include name="configureReport"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_SA_RoomConfigurationTest -->
+    </classes>
+  </test> <!-- 9_AL_Examination_SA_RoomConfigurationTest(failed) -->
+  <test thread-count="5" name="11_AL_Examination_COE_RemoveAbsentIGradeEntryTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_COE_RemoveAbsentIGradeEntryTest">
+        <methods>
+          <include name="aL_Examination_COE_RemoveAbsentIGradeEntryTest"/>
+          <include name="configuration"/>
+          <include name="launchBrowser"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_COE_RemoveAbsentIGradeEntryTest -->
+    </classes>
+  </test> <!-- 11_AL_Examination_COE_RemoveAbsentIGradeEntryTest(failed) -->
+  <test thread-count="5" name="13_AL_Examination_COE_BundleCreationTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_COE_BundleCreationTest">
+        <methods>
+          <include name="aL_Examination_COE_BundleCreationTest"/>
+          <include name="configuration"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_COE_BundleCreationTest -->
+    </classes>
+  </test> <!-- 13_AL_Examination_COE_BundleCreationTest(failed) -->
+  <test thread-count="5" name="14_AL_Examination_PEA_InvigilatorEntryTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_PEA_InvigilatorEntryTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="afterTest"/>
+          <include name="aL_Examination_PEA_InvigilatorEntryTest"/>
+          <include name="configuration"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_PEA_InvigilatorEntryTest -->
+    </classes>
+  </test> <!-- 14_AL_Examination_PEA_InvigilatorEntryTest(failed) -->
+  <test thread-count="5" name="15_AL_Examination_PEA_ExamTimeTableTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_PEA_ExamTimeTableTest">
+        <methods>
+          <include name="aL_Examination_PEA_ExamTimeTableTest"/>
+          <include name="afterTest"/>
+          <include name="configuration"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_PEA_ExamTimeTableTest -->
+    </classes>
+  </test> <!-- 15_AL_Examination_PEA_ExamTimeTableTest(failed) -->
+  <test thread-count="5" name="16_AL_Examination_PEA_ExamTimeTableReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_PEA_ExamTimeTableReportTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="aL_Examination_PEA_ExamTimeTableReportTest"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_PEA_ExamTimeTableReportTest -->
+    </classes>
+  </test> <!-- 16_AL_Examination_PEA_ExamTimeTableReportTest(failed) -->
+  <test thread-count="5" name="17_AL_Examination_PS_StaffEntryTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_PS_StaffEntryTest">
+        <methods>
+          <include name="configureReport"/>
+          <include name="aL_Examination_PS_StaffEntryTest"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_PS_StaffEntryTest -->
+    </classes>
+  </test> <!-- 17_AL_Examination_PS_StaffEntryTest(failed) -->
+  <test thread-count="5" name="18_AL_Examination_ER_ExamReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReportTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="launchBrowser"/>
+          <include name="afterTest"/>
+          <include name="aL_Examination_ER_ExamReportTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReportTest -->
+    </classes>
+  </test> <!-- 18_AL_Examination_ER_ExamReportTest(failed) -->
+  <test thread-count="5" name="19_AL_Examination_ER_ExamReports_OverallSubPercentTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_OverallSubPercentTest">
+        <methods>
+          <include name="aL_Examination_ER_ExamReports_OverallSubPercentTest"/>
+          <include name="configuration"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReports_OverallSubPercentTest -->
+    </classes>
+  </test> <!-- 19_AL_Examination_ER_ExamReports_OverallSubPercentTest(failed) -->
+  <test thread-count="5" name="21_AL_Examination_ER_ExamReports_DegreeWiseTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_DegreeWiseTest">
+        <methods>
+          <include name="aL_Examination_ER_ExamReports_DegreeWiseTest"/>
+          <include name="launchBrowser"/>
+          <include name="configuration"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReports_DegreeWiseTest -->
+    </classes>
+  </test> <!-- 21_AL_Examination_ER_ExamReports_DegreeWiseTest(failed) -->
+  <test thread-count="5" name="22_AL_Examination_ER_ExamReports_FailStudentListTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_FailStudentListTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="configuration"/>
+          <include name="aL_Examination_ER_ExamReports_FailStudentListTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReports_FailStudentListTest -->
+    </classes>
+  </test> <!-- 22_AL_Examination_ER_ExamReports_FailStudentListTest(failed) -->
+  <test thread-count="5" name="23_AL_Examination_ER_MarkEntryLockEntryNotDoneReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_MarkEntryLockEntryNotDoneReportTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="afterTest"/>
+          <include name="aL_Examination_ER_MarkEntryLockEntryNotDoneReportTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_MarkEntryLockEntryNotDoneReportTest -->
+    </classes>
+  </test> <!-- 23_AL_Examination_ER_MarkEntryLockEntryNotDoneReportTest(failed) -->
+  <test thread-count="5" name="24_AL_Examination_ER_ExamReports_BranchSemisterWiseResultAnalysisTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_BranchSemisterWiseResultAnalysisTest">
+        <methods>
+          <include name="aL_Examination_ER_ExamReports_BranchSemisterWiseResultAnalysisTest"/>
+          <include name="afterTest"/>
+          <include name="configuration"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReports_BranchSemisterWiseResultAnalysisTest -->
+    </classes>
+  </test> <!-- 24_AL_Examination_ER_ExamReports_BranchSemisterWiseResultAnalysisTest(failed) -->
+  <test thread-count="5" name="25_AL_Examination_ER_ExamReports_OverallPercentageTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_OverallPercentageTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="launchBrowser"/>
+          <include name="aL_Examination_ER_ExamReports_OverallPercentageTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReports_OverallPercentageTest -->
+    </classes>
+  </test> <!-- 25_AL_Examination_ER_ExamReports_OverallPercentageTest(failed) -->
+  <test thread-count="5" name="26_AL_Examination_ER_ExamReports_SubjectWiseResultAnalysisReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_SubjectWiseResultAnalysisReportTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="configuration"/>
+          <include name="afterTest"/>
+          <include name="aL_Examination_ER_ExamReports_SubjectWiseResultAnalysisReportTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamReports_SubjectWiseResultAnalysisReportTest -->
+    </classes>
+  </test> <!-- 26_AL_Examination_ER_ExamReports_SubjectWiseResultAnalysisReportTest(failed) -->
+  <test thread-count="5" name="27_AL_Examination_COE_LockUnLockMarksTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_COE_LockUnLockMarksTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="configuration"/>
+          <include name="aL_Examination_COE_LockUnLockMarksTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_COE_LockUnLockMarksTest -->
+    </classes>
+  </test> <!-- 27_AL_Examination_COE_LockUnLockMarksTest(failed) -->
+  <test thread-count="5" name="28_AL_Examination_ER_StudentTopperList_CourseWisetoppeListTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_StudentTopperList_CourseWisetoppeListTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="aL_Examination_ER_StudentTopperList_CourseWisetoppeListTest"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_StudentTopperList_CourseWisetoppeListTest -->
+    </classes>
+  </test> <!-- 28_AL_Examination_ER_StudentTopperList_CourseWisetoppeListTest(failed) -->
+  <test thread-count="5" name="34_AL_Examination_COE_StudentWiseUnlockTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_COE_StudentWiseUnlockTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+          <include name="aL_Examination_COE_StudentWiseUnlockTest"/>
+          <include name="configuration"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_COE_StudentWiseUnlockTest -->
+    </classes>
+  </test> <!-- 34_AL_Examination_COE_StudentWiseUnlockTest(failed) -->
+  <test thread-count="5" name="35_AL_Examination_ER_MarksEntryDetailReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_MarksEntryDetailReportTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="aL_Examination_ER_MarksEntryDetailReportTest"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_MarksEntryDetailReportTest -->
+    </classes>
+  </test> <!-- 35_AL_Examination_ER_MarksEntryDetailReportTest(failed) -->
+  <test thread-count="5" name="38_AL_Examination_ER_ConsolidatedMarkEntryReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ConsolidatedMarkEntryReportTest">
+        <methods>
+          <include name="aL_Examination_ER_ConsolidatedMarkEntryReportTest"/>
+          <include name="configuration"/>
+          <include name="afterTest"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ConsolidatedMarkEntryReportTest -->
+    </classes>
+  </test> <!-- 38_AL_Examination_ER_ConsolidatedMarkEntryReportTest(failed) -->
+  <test thread-count="5" name="39_AL_Examination_ER_ExamRegistrationReportTest(failed)">
+    <classes>
+      <class name="ExaminationTest.AL_Examination_ER_ExamRegistrationReportTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="launchBrowser"/>
+          <include name="afterTest"/>
+          <include name="aL_Examination_ER_ExamRegistrationReportTest"/>
+        </methods>
+      </class> <!-- ExaminationTest.AL_Examination_ER_ExamRegistrationReportTest -->
+    </classes>
+  </test> <!-- 39_AL_Examination_ER_ExamRegistrationReportTest(failed) -->
+</suite> <!-- Failed suite [MasterSuite (1)] -->

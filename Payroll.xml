@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PayrollTestSuite"><!-- 57 -->
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+	<test name="01. AL_Payroll_Trans_MW_SalaryRemarkTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_SalaryRemarkTest" />
+		</classes>
+	</test>
+
+	<test name="02. AL_Payroll_Trans_MW_AttendanceEntryRptTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_AttendanceEntryRptTest" />
+		</classes>
+	</test>
+
+	<test name="03. AL_Payroll_Rpt_AnnualReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_AnnualReportTest" />
+		</classes>
+	</test>
+
+	<test name="04. AL_Payroll_Rpt_EmployeePaySlipTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_EmployeePaySlipTest" />
+		</classes>
+	</test>
+
+	<test name="05. AL_Payroll_Trans_MW_MonthlyChangeMasterFileTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyChangeMasterFileTest" />
+		</classes>
+	</test>
+
+	<test name="06. AL_Payroll_Trans_MW_AttendanceEntryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_AttendanceEntryTest" />
+		</classes>
+	</test>
+
+	<test name="07. AL_Payroll_Trans_MW_BulkSalaryProcessTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_BulkSalaryProcessTest" />
+		</classes>
+	</test>
+
+	<test name="08. AL_Payroll_Rpt_BankStatementTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_BankStatementTest" />
+		</classes>
+	</test>
+
+	<test name="09. AL_Payroll_Rpt_EmployeesAbstactSalaryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_EmployeesAbstactSalaryTest" />
+		</classes>
+	</test>
+
+	<test name="10. AL_Payroll_Trans_BD_EmpolyeeInformationTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_EmpolyeeInformationTest" />
+		</classes>
+	</test>
+
+	<test name="11. AL_Payroll_Rpt_AllDeductionHeadReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_AllDeductionHeadReportTest" />
+		</classes>
+	</test>
+
+	<test name="12. AL_Payroll_Rpt_PTPFDeductionReport_EPFReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_PTPFDeductionReport_EPFReportTest" />
+		</classes>
+	</test>
+
+	<test name="13. AL_Payroll_Rpt_PTPFDeductionReport_PTReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_PTPFDeductionReport_PTReportTest" />
+		</classes>
+	</test>
+
+	<test name="14. AL_Payroll_Rpt_OtherSalaryHeadReportsTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_OtherSalaryHeadReportsTest" />
+		</classes>
+	</test>
+
+	<test name="15. AL_Payroll_Rpt_EmployeeJoiningReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_EmployeeJoiningReportTest" />
+		</classes>
+	</test>
+
+	<test name="16. AL_Payroll_Rpt_PTPFDeductionReport_GrossTDSReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_PTPFDeductionReport_GrossTDSReportTest" />
+		</classes>
+	</test>
+
+	<test name="17. AL_Payroll_Rpt_EmployeeIDCardTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_EmployeeIDCardTest" />
+		</classes>
+	</test>
+
+	<test name="18. AL_Payroll_Rpt_ESIDeductionReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_ESIDeductionReportTest" />
+		</classes>
+	</test>
+
+	<test name="19. AL_Payroll_Rpt_EmployeeSelectedFieldReport">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_EmployeeSelectedFieldReportTest" />
+		</classes>
+	</test>
+
+	<test name="20. AL_Payroll_Trans_BD_SequenceNumberAllotmentTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_SequenceNumberAllotmentTest" />
+		</classes>
+	</test>
+
+	<test name="21. AL_Payroll_Rpt_PayAnnualPayHeadReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_PayAnnualPayHeadReportTest" />
+		</classes>
+	</test>
+
+	<test name="22. AL_Payroll_Trans_BD_EmployeeBulkUpdateTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_EmployeeBulkUpdateTest" />
+		</classes>
+	</test>
+
+	<test name="23. AL_Payroll_Trans_MW_UpdatePayHeadTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_UpdatePayHeadTest" />
+		</classes>
+	</test>
+
+	<test name="24. AL_Payroll_Trans_MW_RegularDeductionsTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_RegularDeductionsTest" />
+		</classes>
+	</test>
+
+	<test name="25. AL_Payroll_Trans_BD_BulkPhotoUpdateTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_BulkPhotoUpdateTest" />
+		</classes>
+	</test>
+
+	<test name="26. AL_Payroll_Trans_MW_MonthlyInstallmentEntryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyInstallmentEntryTest" />
+		</classes>
+	</test>
+
+	<test name="27. AL_Payroll_Trans_MW_DonationEntryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_DonationEntryTest" />
+		</classes>
+	</test>
+
+	<test name="28. AL_Payroll_Rpt_DetailReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_DetailReportTest" />
+		</classes>
+	</test>
+
+	<test name="29. AL_Payroll_Trans_MW_SupplementaryBillTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_SupplementaryBillTest" />
+		</classes>
+	</test>
+
+	<test name="30. AL_Payroll_Trans_BD_LockUnlockEmployeeTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_LockUnlockEmployeeTest" />
+		</classes>
+	</test>
+
+	<test name="31. AL_Payroll_Trans_MW_ArrearsCalculationFlow01_1Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_ArrearsCalculationFlow01_1Test" />
+		</classes>
+	</test>
+
+	<test name="32. AL_Payroll_Trans_MW_IncrementArrearsDiffReportFlow01_2Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_IncrementArrearsDiffReportFlow01_2Test" />
+		</classes>
+	</test>
+
+	<test name="33. AL_Payroll_Trans_MW_IncrementArrearsCalculationFlow02_1Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_IncrementArrearsCalculationFlow02_1Test" />
+		</classes>
+	</test>
+
+	<test name="34. AL_Payroll_Trans_MW_IADR_DeleteIncrementArrearsCalculationFlow02_2Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_IADR_DeleteIncrementArrearsCalculationFlow02_2Test" />
+		</classes>
+	</test>
+
+	<test name="35. AL_Payroll_Trans_MW_MonthlyChangeMasterFileTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyChangeMasterFileTest" />
+		</classes>
+	</test>
+
+	<test name="36. AL_Payroll_Trans_MW_SalaryProcess_Flow03_1Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_SalaryProcess_Flow03_1Test" />
+		</classes>
+	</test>
+
+	<test name="37. AL_Payroll_Trans_MW_LockUnLockSalary_Flow03_2Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_LockUnLockSalary_Flow03_2Test" />
+		</classes>
+	</test>
+
+	<test name="38. AL_Payroll_Rpt_EmployeeCountReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_EmployeeCountReportTest" />
+		</classes>
+	</test>
+
+	<test name="39. AL_Payroll_Trans_MW_MonthlyChangesInMasterFileMultipleHeadTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyChangesInMasterFileMultipleHeadTest" />
+		</classes>
+	</test>
+
+	<test name="40. AL_Payroll_Trans_MW_BulkEmployeeEmailPaySlipTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_BulkEmployeeEmailPaySlipTest" />
+		</classes>
+	</test>
+
+	<test name="41. AL_Payroll_Trans_BD_BulkPhotoUpdateFromFolderTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_BulkPhotoUpdateFromFolderTest" />
+		</classes>
+	</test>
+
+	<test name="42. AL_Payroll_Trans_BD_OverRuleTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_BD_OverRuleTest" />
+		</classes>
+	</test>
+
+	<test name="43. AL_Payroll_Trans_MW_ExcelUploadPayHeadsTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_ExcelUploadPayHeadsTest" />
+		</classes>
+	</test>
+
+	<test name="44. AL_Payroll_Trans_MW_SalaryIncrementEntryWithPercentTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_SalaryIncrementEntryWithPercentTest" />
+		</classes>
+	</test>
+
+	<test name="45. AL_Payroll_Trans_MW_SalaryIncrementEntryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_SalaryIncrementEntryTest" />
+		</classes>
+	</test>
+
+	<test name="46. AL_Payroll_Rpt_StaffWiseSalaryDataTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_StaffWiseSalaryDataTest" />
+		</classes>
+	</test>
+
+	<test name="47. AL_Payroll_Trans_IT_ITDeclarationTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_IT_ITDeclarationTest" />
+		</classes>
+	</test>
+
+	<test name="48. AL_Payroll_Trans_IT_ITCalculationTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_IT_ITCalculationTest" />
+		</classes>
+	</test>
+
+	<test name="49. AL_Payroll_Trans_IT_ITTransferTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_IT_ITTransferTest" />
+		</classes>
+	</test>
+
+	<test name="50. AL_Payroll_Rpt_IncomeTaxReports_Form16Test">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_Form16Test" />
+		</classes>
+	</test>
+
+	<test name="51. AL_Payroll_Trans_IT_ITChallanEntryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_IT_ITChallanEntryTest" />
+		</classes>
+	</test>
+
+	<test name="52. AL_Payroll_Rpt_IncomeTaxReports_ShowTaxTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_ShowTaxTest" />
+		</classes>
+	</test>
+
+	<test name="53. AL_Payroll_Trans_IT_BulkITDeclarationTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_IT_BulkITDeclarationTest" />
+		</classes>
+	</test>
+
+	<test name="54. AL_Payroll_Rpt_IncomeTaxReports_Form16PartBTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_Form16PartBTest" />
+		</classes>
+	</test>
+
+	<test name="55. AL_Payroll_Rpt_IncomeTaxReports_EmployeeITStatusReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_EmployeeITStatusReportTest" />
+		</classes>
+	</test>
+
+	<test name="56. AL_Payroll_Rpt_SupplementryWiseReportTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Rpt_SupplementryWiseReportTest" />
+		</classes>
+	</test>
+	<test name="57. AL_Payroll_Trans_MW_ReleaseEntryTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_ReleaseEntryTest" />
+		</classes>
+	</test>
+	<test name="58. AL_Payroll_Trans_MW_ChangesInMonthlySalaryFileTest">
+		<classes>
+			<class name="PayrollTest.AL_Payroll_Trans_MW_ChangesInMonthlySalaryFileTest" />
+		</classes>
+	</test>
+	
+	
+</suite>

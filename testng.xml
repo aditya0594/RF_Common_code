@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="StudentAcademicSuite">
+  <test thread-count="5" name="Test">
+    <classes>
+<!--  <class name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_EmployeeWiseTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_type_ODTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_type_ComOffRequestTest"/>
+	  <class name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_type_LeaveTest"/>
+	  <class name="EstablishmentTest.AL_Establishment_Rpt_AbsentReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_BioConsoRpt_InOutReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_BioConsoRpt_ReportTest"/>  
+	  <class name="EstablishmentTest.AL_Establishment_Rpt_LeaveStatusTest"/>  
+	  <class name="EstablishmentTest.AL_Establishment_Rpt_VacationReportTest"/>
+
+	
+      <class name="EstablishmentTest.AL_Establishment_Rpt_AbsentReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_BioConsoRpt_InOutReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_BioConsoRpt_ReportTest"/>  
+	  <class name="EstablishmentTest.AL_Establishment_Rpt_LeaveStatusTest"/>  
+	  <class name="EstablishmentTest.AL_Establishment_Rpt_VacationReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_ODAndLeaveSummaryReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_PermissionReportTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Rpt_ServiceBookExcelTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_LeaveAllotmentTest"/>	  
+      
+      
+      21/11/2024
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_OverallSubPercentTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_ResultAnalysisTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_DegreeWiseTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_FailStudentListTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_MarkEntryLockEntryNotDoneReportTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_BranchSemisterWiseResultAnalysisTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_OverallPercentageTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ExamReports_SubjectWiseResultAnalysisReportTest"/> 
+      
+      22/11/2024    
+      <class name="ExaminationTest.AL_Examination_ER_StudentTopperList_CourseWisetoppeListTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_StudentTopperList_MeritListTest"/>
+      <class name="ExaminationTest.AL_Examination_COE_IGradeEntry_BulkIGradeEntryTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_StudentTopperList_ProgramBranchWiseFinalMeritListTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_StudentTopperList_TopperListTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_EmpolyeeInformationTest"/>   
+      
+      26/11/2024
+      <class name="PayrollTest.AL_Payroll_Rpt_AllDeductionHeadReportTest"/> 
+      
+      <class name="PayrollTest.AL_Payroll_Rpt_PTPFDeductionReport_EPFReportTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_PTPFDeductionReport_PTReportTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_OtherSalaryHeadReportsTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_EmployeeJoiningReportTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_PTPFDeductionReport_GrossTDSReportTest"/>
+      
+      
+      27/11/2024
+      <class name="PayrollTest.AL_Payroll_Rpt_EmployeeIDCardTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_ChangeShiftTimeTest"/>
+      
+      
+      28/11/2024
+      <class name="PayrollTest.AL_Payroll_Rpt_EmployeeSelectedFieldReportTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_MarksEntryDetailReportTest"/>
+      <class name="ConfigurationTest.AL_Configuration_CreateNoticeNews"/>
+      
+      
+      29/11/2024
+      <class name="ExaminationTest.AL_Examination_AS_EvaluationStaffEntry"/>
+      <class name = "ExaminationTest.AL_Examination_ER_ExamReports_DegreeWiseTest"></class>
+      <class name="ExaminationTest.AL_Examination_ER_AllExamMarkEntryStatusTest"/>
+      <class name="ExaminationTest.AL_Examination_ER_ConsolidatedMarkEntryReportTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_SequenceNumberAllotmentTest"/> 
+      
+      
+      30/11/2024
+      <class name="ExaminationTest.AL_Examination_ER_ExamRegistrationReportTest"/>
+      
+      
+      04/12/2024
+      <class name="EstablishmentTest.AL_Establishment_Trans_DirectLeaveApplicationTest"/>
+      <class name="EstablishmentTest.FL_Establishment_Trans_EmployeeLeaveCard_RequestForLeaveCancellationTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_LeaveCancellationTest"/>
+      
+      05/12/2024
+      <class name="PayrollTest.AL_Payroll_Rpt_PayAnnualPayHeadReportTest"/> 
+      <class name="ExaminationTest.AL_Examination_EU_ExamRuleForPromotionTest"/>
+      <class name="ExaminationTest.AL_Examination_EU_ConvocationMasterTest"/>
+      <class name="ExaminationTest.AL_Examination_EU_BulkExamFormGenerationTest"/>
+      
+      06/12/2024
+      <class name="ConfigurationTest.AL_Configuration_UM_UpdateNewUserLinkTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_CancelReceiptTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_SR_OnlinePaymentTest"/>
+             
+      12/12/2024
+      <class name="PayrollTest.AL_Payroll_Trans_MW_UpdatePayHeadTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_EmployeeBulkUpdateTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_CR_ElectiveCourseRegistrationTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_CR_CancelElectiveCourseRegistrationTest"/>
+      <class name="EstablishmentTest.FL_Establishment_Trans_ODApplicationTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_ODApprovalTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_VacationDaysAllotmentTest"/> 
+      <class name="EstablishmentTest.AL_Establishment_Trans_OrderGenerationTest"/>
+   	  <class name = "ExaminationTest.AL_Examination_COE_IGradeEntry_SingleEntryTest"></class>
+      <class name="ExaminationTest.AL_Examination_COE_RemoveAbsentIGradeEntryTest"/>
+      <class name="ExaminationTest.FL_Examination_MarkEntry_EndSemMarkEntryTest"/>
+      
+      
+      18/12/2024
+      <class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyInstallmentEntryTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_DonationEntryTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_BulkPhotoUpdateTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_RegularDeductionsTest"/>
+      <class name="ELearningTest.FL_ELearning_Trans_CreateAssignmentTest"></class>
+      <class name="ELearningTest.FL_ELearning_Trans_CA_DeleteAssignmentTest"></class>
+      
+      
+      20/12/2024
+      <class name="ELearningTest.FL_ELearning_Trans_TestCreationTest"/>
+      <class name="ELearningTest.FL_ELearning_Trans_TestCreation_DeleteTest"/>       
+      <class name="PayrollTest.AL_Payroll_Rpt_DetailReportTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_SupplementaryBillTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_LockUnlockEmployeeTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_ArrearsCalculationTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_IncrementArrearsDiffReportTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_IncrementArrearsCalculationTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_IADR_DeleteIncrementArrearsCalculationTest"/>
+      
+      
+      24/12/2024
+      <class name="StoresTest.AL_Stores_Rpt_PS_ItemPerticularTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PS_ItemMainGroupPerticularTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PS_ItemAllTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PS_ItemSubGroupAllTest"/> 
+      <class name="StoresTest.AL_Stores_Rpt_PS_ItemSubGroupPerticularTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PS_ItemMainGroupAllTest"/>
+      
+      16/12/2024
+      <class name="StoresTest.AL_Stores_Rpt_PSR_NotDeliveredAllTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PSR_LateDeliveredTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PSR_AllTest"/>  
+      <class name="StoresTest.AL_Stores_Rpt_PSR_DeliveredDateCrossedTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PSR_DeliveredAllTest"/>
+      
+      
+      30/12/2024
+      <class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyChangeMasterFileTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_LUS_UnlockSalaryTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_EmployeeCountReportTest" />
+      <class name="PayrollTest.AL_Payroll_Trans_MW_MonthlyChangesInMasterFileMultipleHeadTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_BulkEmployeeEmailPaySlipTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_BulkPhotoUpdateFromFolderTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_BD_OverRuleTest"/> 
+      <class name="PayrollTest.AL_Payroll_Trans_MW_ExcelUploadPayHeadsTest"/>
+      
+      
+      31/12/2024
+      <class name="HostelTest.AL_Hostel_Report_RoomAllotmentStatusTests"/>
+      <class name="HostelTest.AL_Hostel_Report_RAS_HostelVacantRoomsTests"/>
+      <class name="HostelTest.AL_Hostel_Report_RAS_StudentListForHostelTests"/>
+      <class name="HostelTest.AL_Hostel_Master_HostelAttendanceInchargeTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_SalaryIncrementEntryTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_MW_SalaryIncrementEntryWithPercentTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_StaffWiseSalaryDataTest"/>
+      <class name="HostelTest.AL_Hostel_Report_PhysicallyHandicappedStudentListTest"/>
+      
+      09/01/2024
+      <class name="PayrollTest.AL_Payroll_Trans_IT_ITDeclarationTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_IT_ITCalculationTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_IT_ITTransferTest"/> 
+      <class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_Form16Test"/>
+      <class name="PayrollTest.AL_Payroll_Trans_IT_ITChallanEntryTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_ShowTaxTest"/>
+      <class name="PayrollTest.AL_Payroll_Trans_IT_BulkITDeclarationTest"/>
+      <class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_Form16PartBTest"/> 
+      <class name="PayrollTest.AL_Payroll_Rpt_IncomeTaxReports_EmployeeITStatusReportTest"/>
+      
+      
+      <class name="ExaminationTest.AL_Examination_EU_BulkDuesStatusAllotmentTest"/>
+  	  <class name="ExaminationTest.AL_Examination_Convocation_ConvocationPassoutStudentListTest"/>  
+      <class name="ExaminationTest.AL_Examination_ER_ResultPublicationReportTest"/>   
+      
+      
+      
+      13/01/2025
+      <class name="RFCCAcademicTest.AL_Academic_FR_FeeHeadCurrencyMappingTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_FeesHeadTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_DefineFeesCounterTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_TransferAttendanceRecordTest"/>	
+	  <class name="EstablishmentTest.AL_Establishment_Trans_AttendanceLockUnlockTest"/>
+      <class name="EstablishmentTest.AL_Establishment_Trans_AttendanceProcessTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_BulkUpdatePaymentTypeTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_DemandModificationTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_FeesReceiptDetailsTest"/>
+           
+      14/01/2025
+      <class name="RFCCAcademicTest.AL_Academic_CR_BatchAllotmentTest"/>
+      
+      15/01/2025
+      <class name="RFCCAcademicTest.AL_Academic_CR_ARM_FloorMasterTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_CR_ARM_BlockMasterTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_CR_ARM_RoomMasterTest"/>
+      <class name="ExaminationTest.AL_Examination_COE_BundleAllotmentTest"/>
+	  <class name="RFCCAcademicTest.AL_Academic_CR_CourseWiseSectionAllotmentTest"/>
+	  <class name="RFCCAcademicTest.AL_Academic_CR_StudentDisciplinaryAction_BulkStudentTest"/>
+   	  <class name="RFCCAcademicTest.AL_Academic_CR_StudentDisciplinaryAction_SingleStudentTest"/>
+   	  <class name="RFCCAcademicTest.AL_Academic_FR_BulkTransportHSU_BulkStudentTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_FR_BulkTransportHSU_SingleStudentTest"/>
+      
+      16/01/2025
+      <class name="StoresTest.AL_Stores_Rpt_PI_IteamMainGroupTest"/>
+      <class name="StoresTest.AL_Stores_Rpt_PI_IteamSubGroupTest"/>
+      
+      17/01/2025
+      <class name="RFCCAcademicTest.AL_Academic_PA_BulkBatchAllotmentTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_PA_BulkYearAllotmentTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AR_AttendancePendingDashboardTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AR_FacultywiseAttendanceReportTest"/>
+      
+      
+      21/01/2025
+      <class name="HostelTest.AL_Hostel_FR_CreateFeeDemandTest"/>
+      <class name="HostelTest.AL_Hostel_FR_HostelDemandCancellationTest"/> 
+      <class name="RFCCAcademicTest.AL_Academic_AP_StudentInformationVerificationTest"/>
+  	  <class name="RFCCAcademicTest.AL_Academic_AP_DocumentListMasterTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AP_DocumentSubmissionReportTest"/> 	 
+      <class name="RFCCAcademicTest.AL_Academic_AP_NewAdmissionConsolidateReport_SendEmailTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AP_NewAdmissionConsolidateReportTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_PA_ProgrammeOrBranchChangeTest"/>
+      
+      24/01/2025
+      <class name="RFCCAcademicTest.AL_Academic_PA_AdmissionChangeActivitiesTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_PA_BulkSectionAllotmentTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AP_ImportStudentDataTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AM_AttendanceEmailTriggerTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_CR_BacklogCourseTeacherAllotmentTest"/>
+      <class name="RFCCAcademicTest.AL_Academic_AR_TeacherNotAllotedTest"/>
+      
+      
+          	  
+      -->
+      <!--   <class name="ELearningTest.FL_ELearning_Trans_ProcessPendingResultTest"> data is not on live-->
+      <!--  no data on live  <class name="RFCCAcademicTest.AL_Academic_CR_TeacherStudentAllotmentTests"/> 
+  	  Payroll => Report => Supplementry Wise Report - Script is ready ......report is whitewash on live
+	  <class name="PayrollTest.AL_Payroll_Rpt_SupplementryWiseReportTest"/>-->
+       
+       
+   		<!--  Ashwini cases    
+   		<class name="RFCCAcademicTest.AL_Academic_PA_AdmissionCancellationTest"/>  logic in incomplete-->
+       	<!--  not able to read excel
+  		<class name="RFCCAcademicTest.AL_Academic_AR_FeedbackOnTeacherTest"/>  no data in report/ticket
+  		
+  		 //Ashwini cases end
+      	 //Converted Scripts verified
+         <class name="ConvertedScripts.AL_Academic_AR_StudentAdmissionRegisterReportTest"/>
+         <class name="ConvertedScripts.AL_Academic_FRR_StudentLedgerReportTest"/> 
+         <class name="ConvertedScripts.AL_Academic_FRR_FeesReportTest"/> 
+         <class name="ConvertedScripts.AL_Academic_FR_FeeCollectionTest"/>
+         <class name="ConvertedScripts.AL_Academic_AR_IdentityCardTest"/>
+         <class name="ConvertedScripts.AL_Academic_AP_NoDuesCollectionTest"/>
+         <class name="ConvertedScripts.AL_Academic_AR_StudentAdmissionReportsTest"/>
+         <class name="ConvertedScripts.FL_Academic_FR_TPE_CoreElectiveTeachingPlanTest"/>
+         <class name="ConvertedScripts.AL_Academic_FRR_FR_OverallOutstandingReportTest"/>
+    	//Converted Scripts verified
+    	
+         <class name="ConvertedScripts.AL_Academic_AP_ProspectusEntryTest"/>
+        
+        End of converted scripts
+        -->  
+    
+       
+      
+      
+      <class name="RFCCAcademicTest.AL_Academic_AR_TeacherNotAllotedTest"/>
+      
+      
+      
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- StudentAcademicSuite -->

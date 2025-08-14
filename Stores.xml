@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite"><!-- Store 19 -->
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+	<!-- Store -->
+	<test name="01. AL_Stores_Trans_DepartmentUserRequisitonReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_DepartmentUserRequisitonReportTest" />
+		</classes>
+	</test>
+
+	<test name="02. AL_Stores_Rpt_ItemSaleReportTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_ItemSaleReportTest" />
+		</classes>
+	</test>
+
+	<test name="03. AL_Stores_Rpt_ItemExpiryWarrantyReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_ItemExpiryWarrantyReportTest" />
+		</classes>
+	</test>
+
+	<test name="04. AL_Stores_Rpt_ItemWarrantyExpiredReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_ItemWarrantyExpiredReportTest" />
+		</classes>
+	</test>
+
+	<test name="05. AL_Stores_Rpt_DepartmentwiseIssueReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_DepartmentwiseIssueReportTest" />
+		</classes>
+	</test>
+
+	<test name="06. AL_Stores_Rpt_SearchRequisitionTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_SearchRequisitionTest" />
+		</classes>
+	</test>
+
+	<test name="07. AL_Stores_Rpt_PS_ItemMainGroupPerticularTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_PS_ItemMainGroupPerticularTest" />
+		</classes>
+	</test>
+
+	<test name="08. AL_Stores_Rpt_PS_ItemMainGroupAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemMainGroupAllTest" />
+		</classes>
+	</test>
+
+	<test name="09. AL_Stores_Rpt_PS_ItemSubGroupPerticularTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_PS_ItemSubGroupPerticularTest" />
+		</classes>
+	</test>
+
+	<test name="10. AL_Stores_Rpt_PS_ItemAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemAllTest" />
+		</classes>
+	</test>
+
+	<test name="11. AL_Stores_Rpt_PS_ItemSubGroupAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemSubGroupAllTest" />
+		</classes>
+	</test>
+
+	<test name="12. AL_Stores_Rpt_PS_ItemPerticularTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PS_ItemPerticularTest" />
+		</classes>
+	</test>
+
+	<test name="13. AL_Stores_Rpt_PSR_AllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_AllTest" />
+		</classes>
+	</test>
+
+	<test name="14. AL_Stores_Rpt_PSR_DeliveredAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_DeliveredAllTest" />
+		</classes>
+	</test>
+
+	<test name="15. AL_Stores_Rpt_PSR_DeliveredAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_DeliveredAllTest" />
+		</classes>
+	</test>
+
+	<test name="16. AL_Stores_Rpt_PSR_NotDeliveredAllTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PSR_NotDeliveredAllTest" />
+		</classes>
+	</test>
+
+	<test name="17. AL_Stores_Rpt_PSR_DeliveredDateCrossedTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_PSR_DeliveredDateCrossedTest" />
+		</classes>
+	</test>
+
+	<test name="18. AL_Stores_Rpt_PI_IteamMainGroupTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PI_IteamMainGroupTest" />
+		</classes>
+	</test>
+
+	<test name="19. AL_Stores_Rpt_PI_IteamSubGroupTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_PI_IteamSubGroupTest" />
+		</classes>
+	</test>
+
+	<test name="20. AL_Stores_Rpt_CDWR_College_DetailedReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_College_DetailedReportTest" />
+		</classes>
+	</test>
+
+	<test name="21. AL_Stores_Rpt_CDWR_College_SummeryReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_College_SummeryReportTest" />
+		</classes>
+	</test>
+
+	<test name="22. AL_Stores_Rpt_FAR_SummeryTest">
+		<classes>
+			<class name="StoresTest.AL_Stores_Rpt_FAR_SummeryTest" />
+		</classes>
+	</test>
+
+	<test name="23. AL_Stores_Rpt_SER_VendorPaymentReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_SER_VendorPaymentReportTest" />
+		</classes>
+	</test>
+
+	<test name="24. AL_Stores_Rpt_SER_SecurityPassReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_SER_SecurityPassReportTest" />
+		</classes>
+	</test>
+
+	<test name="25. AL_Stores_Rpt_CDWR_MainStore_DetailReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_MainStore_DetailReportTest" />
+		</classes>
+	</test>
+
+	<test name="26. AL_Stores_Rpt_CDWR_MainStore_SummaryReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_CDWR_MainStore_SummaryReportTest" />
+		</classes>
+	</test>
+	
+	<test name="27. AL_Stores_Trans_GenerateItemSerialNumberTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_GenerateItemSerialNumberTest" />
+		</classes>
+	</test>
+	
+	<test name="28. AL_Stores_Rpt_ItemMovementReportTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_ItemMovementReportTest" />
+		</classes>
+	</test>
+	
+	<test name="29. AL_Stores_Rpt_RequiredTotalItemTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_RequiredTotalItemTest" />
+		</classes>
+	</test>
+	
+	<test name="30. AL_Stores_Rpt_GoodsReceiptRegisterTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_GoodsReceiptRegisterTest" />
+		</classes>
+	</test>
+	
+	<test name="31. AL_Stores_Rpt_IIR_IndentSlipReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_IndentSlipReportTests" />
+		</classes>
+	</test>
+	
+	<test name="32. AL_Stores_Rpt_IIR_IssueSlipNoWiseReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_IssueSlipNoWiseReportTests" />
+		</classes>
+	</test>
+	
+	<test name="33. AL_Stores_Rpt_IIR_RequisitionWiseReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_RequisitionWiseReportTests" />
+		</classes>
+	</test>
+	
+	<test name="34. AL_Stores_Trans_ItemSale_Flow01_1_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_ItemSale_Flow01_1_Test" />
+		</classes>
+	</test>
+	
+	<test name="35. AL_Stores_Trans_ItemSaleApproval_Flow01_2_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_ItemSaleApproval_Flow01_2_Test" />
+		</classes>
+	</test>
+	
+	<test name="36. AL_Stores_Trans_DeadStockEntryTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_DeadStockEntryTest" />
+		</classes>
+	</test>
+	
+	<test name="37. AL_Stores_Rpt_StoreRegisterTest">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_StoreRegisterTest" />
+		</classes>
+	</test>
+	
+	<test name="38. AL_Stores_Rpt_IIR_EmployeeIssuedItemsReportTests">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Rpt_IIR_EmployeeIssuedItemsReportTests" />
+		</classes>
+	</test>
+	<test name="39. AL_Stores_Trans_VendorPaymentEntry_Flow02_1_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_VendorPaymentEntry_Flow02_1_Test" />
+		</classes>
+	</test>	
+	<test name="40. AL_Stores_Trans_VendorPaymentApproval_Flow02_2_Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_VendorPaymentApproval_Flow02_2_Test" />
+		</classes>
+	</test>	
+	<test name="41. AL_Stores_Trans_DepartmentUserRequisitonFlow04_1Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_DepartmentUserRequisitonFlow04_1Test" />
+		</classes>
+	</test>	
+	<test name="42. AL_Stores_Trans_RequisitionApprovalFlow04_2Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_RequisitionApprovalFlow04_2Test" />
+		</classes>
+	</test>	
+	<test name="43. AL_Stores_Trans_IndentPreparationFlow04_3Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_IndentPreparationFlow04_3Test" />
+		</classes>
+	</test>		
+	<test name="44. AL_Stores_Trans_PurchaseOrderPreperationFlow04_4Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_PurchaseOrderPreperationFlow04_4Test" />
+		</classes>
+	</test>	
+	<test name="45. AL_Stores_Trans_POApprovalFlow04_5Test">
+		<classes>
+			<class
+				name="StoresTest.AL_Stores_Trans_POApprovalFlow04_5Test" />
+		</classes>
+	</test>		
+		
+</suite>

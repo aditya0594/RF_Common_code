@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Elearning MasterSuite">
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+	<test name="Test 01: FL_ELearning_Trans_CreateElibraryFlow01_1Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateElibraryFlow01_1Test" />
+		</classes>
+	</test>
+
+	<test name="Test 02: SL_Elearning_View_AccessELibraryFlow01_2Test">
+		<classes>
+			<class
+				name="ELearningTest.SL_Elearning_View_AccessELibraryFlow01_2Test" />
+		</classes>
+	</test>
+
+	<test name="Test 03: FL_ELearning_Trans_CreateElibrary_DeleteFlow01_3Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateElibrary_DeleteFlow01_3Test" />
+		</classes>
+	</test>
+
+	<test name="Test 04: FL_ELearning_Trans_CreateSyllabusFlow02_1Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateSyllabusFlow02_1Test" />
+		</classes>
+	</test>
+
+	<test name="Test 05: FL_ELearning_Trans_CreateLectureNotesFlow02_2Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateLectureNotesFlow02_2Test" />
+		</classes>
+	</test>
+
+	<test name="Test 06: SL_ELearning_Trans_ViewLectureNotesFlow02_3Test">
+		<classes>
+			<class
+				name="ELearningTest.SL_ELearning_Trans_ViewLectureNotesFlow02_3Test" />
+		</classes>
+	</test>
+
+	<test name="Test 07: FL_ELearning_Trans_DeleteLectureNotesFlow02_4Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_DeleteLectureNotesFlow02_4Test" />
+		</classes>
+	</test>
+
+	<test name="Test 08: SL_ELearning_View_ViewSyllabusFlow02_5Test">
+		<classes>
+			<class name="ELearningTest.SL_ELearning_View_ViewSyllabusFlow02_5Test" />
+		</classes>
+	</test>
+
+	<test name="Test 09: FL_ELearning_Trans_CreateSyllabus_DeleteFlow02_6Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateSyllabus_DeleteFlow02_6Test" />
+		</classes>
+	</test>
+
+	<test name="Test 10: FL_ELearning_Trans_CreateAssignmentFlow03_1Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateAssignmentFlow03_1Test" />
+		</classes>
+	</test>
+
+	<test name="Test 11: SL_ELearning_View_ViewStudAssignmentFlow03_2Test">
+		<classes>
+			<class
+				name="ELearningTest.SL_ELearning_View_ViewStudAssignmentFlow03_2Test" />
+		</classes>
+	</test>
+
+	<test name="Test 12: FL_ELearning_Trans_CA_DeleteAssignmentFlow03_3Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CA_DeleteAssignmentFlow03_3Test" />
+		</classes>
+	</test>
+
+	<test name="Test 13: FL_ELearning_Trans_CreateQuestionBankFlow04_1Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateQuestionBankFlow04_1Test" />
+		</classes>
+	</test>
+
+	<test
+		name="Test 14: FL_ELearning_Trans_CreateQuestionBank_DeleteFlow04_2Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateQuestionBank_DeleteFlow04_2Test" />
+		</classes>
+	</test>
+
+	<test name="Test 15: FL_ELearning_Trans_CreateForumFlow05_1Test">
+		<classes>
+			<class name="ELearningTest.FL_ELearning_Trans_CreateForumFlow05_1Test" />
+		</classes>
+	</test>
+
+	<test name="Test 16: FL_ELearning_Trans_CreateForum_DeleteFlow05_2Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateForum_DeleteFlow05_2Test" />
+		</classes>
+	</test>
+
+	<test name="Test 17: FL_ELearning_Trans_CreateAnnouncementFlow06_1Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateAnnouncementFlow06_1Test" />
+		</classes>
+	</test>
+
+	<test
+		name="Test 18: FL_ELearning_Trans_CreateAnnouncement_DeleteFlow06_2Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CreateAnnouncement_DeleteFlow06_2Test" />
+		</classes>
+	</test>
+
+	<test
+		name="Test 19: FL_ELearning_Trans_CheckStudentAssignmentTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_CheckStudentAssignmentTest" />
+		</classes>
+	</test>
+
+	<test name="Test 20: FL_ELearning_Trans_TestCreationFlow07_1Test">
+		<classes>
+			<class name="ELearningTest.FL_ELearning_Trans_TestCreationFlow07_1Test" />
+		</classes>
+	</test>
+
+	<test name="Test 21:FL_ELearning_Trans_TestCreation_DeleteFlow07_2Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_TestCreation_DeleteFlow07_2Test" />
+		</classes>
+	</test>
+
+	<test name="Test 22: SizeConfigurationOfAttachmentsTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_SizeConfigurationOfAttachmentsTest" />
+		</classes>
+	</test>
+
+	<test name="Test 23: FL_ELearning_Trans_IPAddressEntryTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_IPAddressEntryTest" />
+		</classes>
+	</test>
+	<test name="Test 24: FL_ELearning_Trans_PersonalCalendarTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_PersonalCalendarTest" />
+		</classes>
+	</test>
+	<test name="Test 25: FL_ELearning_Trans_ImportQuestionBankTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_ImportQuestionBankTest" />
+		</classes>
+	</test>
+	<test name="Test 26: FL_ELearning_Trans_ExportQuestionBankTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_ExportQuestionBankTest" />
+		</classes>
+	</test>
+	<test name="Test 27 FL_ELearning_Trans_SendSMSToStudentsTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_SendSMSToStudentsTest" />
+		</classes>
+	</test>
+
+	<test
+		name="Test 28 FL_ELearning_Trans_MarkEntryForDescriptiveTestTest">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_MarkEntryForDescriptiveTestTest" />
+		</classes>
+	</test>
+	<test
+		name="Test 29 SL_ELearning_View_ViewStudentTestFlow08_1Test">
+		<classes>
+			<class
+				name="ELearningTest.SL_ELearning_View_ViewStudentTestFlow08_1Test" />
+		</classes>
+	</test>
+	<test
+		name="Test 30 SL_ELearning_Trans_RequestForReTestFlow08_2Test">
+		<classes>
+			<class
+				name="ELearningTest.SL_ELearning_Trans_RequestForReTestFlow08_2Test" />
+		</classes>
+	</test>
+	<test
+		name="Test 31 FL_ELearning_Trans_AllowRetestFlow08_3Test">
+		<classes>
+			<class
+				name="ELearningTest.FL_ELearning_Trans_AllowRetestFlow08_3Test" />
+		</classes>
+	</test>
+
+</suite>

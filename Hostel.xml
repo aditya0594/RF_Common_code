@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hostel-MasterSuite"><!-- Hostel - 20 -->
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+
+	<test name="1 SL_Hostel_FR_CreateStandardFeeTest">
+		<classes>
+			<class name="HostelTest.SL_Hostel_FR_CreateStandardFeeTest"></class>
+		</classes>
+	</test>
+
+	<test name="2 AL_Hostel_Transaction_HostelFineTests">
+		<classes>
+			<class name="HostelTest.AL_Hostel_Transaction_HostelFineTests"></class>
+		</classes>
+	</test>
+
+	<test name="3 AL_Hostel_Transaction_AssetAllotmentTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_AssetAllotmentTests"></class>
+		</classes>
+	</test>
+
+	<test name="4 AL_Hostel_Transaction_HostelRoomBookingFlow01_1Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_HostelRoomBookingFlow01_1Test"></class>
+		</classes>
+	</test>
+
+	<test name="5 AL_Hostel_Transaction_CancelRoomAllotmentFlow01_2Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_CancelRoomAllotmentFlow01_2Test"></class>
+		</classes>
+	</test>
+
+	<test
+		name="6 AL_Hostel_Transaction_ChangeHostelRoomAllotmentTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_ChangeHostelRoomAllotmentTests"></class>
+		</classes>
+	</test>
+
+	<test name="7 AL_Hostel_Report_AssetAllotmentReportTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_AssetAllotmentReportTests"></class>
+		</classes>
+	</test>
+
+	<test name="8 AL_Hostel_Report_HostelLeavingReportTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HostelLeavingReportTests"></class>
+		</classes>
+	</test>
+
+	<test name="9 AL_Hostel_Report_HostelStudentAddressTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HostelStudentAddressTests"></class>
+		</classes>
+	</test>
+
+	<test name="10 AL_Hostel_Report_HostelStudentInformationTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HostelStudentInformationTests"></class>
+		</classes>
+	</test>
+
+	<test name="11 AL_Hostel_Transaction_GuestRoomAllotmentTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Transaction_GuestRoomAllotmentTests"></class>
+		</classes>
+	</test>
+
+	<test name="12 AL_Hostel_HGP_PurposeMasterTest">
+		<classes>
+			<class name="HostelTest.AL_Hostel_HGP_PurposeMasterTest"></class>
+		</classes>
+	</test>
+
+	<test name="13 AL_Hostel_Report_HSI_StudentSearchTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_HSI_StudentSearchTests"></class>
+		</classes>
+	</test>
+
+	<test name="14 AL_Hostel_Report_RAS_HostelVacantRoomsTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_RAS_HostelVacantRoomsTests"></class>
+		</classes>
+	</test>
+	<test name="15 AL_Hostel_Report_RAS_StudentListForHostelTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_RAS_StudentListForHostelTests"></class>
+		</classes>
+	</test>
+	<test name="16 AL_Hostel_Report_RoomAllotmentStatusTests">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_RoomAllotmentStatusTests"></class>
+		</classes>
+	</test>
+	<test name="17 AL_Hostel_Master_HostelAttendanceInchargeTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Master_HostelAttendanceInchargeTest"></class>
+		</classes>
+	</test>
+	<test
+		name="18 AL_Hostel_Report_PhysicallyHandicappedStudentListTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_Report_PhysicallyHandicappedStudentListTest"></class>
+		</classes>
+	</test>
+
+	<test name="19 AL_Hostel_FR_CreateFeeDemandTest">
+		<classes>
+			<class name="HostelTest.AL_Hostel_FR_CreateFeeDemandTest" />
+		</classes>
+	</test>
+
+	<test name="20 AL_Hostel_FR_HostelDemandCancellationTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_FR_HostelDemandCancellationTest" />
+		</classes>
+	</test>
+	
+		<test name="21 AL_Hostel_HGP_ApprovalAuthorityMasterFlow02_1Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_ApprovalAuthorityMasterFlow02_1Test" />
+		</classes>
+	</test>
+	
+	<test name="22 AL_Hostel_HGP_GatePassRequestFlow02_2Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_GatePassRequestFlow02_2Test" />
+		</classes>
+	</test>
+	
+	<test name="23 AL_Hostel_HGP_GatePassApprovalFlow02_3Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_GatePassApprovalFlow02_3Test" />
+		</classes>
+	</test>
+	
+	<test name="24 AL_Hostel_HGP_GatePassDirectFinalApprovalFlow2_3_1Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_GatePassDirectFinalApprovalFlow2_3_1Test" />
+		</classes>
+	</test>
+
+
+	<test name="25 AL_Hostel_HGP_GatePassRequestsStatusFlow02_4Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_GatePassRequestsStatusFlow02_4Test" />
+		</classes>
+	</test>
+	
+
+		<test name="26 AL_Hostel_HGP_GenerateHostelGatePassFlow02_5Test">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_GenerateHostelGatePassFlow02_5Test" />
+		</classes>
+	</test>
+
+		<test name="27 AL_Hostel_HGP_HostelGatePassReportTest">
+		<classes>
+			<class
+				name="HostelTest.AL_Hostel_HGP_HostelGatePassReportTest" />
+		</classes>
+	</test>
+
+
+
+</suite>

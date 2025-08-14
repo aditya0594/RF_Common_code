@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite"><!-- Establishment 31 -->
+
+	<!-- Establishment -->
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+ 	
+ 	<!-- Establishment=34 -->
+ 	
+	<test name="1. AL_Establishment_Trans_AssignDefaultShiftTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_AssignDefaultShiftTest"></class>
+		</classes>
+	</test>
+	<test name="2. AL_Establishment_Trans_EmployeeServiceBookTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_EmployeeServiceBookTest"></class>
+		</classes>
+	</test>
+	<test name="3. FL_Establishment_Trans_EmployeeLeaveCardFlow01_1Test">
+		<classes>
+			<class
+				name="EstablishmentTest.FL_Establishment_Trans_EmployeeLeaveCardFlow01_1Test"></class>
+		</classes>
+	</test>
+	<test name="4. AL_Establishment_Trans_LeaveApprovalRejectFlow01_2Test">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_LeaveApprovalRejectFlow01_2Test"></class>
+		</classes>
+	</test>
+	<test name="5. FL_Establishment_Trans_PermissionEntryFlow02_1Test">
+		<classes>
+			<class
+				name="EstablishmentTest.FL_Establishment_Trans_PermissionEntryFlow02_1Test"></class>
+		</classes>
+	</test>
+	<test name="6. AL_Establishment_Trans_PermissionApprovalFlow02_2Test">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_PermissionApprovalFlow02_2Test"></class>
+		</classes>
+	</test>
+	<test name="7. AL_Establishment_Rpt_BiometricSummaryReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_BiometricSummaryReportTest"></class>
+		</classes>
+	</test>
+	<test name="8. AL_Establishment_Trans_DirectLeaveApplicationFlow03_1Test">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_DirectLeaveApplicationFlow03_1Test"></class>
+		</classes>
+	</test>
+	<test
+		name="9. FL_Establishment_Trans_EmployeeLeaveCard_RequestForLeaveCancellationFlow03_2Test">
+		<classes>
+			<class
+				name="EstablishmentTest.FL_Establishment_Trans_EmployeeLeaveCard_RequestForLeaveCancellationFlow03_2Test"></class>
+		</classes>
+	</test>
+	<test name="10. AL_Establishment_Trans_LeaveCancellationFlow03_3Test">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_LeaveCancellationFlow03_3Test"></class>
+		</classes>
+	</test>
+	<test name="11. AL_Establishment_Rpt_LeaveReport_EmployeeWiseTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_EmployeeWiseTest"></class>
+		</classes>
+	</test>
+	<test name="12. AL_Establishment_Rpt_LeaveReport_type_LeaveTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_type_LeaveTest"></class>
+		</classes>
+	</test>
+	<test name="13. AL_Establishment_Rpt_LeaveReport_type_ODTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_type_ODTest"></class>
+		</classes>
+	</test>
+	<test
+		name="14. AL_Establishment_Rpt_LeaveReport_type_ComOffRequestTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_LeaveReport_type_ComOffRequestTest"></class>
+		</classes>
+	</test>
+	<test name="15. AL_Establishment_Rpt_AbsentReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_AbsentReportTest"></class>
+		</classes>
+	</test>
+	<test name="16. AL_Establishment_Rpt_BioConsoRpt_InOutReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_BioConsoRpt_InOutReportTest"></class>
+		</classes>
+	</test>
+	<test name="17. AL_Establishment_Rpt_BioConsoRpt_ReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_BioConsoRpt_ReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="18. AL_Establishment_Rpt_LeaveStatus_ReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_LeaveStatus_ReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="19. AL_Establishment_Rpt_VacationReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_VacationReportTest"></class>
+		</classes>
+	</test>
+	<test name="20. AL_Establishment_Rpt_ODAndLeaveSummaryReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_ODAndLeaveSummaryReportTest"></class>
+		</classes>
+	</test>
+	<test name="21. AL_Establishment_Rpt_PermissionReportTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_PermissionReportTest"></class>
+		</classes>
+	</test>
+	<test name="22. AL_Establishment_Rpt_ServiceBookExcelTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_ServiceBookExcelTest"></class>
+		</classes>
+	</test>
+	<test name="23. AL_Establishment_Trans_LeaveAllotmentTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_LeaveAllotmentTest"></class>
+		</classes>
+	</test>
+	<test name="24. AL_Establishment_Trans_ChangeShiftTimeTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_ChangeShiftTimeTest"></class>
+		</classes>
+	</test>
+	<test name="25. AL_Establishment_Trans_OrderGenerationTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_OrderGenerationTest"></class>
+		</classes>
+	</test>
+	<test name="26. AL_Establishment_Trans_VacationDaysAllotmentTest">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_VacationDaysAllotmentTest"></class>
+		</classes>
+	</test>
+	<test name="27. FL_Establishment_Trans_ODApplicationFlow04_1Test">
+		<classes>
+			<class
+				name="EstablishmentTest.FL_Establishment_Trans_ODApplicationFlow04_1Test"></class>
+		</classes>
+	</test>
+	<test name="28. AL_Establishment_Trans_ODApprovalFlow04_2Test">
+		<classes>
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_ODApprovalFlow04_2Test"></class>
+		</classes>
+	</test>
+
+	<test
+		name="29. AL_Establishment_Trans_TransferAttendanceRecordFlow05_1Test">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_TransferAttendanceRecordFlow05_1Test" />
+
+		</classes>
+	</test>
+
+	<test name="30. AL_Establishment_Trans_AttendanceProcessFlow05_2Test">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_AttendanceProcessFlow05_2Test" />
+
+		</classes>
+	</test>
+	
+	<test name="31. AL_Establishment_Trans_AttendanceLockUnlockFlow05_3Test">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_AttendanceLockUnlockFlow05_3Test" />
+
+		</classes>
+	</test>
+
+	<test
+		name="32. AL_Establishment_Rpt_LeaveStatus_AuthorityStatusReportTest">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_LeaveStatus_AuthorityStatusReportTest" />
+
+		</classes>
+	</test>
+		<test name="33. AL_Establishment_Trans_LeaveShiftManagementTest">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_LeaveShiftManagementTest" />
+
+		</classes>
+	</test>
+	
+	<test name="34. AL_Establishment_Rpt_BiometricDetailsReportTest">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_BiometricDetailsReportTest" />
+
+		</classes>
+	</test>
+		<test name="35. AL_Establishment_Trans_ManualBioMetricEntry">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Trans_ManualBioMetricEntry" />
+
+		</classes>
+	</test>
+			<test name="36. AL_Establishment_Rpt_EmployeePunchStatusTest">
+		<classes>
+
+			<class
+				name="EstablishmentTest.AL_Establishment_Rpt_EmployeePunchStatusTest" />
+
+		</classes>
+	</test>
+	
+
+</suite>

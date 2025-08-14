@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite"><!-- 13 --> <!--Admin - 6, Finance - 1,CDC - 3, Dashboard - 1 , configuration 
+		- 2 -->
+
+	<listeners>
+		<listener class-name="com.qa.listeners.ExtentListeners" />
+	</listeners>
+
+	<!-- Administration -->
+	<test name="01. AL_Administration_SRM_Trans_ServiceRegistrationTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_SRM_Trans_ServiceRegistrationTest"></class>
+		</classes>
+	</test>
+
+	<test name="02. AL_Administration_VM_Trans_RouteAllotmentTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_RouteAllotmentTest"></class>
+		</classes>
+	</test>
+<!-- 
+	<test name="03. AL_Administration_VM_Trans_FuelIndentEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_FuelIndentEntryTest"></class>
+		</classes>
+	</test>
+ -->
+	<test name="04. AL_Administration_VM_Trans_ItemPurchaseEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_ItemPurchaseEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="05. AL_Administration_SRM_Transaction_ServicestatusreportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_SRM_Transaction_ServicestatusreportTest"></class>
+		</classes>
+	</test>
+
+	<test name="06. AL_Administration_GR_Rpt_GSR_CompletedCGRTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_CompletedCGRTest"></class>
+		</classes>
+	</test>
+
+	<test name="07. AL_Administration_GR_Rpt_GSR_CompletedReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_CompletedReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="08. AL_Administration_GR_Rpt_GSR_InprocessCGRTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_InprocessCGRTest"></class>
+		</classes>
+	</test>
+
+	<test name="09. AL_Administration_GR_Rpt_GSR_PendingReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_PendingReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="10. AL_Administration_GR_Rpt_GSR_PendingCGRTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GSR_PendingCGRTest"></class>
+		</classes>
+	</test>
+
+	<test name="11. AL_Administration_GR_Master_GrievanceTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Master_GrievanceTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="12. AL_Administration_GR_Rpt_GrievanceSummaryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Rpt_GrievanceSummaryTest"></class>
+		</classes>
+	</test>
+
+	<test name="13. AL_Administration_GR_Master_SubGrievanceTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Master_SubGrievanceTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="14. AL_Administration_GR_Master_RedressalCommitteeTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_GR_Master_RedressalCommitteeTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="15. AL_Administration_VM_Trans_VehicleServicingTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_VehicleServicingTest"></class>
+		</classes>
+	</test>
+
+	<test name="16. AL_Administration_VM_Trans_FitnessTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_FitnessTest"></class>
+		</classes>
+	</test>
+
+	<test name="17. AL_Administration_VM_Trans_RoadTaxTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_RoadTaxTest"></class>
+		</classes>
+	</test>
+
+	<test name="18. AL_Administration_VM_Trans_InsuranceTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_InsuranceTest"></class>
+		</classes>
+	</test>
+
+	<test name="19. AL_Administration_VM_Trans_LogbookEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_LogbookEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="20. AL_Administration_FM_Rpt_MR_ForwardReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_ForwardReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="21. AL_Administration_FM_Rpt_MR_PendingFilesReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_PendingFilesReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="22. AL_Administration_FM_Rpt_MR_CompleteFilesReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_CompleteFilesReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="23. AL_Administration_VM_Trans_ItemPurchaseEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_ItemPurchaseEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="24. AL_Administration_VM_Trans_ArrivalTimeEntryTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_ArrivalTimeEntryTest"></class>
+		</classes>
+	</test>
+
+	<test name="25. AL_Administration_VM_Trans_IncidentRegisterTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_IncidentRegisterTest"></class>
+		</classes>
+	</test>
+
+	<test name="26. AL_Administration_VM_Trans_BusTokenIssueTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_BusTokenIssueTest"></class>
+		</classes>
+	</test>
+
+	<test name="27. AL_Administration_VM_Trans_CollegeVehicleDailyAttendanceTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_CollegeVehicleDailyAttendanceTest"></class>
+		</classes>
+	</test>
+
+	<test name="28. AL_Administration_VM_Trans_BusStructureMappingTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_BusStructureMappingTest"></class>
+		</classes>
+	</test>
+
+	<test name="29. AL_Administration_VM_Trans_CreateBusInchargeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_CreateBusInchargeTest"></class>
+		</classes>
+	</test>
+
+	<test name="30. AL_Administration_VM_Trans_TourEventDetailsTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_VM_Trans_TourEventDetailsTest"></class>
+		</classes>
+	</test>
+
+	<test name="31. AL_Administration_FM_Rpt_MR_ReturnReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_ReturnReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="32. AL_Administration_FM_Master_DocumentTypeTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Master_DocumentTypeTest"></class>
+		</classes>
+	</test>
+
+	<test name="33. AL_Administration_FM_Master_DepartmentAuthorityMappingTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Master_DepartmentAuthorityMappingTest"></class>
+		</classes>
+	</test>
+
+	<test name="34. AL_Administration_FM_Rpt_MR_FileMovementDetailsReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_MR_FileMovementDetailsReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="35. AL_Administration_FM_Master_RoleMasterTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Master_RoleMasterTest"></class>
+		</classes>
+	</test>
+
+	<test name="36. AL_Administration_FM_Rpt_SR_EmployeeListReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_EmployeeListReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="37. AL_Administration_FM_Rpt_SR_ERPAMCProppsalReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_ERPAMCProppsalReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="38. AL_Administration_FM_Rpt_SR_XYZReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_XYZReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="39. AL_Administration_FM_Rpt_SR_AttendanceListReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_AttendanceListReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="40. AL_Administration_FM_Rpt_SR_OfficeDocumentFilegReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_OfficeDocumentFilegReportTest"></class>
+		</classes>
+	</test>
+
+	<test name="41. AL_Administration_FM_Rpt_SR_OfficeDocumentFileReportTest">
+		<classes>
+			<class
+				name="AdministrationTest.AL_Administration_FM_Rpt_SR_OfficeDocumentFileReportTest"></class>
+		</classes>
+	</test>
+	
+</suite>
