@@ -145,8 +145,10 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     String AdmissionBatchText= "2024-25";
     public void AdmissionBatchSelect() throws InterruptedException {
         System.out.println("admission batch select " + AdmissionBatchText);
+
         waitUntilElementIsClickableBy(admissionBatchDrop);
         dropdownByEnter(admissionBatchDrop, dropdownInput, AdmissionBatchText);
+        Thread.sleep(3000);
         loader();
 
     }
@@ -220,10 +222,12 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     }
 
     By SubmitbtnforSectionEnroll  = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnSubmit']");
-    public void submitSectionEnroll() throws InterruptedException {
+    public void submitSectionEnrollmentEnroll() throws InterruptedException {
         System.out.println("Click on the filter button ");
         waitForVisibilityBy(SubmitbtnforSectionEnroll);
         clickBy(SubmitbtnforSectionEnroll);
+        acceptAlert();
+        Thread.sleep(1000);
     }
 
 

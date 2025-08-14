@@ -192,4 +192,7 @@ public class AP_New_StudentTest extends BaseClass {
         String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
         System.out.println("Student name extracted from Excel: "+ RRNOnumber);
         feeCollection.EnterUnqiueRRNO(RRNOnumber);
-        feeCollection.submitSectionEnrol
+        feeCollection.submitSectionEnrollmentEnroll();
+
+    }
+}
