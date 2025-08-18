@@ -1,7 +1,8 @@
-package RFCCAcademic;
+package StudentAdmissionTest;
 
 import java.io.File;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.TotalDigitsDocument.TotalDigits;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,12 +21,7 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
         driver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
-
-//    public void LoginPage(WebDriver driver) {
-//        this.driver = driver;
-//        PageFactory.initElements(driver, this);  // ✅ Initialize elements
-//    }
-//
+    
     // WebElement locators using FindBy annotations
     @FindBy(linkText = "Student Related")
     private WebElement studentRelated;
@@ -41,11 +37,6 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     @FindBy(id = "ctl00_ContentPlaceHolder1_ddlNationality")
     private WebElement nationality;
-
-    @FindBy(id = "ctl00_ContentPlaceHolder1_txtABCCId")
-    private WebElement ABC;
-
-
     
     @FindBy(id = "ctl00_ContentPlaceHolder1_ddlReligion")
     private WebElement religen;
@@ -92,7 +83,7 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     @FindBy(id = "ctl00_ContentPlaceHolder1_lvBinddata_ctrl3_btnSubmit")
     private WebElement uploadaddressperticular;
     
-    @FindBy(id = "ctl00_ContentPlaceHolder1_lvBinddata_ctrl3_btnSubmit")
+    @FindBy(id = "ctl00_ContentPlaceHolder1_lvBinddata_ctrl4_btnSubmit")
     private WebElement medicalrecod;
     
     @FindBy(id = "ctl00_ContentPlaceHolder1_lvBinddata_ctrl5_btnSubmit")
@@ -124,7 +115,22 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     @FindBy(id = "ctl00_ContentPlaceHolder1_btnSave") 
     private WebElement nextContinue;
+    
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtSchoolCollegeNameSsc") 
+    private WebElement schoolname;
 
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtBoardSsc") 
+    private WebElement board;
+    
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtYearOfExamSsc") 
+    private WebElement yearofexam;
+    
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtOutOfMarksSsc") 
+    private WebElement outofmarks;
+    
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtMarksObtainedSsc") 
+    private WebElement marksobtaine;
+    
 	public SL_Academic_SR_StudentInformation loginPage() throws InterruptedException {
 
 		System.out.println("Enter UserName ->  210011601001"); //100 -> Student
@@ -136,7 +142,7 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
 		// Thread.sleep(2000);
 
 		// captchaHandle();
-		System.out.println("Enter Master Captcha -> UAT - >RFC123 || Live -> 5321");
+		System.out.println("Enter Master Captcha -> UAT - >RFC123 || Live -> RFC@123");
 		driver.findElement(By.id("txtcaptcha")).sendKeys("4321");
 
 		//Thread.sleep(2000);
@@ -178,9 +184,10 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
 	}
 	
 	
-    public void  clickStudentRelated() {
+    public SL_Academic_SR_StudentInformation clickStudentRelated() {
         System.out.println("Click on Student Related");
         studentRelated.click();
+        return this;
     }
     
  
@@ -215,10 +222,10 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
 
     public SL_Academic_SR_StudentInformation Select_Religion() {
-        String religion = "Islam";
-        System.out.println("Select religion  -> " + religion);
+        String branch = "Islam";
+        System.out.println("BRANCH -> " + branch);
         Select branchSelect = new Select(religen);
-        branchSelect.selectByVisibleText(religion);
+        branchSelect.selectByVisibleText(branch);
         return this;
     }
     
@@ -231,11 +238,11 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     }
     
     public SL_Academic_SR_StudentInformation Enter_ABC_ID() {
-        System.out.println("Enter_ABC_ID > RFCC 11");
-    	js.executeScript("arguments[0].scrollIntoView();",abcID);
+        System.out.println("Enter_ABC_ID > 123456789123");
+    	js.executeScript("arguments[0].scrollIntoView();",nationality);
         abcID.clear();
         abcID.sendKeys("123456789012");
-        return this;
+        return this;                                                                                                   
     }
     
 
@@ -271,6 +278,7 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     public SL_Academic_SR_StudentInformation Click_AddressDetails() {
         System.out.println("Click on Address Details");
+        addressdetails.clear();
         addressdetails.sendKeys("At post Pimpi Chichwad behind bus stand");
         return this;
     }
@@ -355,13 +363,14 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     
     public SL_Academic_SR_StudentInformation Upload_AdharCard() throws InterruptedException {
-        System.out.println("Uploading Upload_AdharCard");
+        System.out.println("Upload_AdharCard");
         File uploadFile1 = new File(".\\src\\test\\resources\\documentsForTesting\\ADHAR_CARD.jpg");
         WebElement fileInput = driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvBinddata_ctrl2_fuFile"));
         fileInput.sendKeys(uploadFile1.getAbsolutePath());
         threadWait1();
         uploadAdharcard.click();
-        Thread.sleep(4000);
+        
+        Thread.sleep(2000); 
         Alert alert =  driver.switchTo().alert();
         String Expected_Msg = "Document Uploaded Successfully.... !"; 
         String Actual_Msg = alert.getText();
@@ -410,6 +419,8 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     public SL_Academic_SR_StudentInformation Upload_CommunityCertificate() throws InterruptedException {
         System.out.println("Upload_CommunityCertificate");
+        js.executeScript("arguments[0].scrollIntoView();",uploadaddressperticular);
+   
         File uploadFile1 = new File(".\\src\\test\\resources\\documentsForTesting\\ADHAR_CARD.jpg");
         WebElement fileInput = driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvBinddata_ctrl5_fuFile"));
         fileInput.sendKeys(uploadFile1.getAbsolutePath());
@@ -446,6 +457,8 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     public SL_Academic_SR_StudentInformation Upload_JointDeclaration() throws InterruptedException {
         System.out.println("Upload_JointDeclaration");
+        js.executeScript("arguments[0].scrollIntoView();",conductcertificate);
+
         File uploadFile1 = new File(".\\src\\test\\resources\\documentsForTesting\\ADHAR_CARD.jpg");
         WebElement fileInput = driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvBinddata_ctrl9_fuFile"));
         fileInput.sendKeys(uploadFile1.getAbsolutePath());
@@ -477,6 +490,8 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
         Assert.assertEquals(Actual_Msg , Expected_Msg );
         System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
         alert.accept();
+        js.executeScript("arguments[0].scrollIntoView();",uploadJointUndertaking);
+
         return this;
     }
     
@@ -519,6 +534,8 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     public SL_Academic_SR_StudentInformation Upload_Photograph() throws InterruptedException {
         System.out.println("Upload_Photograph");
+        js.executeScript("arguments[0].scrollIntoView();",uploadotherdocuments);
+
         File uploadFile1 = new File(".\\src\\test\\resources\\documentsForTesting\\ADHAR_CARD.jpg");
         WebElement fileInput = driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvBinddata_ctrl14_fuFile"));
         fileInput.sendKeys(uploadFile1.getAbsolutePath());
@@ -577,6 +594,5 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
         return this;
     }
     
-    
-    
+
 }

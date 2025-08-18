@@ -1,0 +1,78 @@
+package StudentAdmissionTest;
+
+import RFCCAcademic.AL_Academic_AP_NewStudent;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import utility.BaseClass;
+
+import java.time.Duration;
+import java.util.List;
+
+import static RFCCAcademic.AL_Academic_AP_NewStudent.loader;
+
+public class AL_Dept_wise_Link_Assigned extends BaseClass {
+
+    public AL_Dept_wise_Link_Assigned(WebDriver rdriver) {
+        driver = rdriver;
+        PageFactory.initElements(rdriver, this);
+    }
+
+    By Showbtn = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnShow']");
+
+    public void deptWiseLinked(String StudentName) throws InterruptedException {
+        System.out.println("Going on the Configuration");
+        WebElement configurationMove =  driver.findElement(By.linkText("Configuration"));
+        Actions action = new Actions(driver);
+        action.moveToElement(configurationMove).perform();
+        System.out.println("click  on the User Management");
+        driver.findElement(By.linkText("User Management")).click();
+        driver.findElement(By.linkText("Dept. Wise Link Assign")).click();
+       // loader();
+        System.out.println( "select user type : ");
+        driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlUser-container")).click();
+        driver.findElement(By.xpath("//span/span/input")).sendKeys("Student");
+        driver.findElement(By.xpath("//span/span/input")).sendKeys(Keys.ENTER);
+
+        System.out.println("Click on the show button");
+        clickBy(Showbtn);
+        Thread.sleep(6000);
+        loader();
+        By submitbtn = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnSubmit']");
+        By searchString = By.xpath("//input[@class='form-control form-control-sm']");
+        By CheckboxforSelect = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_lvDetail_ctrl6010_cbRow']");
+        System.out.println("Enter the student name  : "+ StudentName);
+        sendKeysBy(searchString,StudentName);
+        clickBy(CheckboxforSelect);
+
+        By studentRelated = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst224']");
+        By studentInformation = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst231']");
+     driver.findElement(By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst52']")).click();
+        // Get all expandable menu items (with '+')
+        WebElement studentRelatedWeb = driver.findElement(studentRelated);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(studentRelatedWeb).click().perform();
+        WebElement studentInformationele =  driver.findElement(studentInformation);
+        WebElement checkboxStudentInformation  = driver.findElement(By.id("ctl00_ContentPlaceHolder1_tvLinksn231CheckBox"));
+        actions.moveToElement(studentInformationele);
+        actions.click(checkboxStudentInformation).perform();
+        clickBy(submitbtn);
+
+
+        Alert alert = driver.switchTo().alert();
+        String Expected_Msg = "Record Saved Successfully.";
+        String Actual_Msg = alert.getText();
+        System.out.println(Actual_Msg = Expected_Msg);
+        Thread.sleep(3000);
+        Assert.assertEquals(Actual_Msg, Expected_Msg, "Actual and Expected Msg matched");
+        alert.accept();
+
+
+    }
+
+    //=======================================Student Login information===========================================
+
+}

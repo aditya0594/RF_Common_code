@@ -404,6 +404,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     public AL_Academic_AP_NewStudent admissionYear() throws InterruptedException {
 
+        Thread.sleep(2000);
         System.out.println("Selecting Admission Year: " + admissionYeartxt);
         Thread.sleep(1000);
         waitForElementVisible(admissionYear);
@@ -533,6 +534,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     By submitStundentBtn = By.id("ctl00_ContentPlaceHolder1_btnSave");
 
     public AL_Academic_AP_NewStudent SubmitStudent() {
+        System.out.println("Submitting the student ");
         loader();
         waitUntilElementIsClickableBy(submitStundentBtn);
         clickBy(submitStundentBtn);
@@ -547,10 +549,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     By searchCriteriaClick = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlSearch-container']");
     By searchname = By.id("ctl00_ContentPlaceHolder1_txtSearch");
     By searchbutton = By.id("ctl00_ContentPlaceHolder1_btnSearch");
-
-
     By clickOnSearchStudent = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_lvStudent_ctrl0_lnkId']");
-  													  //a[@id='ctl00_ContentPlaceHolder1_lvStudentPanel_ctrl0_lnkIdPanel']
     By demandVerifyText = By.id("ctl00_ContentPlaceHolder1_lblStatus");
     By createDemandbutton = By.id("ctl00_ContentPlaceHolder1_btnCreateDemand");
     By semesterselectDemandDropdown = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlForSemesterN-container']");
@@ -568,7 +567,6 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         waitUntilElementIsClickableBy(searchCriteriaClick);
         dropdownByEnter(searchCriteriaClick, dropdownInput, "NAME");
         Thread.sleep(1000);
-
     }
 
     public void searchStringName(String name) {
@@ -577,7 +575,6 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         waitUntilElementIsClickableBy(searchname);
         sendKeysBy(searchname, name);
         driver.findElement(searchname).sendKeys(Keys.TAB);
-
     }
 
     public AL_Academic_AP_NewStudent searchBtn() {

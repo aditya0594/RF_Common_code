@@ -143,10 +143,11 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     By admissionBatchDrop = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlAdmBatch-container']");
 
     String AdmissionBatchText= "2024-25";
-    public void AdmissionBatchSelect() throws InterruptedException {
+    public void admissionBatchSelect() throws InterruptedException {
         System.out.println("admission batch select " + AdmissionBatchText);
 
-        waitUntilElementIsClickableBy(admissionBatchDrop);
+        Thread.sleep(5000);
+
         dropdownByEnter(admissionBatchDrop, dropdownInput, AdmissionBatchText);
         Thread.sleep(3000);
         loader();
@@ -208,7 +209,7 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     }
 
     By RRNOField  = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_lvStudents_ctrl0_txtRollNo']");
-    public void EnterUnqiueRRNO(String RRNO) throws InterruptedException {
+    public void enterUnqiueRRNO(String RRNO) throws InterruptedException {
         System.out.println("Entered the RRNO number :  " +RRNO );
 //        driver.findElement(By.xpath("//th/span[@id='ctl00_ContentPlaceHolder1_lvStudents_lblDYRRNo']")).click();
 //        driver.findElement(By.xpath("//th/span[@id='ctl00_ContentPlaceHolder1_lvStudents_lblDYRRNo']")).sendKeys(Keys.TAB);
@@ -230,6 +231,16 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
         Thread.sleep(1000);
     }
 
+    By adminProfile = By.xpath("//p[@id='ctl00_noimghead']");
+    By logoutbtn = By.xpath("//i[@class='fas fa-power-off']");
+    public void adminLogout() throws InterruptedException {
+        System.out.println("Logout the admin" );
+        waitUntilElementIsClickableBy(adminProfile);
+        clickBy(adminProfile);
+        Thread.sleep(1000);
+        waitUntilElementIsClickableBy(logoutbtn);
+        clickBy(logoutbtn);
+    }
 
 
 
