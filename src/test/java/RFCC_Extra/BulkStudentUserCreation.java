@@ -2,12 +2,10 @@ package RFCC_Extra;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -46,11 +44,11 @@ public class BulkStudentUserCreation extends BaseClass {
 //	public void afterClass() {
 //	}
 	
-	//@BeforeMethod
+//	@BeforeMethod
 //	public void beforeMethod(Method m) throws Exception{
-//		
+//
 //		driver = initializeDriverBFT("UrlAtlasAdmin");
-//		
+//
 //		System.out.println("\n" + "*****Starting Test: " + m.getName() + "******" + "\n");
 //	}
 //
@@ -63,7 +61,6 @@ public class BulkStudentUserCreation extends BaseClass {
 		driver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
-
 	
 	public void User_able_to_Bulk_Student_User_Creation(String StudentName) throws IOException, Exception {
 		
@@ -71,7 +68,6 @@ public class BulkStudentUserCreation extends BaseClass {
 //		
 //		homePage = loginPage.login(loginUsers.getJSONObject("AtlasAdminLogin").getString("userName"),
 //				loginUsers.getJSONObject("AtlasAdminLogin").getString("password"));
-				
 		System.out.println("Academic-> USER MANAGEMENT -> Bulk Student User Creation -> Create Student Login");
 			//	driver.get("https://atlasuniversityuat.mastersofterp.in/administration/iitms8HN+3fBCXVPmJDM0d1d7XlWcvMHz0X06ApQA5qZ7G38PyNdKCYetZ599tEVpgGef?enc=3Q2Y1k5BriJsFcxTY7ebQnwG7koRzid376GIlp0v99k=");
 		System.out.println("Going on the Configuration");
@@ -133,12 +129,20 @@ public class BulkStudentUserCreation extends BaseClass {
 				//driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvStudents_ctrl0_chkRow")).click();
 				//driver.findElement(By.name("ctl00$ContentPlaceHolder1$lvStudents$ctrl108$chkRow")).click();
 				System.out.println("Select searched student ");
-				driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvStudents_ctrl1_chkRow")).click();
+				driver.findElement(By.xpath("(//input[contains(@id,'ctl00_ContentPlaceHolder1_lvStudents_ctr')])[1]")).click();
 				
 				Thread.sleep(2000);
 				System.out.println("click on Create Login");
 				driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnCreateLogin")).click();
-				acceptAlert();
+				Thread.sleep(2000);
+		Alert alert =  driver.switchTo().alert();
+		String Expected_Msg = "Students Login Created Successfully";
+		String Actual_Msg = alert.getText();
+		Assert.assertEquals(Actual_Msg , Expected_Msg );
+		System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
+		alert.accept();
+
+
 				
 	}
 }

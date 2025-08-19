@@ -36,16 +36,39 @@ public class AL_Dept_wise_Link_Assigned extends BaseClass {
         driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlUser-container")).click();
         driver.findElement(By.xpath("//span/span/input")).sendKeys("Student");
         driver.findElement(By.xpath("//span/span/input")).sendKeys(Keys.ENTER);
+        Thread.sleep(1000);
+
+
+        driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlDegree-container")).click();
+        driver.findElement(By.xpath("//span/span/input")).sendKeys("Bachelor of Architecture");
+        driver.findElement(By.xpath("//span/span/input")).sendKeys(Keys.ENTER);
+        Thread.sleep(1000);
+
+
+        driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlBranch-container")).click();
+        driver.findElement(By.xpath("//span/span/input")).sendKeys("Architecture");
+        driver.findElement(By.xpath("//span/span/input")).sendKeys(Keys.ENTER);
+        Thread.sleep(1000);
+
+        driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlSemester-container")).click();
+        driver.findElement(By.xpath("//span/span/input")).sendKeys("I");
+        Thread.sleep(500);
+        driver.findElement(By.xpath("//span/span/input")).sendKeys(Keys.ENTER);
+
+
 
         System.out.println("Click on the show button");
         clickBy(Showbtn);
-        Thread.sleep(6000);
-        loader();
+
+
         By submitbtn = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnSubmit']");
         By searchString = By.xpath("//input[@class='form-control form-control-sm']");
-        By CheckboxforSelect = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_lvDetail_ctrl6010_cbRow']");
+        By CheckboxforSelect = By.xpath("//input[contains(@id,'ctl00_ContentPlaceHolder1_lvDetail_ctrl')]");
+
+
         System.out.println("Enter the student name  : "+ StudentName);
         sendKeysBy(searchString,StudentName);
+       // waitForVisibilityBy(CheckboxforSelect);
         clickBy(CheckboxforSelect);
 
         By studentRelated = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst224']");
@@ -72,7 +95,5 @@ public class AL_Dept_wise_Link_Assigned extends BaseClass {
 
 
     }
-
-    //=======================================Student Login information===========================================
 
 }

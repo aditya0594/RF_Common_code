@@ -112,7 +112,6 @@ public class BaseClass {
 	}
 	public void clickBy(By e) {
 		WebElement e1 = driver.findElement(e);
-		waitUntilElementIsClickable(e1);
 		e1.click();
 	}
 
@@ -128,6 +127,11 @@ public class BaseClass {
 	public void clearText(WebElement e) {
 		waitForVisibility(e);
 		e.clear();
+	}
+	public void clearTextBy(By e) {
+		waitForVisibilityBy(e);
+		driver.findElement(e).clear();
+
 	}
 
 	public String getAttribute(WebElement e, String attribute) {
@@ -210,9 +214,7 @@ public class BaseClass {
 	}
 
 	public static void dropdownByEnter(By element,By textfield, String option) throws InterruptedException {
-		waitForElementVisible(element);
 		driver.findElement(element).click();
-		waitForElementVisible(element);
 		driver.findElement(textfield).sendKeys(option);
 		driver.findElement(textfield).sendKeys(Keys.ENTER);
 		Thread.sleep(500);

@@ -46,6 +46,7 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
 
     public void SearchStringStudentName(String StudentName) throws InterruptedException {
         System.out.println("Enter the student name  : "+ StudentName);
+        Thread.sleep(1000);
        sendKeysBy(searchString,StudentName);
 
     }
@@ -72,7 +73,6 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
         waitUntilElementIsClickableBy(feecollectionModeClick);
         dropdownByEnter(feecollectionModeClick, dropdownInput, FeesCollectionMode);
         Thread.sleep(1000);
-        loader();
     }
 
     String PayType="ONLINE";
@@ -134,7 +134,7 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     String SchoolText= "Crescent School of Architecture - Chennai";
     public void schoolInstituteSelect() throws InterruptedException {
         System.out.println("Selected the school Institute :  " + SchoolText );
-        waitUntilElementIsClickableBy(schoolDropdown);
+        Thread.sleep(3000);
         dropdownByEnter(schoolDropdown, dropdownInput, SchoolText);
         Thread.sleep(1000);
     }
@@ -145,12 +145,9 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     String AdmissionBatchText= "2024-25";
     public void admissionBatchSelect() throws InterruptedException {
         System.out.println("admission batch select " + AdmissionBatchText);
-
         Thread.sleep(5000);
-
         dropdownByEnter(admissionBatchDrop, dropdownInput, AdmissionBatchText);
         Thread.sleep(3000);
-        loader();
 
     }
 
@@ -159,11 +156,8 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     String AcademicText= "2023-2024";
     public void academicYear() throws InterruptedException {
         System.out.println("admission batch select " + AcademicText );
-        waitForElementVisible(academicYeardrop);
-        waitUntilElementIsClickableBy(academicYeardrop);
         dropdownByEnter(academicYeardrop, dropdownInput, AcademicText);
         Thread.sleep(1000);
-        loader();
     }
 
     By degreeDrop = By.cssSelector("#select2-ctl00_ContentPlaceHolder1_ddlDegree-container");
@@ -171,19 +165,24 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     String degreeText= "Bachelor of Architecture";
     public void degreedrop() throws InterruptedException {
         System.out.println("admission batch select " + degreeText );
+        Thread.sleep(6000);
+        waitUntilElementIsClickableBy(degreeDrop);
         dropdownByEnter(degreeDrop, dropdownInput, degreeText);
-        Thread.sleep(1000);
-        loader();
+        Thread.sleep(6000);
     }
 
-    By programBranchDrop = By.cssSelector("#select2-ctl00_ContentPlaceHolder1_ddlBranch-container");
+    By programBranchDrop = By.xpath("//span[@class='select2-selection select2-selection--single'] //*[@id='select2-ctl00_ContentPlaceHolder1_ddlBranch-container']");
 
     String ProgramBranchNext= "Architecture";
     public void programBranch() throws InterruptedException {
-        System.out.println("Select the program Branch " + ProgramBranchNext );
-        waitUntilElementIsClickableBy(programBranchDrop);
+        System.out.println("Select the program Branch : " + ProgramBranchNext );
+        Thread.sleep(6000);
+        Actions actions = new Actions(driver);
+        WebElement ele = driver.findElement(programBranchDrop);
+        actions.sendKeys(Keys.SPACE).perform();
+        actions.click(ele).perform();
         dropdownByEnter(programBranchDrop, dropdownInput, ProgramBranchNext);
-        Thread.sleep(1000);
+        Thread.sleep(6000);
     }
     By filterBtn = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnFilter']");
     public void filterButton() throws InterruptedException {

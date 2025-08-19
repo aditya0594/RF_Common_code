@@ -125,6 +125,9 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     @FindBy(id = "ctl00_ContentPlaceHolder1_btnSave") 
     private WebElement nextContinue;
 
+    @FindBy(id = "ctl00_ContentPlaceHolder1_btnSave")
+    private WebElement documentNextContinue;
+
 	public SL_Academic_SR_StudentInformation loginPage() throws InterruptedException {
 
 		System.out.println("Enter UserName ->  210011601001"); //100 -> Student
@@ -232,7 +235,7 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     public SL_Academic_SR_StudentInformation Enter_ABC_ID() {
         System.out.println("Enter_ABC_ID > RFCC 11");
-    	js.executeScript("arguments[0].scrollIntoView();",abcID);
+    	js.executeScript("arguments[0].scrollIntoView();",nationality);
         abcID.clear();
         abcID.sendKeys("123456789012");
         return this;
@@ -368,10 +371,22 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
         Assert.assertEquals(Actual_Msg , Expected_Msg );
         System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
         alert.accept();
+
+        click(documentNextContinue);
         return this;
+
+
     }
-    
-    
+
+    public SL_Academic_SR_StudentInformation uploadDoucumentNext() throws InterruptedException {
+        System.out.println("Uploading Document Next button ");
+        click(documentNextContinue);
+        return this;
+
+    }
+
+
+
     public SL_Academic_SR_StudentInformation Upload_Addressparticulars() throws InterruptedException {
         System.out.println("Upload_Address particulars");
         File uploadFile1 = new File(".\\src\\test\\resources\\documentsForTesting\\ADHAR_CARD.jpg");

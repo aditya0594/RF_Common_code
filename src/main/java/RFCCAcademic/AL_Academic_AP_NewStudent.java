@@ -285,7 +285,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     static By loader = By.xpath("(//div[@id='loader-img'])[3]");
 
     public static void loader() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
 
     }
@@ -550,7 +550,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     By searchname = By.id("ctl00_ContentPlaceHolder1_txtSearch");
     By searchbutton = By.id("ctl00_ContentPlaceHolder1_btnSearch");
     By clickOnSearchStudent = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_lvStudent_ctrl0_lnkId']");
-    By demandVerifyText = By.id("ctl00_ContentPlaceHolder1_lblStatus");
+    By demandVerifyText = By.xpath("//*[contains(text(),'CREATED')]");
     By createDemandbutton = By.id("ctl00_ContentPlaceHolder1_btnCreateDemand");
     By semesterselectDemandDropdown = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlForSemesterN-container']");
     By receptTypeSelectdemandDropDown = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlRecType-container']");
@@ -581,71 +581,74 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         System.out.println("Click on the search button");
         waitUntilElementIsClickableBy(searchname);
         clickBy(searchbutton);
-        loader();
+        //loader();
         return this;
     }
 
     public AL_Academic_AP_NewStudent clickonSearchStudent() {
-        loader();
         System.out.println("Click on the searched Student Name");
         waitUntilElementIsClickableBy(clickOnSearchStudent);
         clickBy(clickOnSearchStudent);
-        loader();
         return this;
     }
 
     public void verifyDemandStatus() {
-        loader();
         System.out.println("Verify the demand status");
         String demandStatus = driver.findElement(demandVerifyText).getText();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(demandVerifyText));
         Assert.assertEquals(demandStatus, "CREATED");
     }
 
     public void CreateDemandbutton() {
         System.out.println("Click on the create demand button");
-        loader();
+
         waitUntilElementIsClickableBy(createDemandbutton);
         scrollIntoElementBy(createDemandbutton);
         clickBy(createDemandbutton);
-        //loader();
         acceptAlert();
     }
 
     public void sessionSelectiondemand(String sessionTypeFieldtext) throws InterruptedException {
-        loader();
+
         System.out.println("Selecting Admission category: " + sessionTypeFieldtext);
         By element = By.xpath("(//span[@class='select2-selection select2-selection--single'] //*[normalize-space()='Please Select'])[10]");
         clickBy(element);
         dropdownByEnter(element, dropdownInput, sessionTypeFieldtext);
         clickBy(semesterselectDemandDropdown);
+
     }
 
 
     public void semesterselectDemand() throws InterruptedException {
 
         Thread.sleep(1000);
-        loader();
+
         System.out.println("Selecting Admission category: " + semestertxt);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(semesterselectDemandDropdown));
         clickBy(semesterselectDemandDropdown);
         dropdownByEnter(semesterselectDemandDropdown, dropdownInput, semestertxt);
-        loader();
-        clickBy(receptTypeSelectdemandDropDown);
+       // clickBy(receptTypeSelectdemandDropDown);
+        WebElement element1 = driver.findElement(By.xpath("(//i[@class='fa fa-angle-down'])[15]"));
+        waitUntilElementIsClickable(element1);
+        Thread.sleep(1000);
 
     }
 
     String receiptSelectText = "Admission Fee";
 
     public void receptTypeSelectdemand() throws InterruptedException {
-        System.out.println("Selecting Recept Type: ");
-        loader();
+        System.out.println("Selecting Recept Type: receiptSelectText ");
+        WebElement element = driver.findElement(By.xpath("(//i[@class='fa fa-angle-down'])[15]"));
+        Actions action = new Actions(driver);
         Thread.sleep(1000);
-        loader();
+        action.moveToElement(element).click().perform();
+        action.moveToElement(element).click().perform();
+        Thread.sleep(1000);
         System.out.println("Selecting Admission category: " + receiptSelectText);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.elementToBeClickable(receptTypeSelectdemandDropDown));
-        clickBy(receptTypeSelectdemandDropDown);
+
+        Thread.sleep(1000);
         dropdownByEnter(receptTypeSelectdemandDropDown, dropdownInput, receiptSelectText);
     }
 

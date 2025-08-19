@@ -63,6 +63,13 @@ public class PDFUtility extends BaseClass{
 			return false;
 	}
 
+	public void downloadPDF(WebDriver driver) throws AWTException, InterruptedException,IOException {
+	new ProcessBuilder("AutoIT/PrintPDF.exe").start();
+//		Thread.sleep(15000);
+//		Thread.sleep(4000);
+//		renamePDF("DownloadPDFs/AutoIT/Saved_Print.pdf", "DownloadPDFs/"+filename+".pdf");
+	}
+
 	public void downloadPDF(WebDriver driver, String filename) throws AWTException, InterruptedException,IOException {
 //		new ProcessBuilder("AutoIT/PrintPDF.exe").start();
 //		Thread.sleep(15000);
