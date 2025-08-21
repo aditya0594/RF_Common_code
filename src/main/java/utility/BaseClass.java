@@ -47,6 +47,8 @@ public class BaseClass {
 			if (browserName.equals("chrome")) {
 				WebDriverManager.chromedriver().setup();
 				ChromeOptions options = new ChromeOptions();
+				options.addArguments("window-size=2560,1440");
+				options.addArguments("profile-directory=Default");// avoids resizing delay
 				options.addArguments("--disable-blink-features=AutomationControlled"); // less detection
 				options.addArguments("--disable-extensions"); // no extensions
 				options.addArguments("--disable-infobars"); // hide "Chrome is being controlled"
@@ -56,7 +58,9 @@ public class BaseClass {
 				options.addArguments("--disable-background-timer-throttling");
 				options.addArguments("--disable-backgrounding-occluded-windows");
 				options.addArguments("--disable-renderer-backgrounding");
-				options.addArguments("--start-maximized"); // avoids resizing delay
+				options.addArguments("--start-maximized");
+				options.addArguments("user-data-dir=C:/Users/HM/AppData/Local/Google/Chrome/User Data");
+				options.addArguments("profile-directory=Default");// avoids resizing delay
 
 				Map<String, Object> prefs = new HashMap<>();
 				prefs.put("profile.managed_default_content_settings.images", 2); // block images
@@ -73,8 +77,10 @@ public class BaseClass {
 				
 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 				driver.get(prop.getProperty(url));
+
 				driver.manage().deleteAllCookies();
 				driver.manage().window().maximize();
+
 			}
 
 		} catch (Exception e) {

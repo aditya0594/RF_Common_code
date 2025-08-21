@@ -199,7 +199,7 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
         waitForVisibilityBy(filterNameforTable);
         sendKeysBy(filterNameforTable,StudentName);
         Actions actions = new Actions(driver);
-        actions.sendKeys(Keys.TAB).perform();
+        //actions.sendKeys(Keys.TAB).perform();
         actions.sendKeys(Keys.TAB).perform();
        // clickBy(filterNameForTableSEarchBtn);
         //driver.switchTo().activeElement().sendKeys(Keys.TAB);

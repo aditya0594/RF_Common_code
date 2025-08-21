@@ -1,13 +1,17 @@
 package pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.interactions.Actions;
 import utility.BaseClass;
 
 public class RF_AdminLoginPage extends BaseClass{
 
 	public static void loginPage() throws InterruptedException {
+
 
 		Thread.sleep(1000);
 		System.out.println("Enter UserName -> admin");
@@ -26,7 +30,7 @@ public class RF_AdminLoginPage extends BaseClass{
 		
 		  Thread.sleep(3000); System.out.println("Click on Login Button");
 		  driver.findElement(By.id("btnLogin")).click();
-		 
+
 		
 		  Thread.sleep(1000);
 		  Thread.sleep(1000);
@@ -39,6 +43,14 @@ public class RF_AdminLoginPage extends BaseClass{
 				} else {
 					System.out.println("Skip Button is not Prescent");
 				}
+				Actions actions = new Actions(driver);
+
+				// Press CTRL + '-' two times (zoom out twice)
+				actions.keyDown(Keys.CONTROL).sendKeys(Keys.SUBTRACT).keyUp(Keys.CONTROL).perform();
+				actions.keyDown(Keys.CONTROL).sendKeys(Keys.SUBTRACT).keyUp(Keys.CONTROL).perform();
+				actions.keyDown(Keys.CONTROL).sendKeys(Keys.SUBTRACT).keyUp(Keys.CONTROL).perform();
+				actions.keyDown(Keys.CONTROL).sendKeys(Keys.SUBTRACT).keyUp(Keys.CONTROL).perform();
+
 
 				// check weather the Notice Modal is present or not
 				Thread.sleep(1000);

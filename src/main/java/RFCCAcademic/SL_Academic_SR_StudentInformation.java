@@ -64,7 +64,16 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     
     @FindBy(id = "ctl00_ContentPlaceHolder1_txtPermAddress")
     private WebElement addressdetails;
-    
+
+    @FindBy(xpath = "//a[@id='ctl00_ContentPlaceHolder1_lnkAddressDetail']")
+    private WebElement addressdetailsTab;
+
+    @FindBy(xpath = "//a[@id='ctl00_ContentPlaceHolder1_lnkUploadDocument']")
+    private WebElement documentUploadTab;
+
+    @FindBy(xpath = "//a[@id='ctl00_ContentPlaceHolder1_lnkQualificationDetail']")
+    private WebElement qualificationTab;
+
     @FindBy(id = "ctl00_ContentPlaceHolder1_ddlPermCountry")
     private WebElement country;
     
@@ -271,7 +280,37 @@ public class SL_Academic_SR_StudentInformation extends BaseClass
     }
 
     // Address Details
-    
+    public void AdressTabClick() {
+        System.out.println("Click on Address Details");
+        addressdetailsTab.click();
+
+    }
+
+    public void documentUploadTab() {
+        System.out.println("Click on Address Details");
+        documentUploadTab.click();
+
+    }
+    public void qualificationTab() {
+        System.out.println("Click on Address Details");
+        qualificationTab.click();
+
+    }
+    @FindBy(xpath = "//a[@id='ctl00_ContentPlaceHolder1_lnkCovid']")
+    private WebElement covidTab;
+
+    public void covidTab() {
+        System.out.println("Click on Address Details");
+        covidTab.click();
+    }
+    @FindBy(xpath = "//a[@id='ctl00_ContentPlaceHolder1_lnkCovid']")
+    private WebElement otherInfoTAb;
+
+    public void otherInfoTab() {
+        System.out.println("Click on Address Details");
+        covidTab.click();
+
+    }
     public SL_Academic_SR_StudentInformation Click_AddressDetails() {
         System.out.println("Click on Address Details");
         addressdetails.sendKeys("At post Pimpi Chichwad behind bus stand");

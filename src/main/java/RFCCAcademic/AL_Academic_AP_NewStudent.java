@@ -1,10 +1,6 @@
 package RFCCAcademic;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -428,7 +424,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     public AL_Academic_AP_NewStudent admissionBranchSelect() throws InterruptedException {
 
         System.out.println("Selecting Admission Branch: " + admissionBranchtext);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         waitForElementVisible(admissionBranchDropdown);
         dropdownByEnter(admissionBranchDropdown, dropdownInput, admissionBranchtext);
         return this;
@@ -520,7 +516,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     public AL_Academic_AP_NewStudent sessionSelection(String sessionTypeFieldtext) throws InterruptedException {
         //String sessionTypeFieldtext = "2023-2024";
-        loader();
+        Thread.sleep(2000);
 
         System.out.println("Selecting Admission category: " + sessionTypeFieldtext);
         waitForElementVisible(sessionfield);
@@ -592,20 +588,26 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         return this;
     }
 
-    public void verifyDemandStatus() {
+    public void verifyDemandStatus() throws InterruptedException {
         System.out.println("Verify the demand status");
+        Thread.sleep(1000);
         String demandStatus = driver.findElement(demandVerifyText).getText();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(demandVerifyText));
         Assert.assertEquals(demandStatus, "CREATED");
     }
 
-    public void CreateDemandbutton() {
+    public void CreateDemandbutton() throws InterruptedException {
         System.out.println("Click on the create demand button");
-
         waitUntilElementIsClickableBy(createDemandbutton);
         scrollIntoElementBy(createDemandbutton);
         clickBy(createDemandbutton);
+        /*Alert alert = driver.switchTo().alert();
+        String Expected_Msg = "Demand successfully created for selected students";
+        String Actual_Msg = alert.getText();
+        Assert.assertEquals(Actual_Msg , Expected_Msg );
+        System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);]
+        alert.accept();*/
         acceptAlert();
     }
 

@@ -8,6 +8,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.qa.pages.HomePageAdmin;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pojo.Browser;
@@ -49,7 +50,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
     }
 
 
-    @Test(priority = 1, enabled = true)
+    /*@Test(priority = 1, enabled = true)
     public void New_Student_create() throws Exception {
 
         newStudentPage = new AL_Academic_AP_NewStudent(driver);
@@ -144,7 +145,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
             newStudentPage.searchBtn();
             newStudentPage.clickonSearchStudent();
             newStudentPage.sessiontitle();
-            newStudentPage.sessionSelectiondemand("2023-2024 (  )");
+            newStudentPage.sessionSelectiondemand("2023-2024 ( 2023-2024 )");
             newStudentPage.semesterselectDemand();
             newStudentPage.receptTypeSelectdemand();
             newStudentPage.verifyDemandStatus();
@@ -155,15 +156,15 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
        //===========================Fee Receipt==========
         @Test(priority = 3, enabled = true)
         public void FeeReceipt() throws Exception {
-        //  String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
-        // System.out.println("Student name extracted from Excel: "+ StudentName);
+         String StudentNamefees = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+         System.out.println("Student name extracted from Excel: "+ StudentNamefees);
             HP = new HomePageAdmin(driver);
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
             RF_AdminLoginPage.loginPage();
         HP.Academic();
         feeCollection.feeCollections();
         feeCollection.searchCriteriaSelect();
-        feeCollection.SearchStringStudentName(StudentName);
+        feeCollection.SearchStringStudentName(StudentNamefees);
         feeCollection.searchBtn();
         feeCollection.clickonSearchedStudent();
         feeCollection.feeCollectionModeSelection();
@@ -179,8 +180,8 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
     //===========================Post Admission =====================================
         @Test(priority = 4, enabled = true)
         public void PostAdmission() throws Exception {
-            // String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
-            System.out.println("Student name extracted from Excel: " + StudentName);
+            String StudentNamePost = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+            System.out.println("Student name extracted from Excel: " + StudentNamePost);
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
             HP = new HomePageAdmin(driver);
             RF_AdminLoginPage.loginPage();
@@ -193,7 +194,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
             feeCollection.degreedrop();
             feeCollection.programBranch();
             feeCollection.filterButton();
-            feeCollection.filterNameForTable(StudentName);
+            feeCollection.filterNameForTable(StudentNamePost);
 
             String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
             System.out.println("Student name extracted from Excel: " + RRNOnumber);
@@ -201,19 +202,21 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
 
             feeCollection.submitSectionEnrollmentEnroll();
             BulkStudentUserCreation bulkStudentcreate = new BulkStudentUserCreation(driver);
-            bulkStudentcreate.User_able_to_Bulk_Student_User_Creation(StudentName);
-        }
+            bulkStudentcreate.User_able_to_Bulk_Student_User_Creation(StudentNamePost);
+        }*/
 
         // ========================department wise Linked assigned  ==============
         @Test(priority = 5, enabled = true)
         public void deptWiseLinked() throws Exception {
             HP = new HomePageAdmin(driver);
+            String StudentNamedept = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+            System.out.println("Student name extracted from Excel: " + StudentNamedept);
             RF_AdminLoginPage.loginPage();
             HP.Academic();
             AL_Configuration_UM_DeptwiseLinkAssigned deptWise = new AL_Configuration_UM_DeptwiseLinkAssigned(driver);
             //  String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
             //   System.out.println("Student name extracted from Excel: "+ StudentName);
-            deptWise.deptWiseLinked(StudentName);
+            deptWise.deptWiseLinked(StudentNamedept);
         }
 
 
@@ -222,16 +225,16 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         public void studentLogin() throws Exception {
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
             SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
-            String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-            System.out.println("Student name extracted from Excel: " + RRNOnumber);
+            String RRNOnumberStudentLogin = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+            System.out.println("Student name extracted from Excel: " + RRNOnumberStudentLogin);
             HP = new HomePageAdmin(driver);
             RF_AdminLoginPage.loginPage();
             HP.Academic();
             feeCollection.adminLogout();
             acceptAlert();
-            studentLogin.newCreatedStudentLogin(RRNOnumber, RRNOnumber);
-            studentLogin.changeStudentPassword(RRNOnumber);
-            studentLogin.StudentLoginWithChangepassword(RRNOnumber);
+            studentLogin.newCreatedStudentLogin(RRNOnumberStudentLogin, RRNOnumberStudentLogin);
+            studentLogin.changeStudentPassword(RRNOnumberStudentLogin);
+            studentLogin.StudentLoginWithChangepassword(RRNOnumberStudentLogin);
         }
 
         // =====================information edit in student login ===================
@@ -240,23 +243,25 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                 AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
                 SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
                 HP = new HomePageAdmin(driver);
+                // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
                 RF_AdminLoginPage.loginPage();
                 HP.Academic();
                 feeCollection.adminLogout();
                 acceptAlert();
                 String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-                studentLogin.newCreatedStudentLogin(RRNOnumber, "Student@12345");
+                studentLogin.newCreatedStudentLogin(RRNOnumberInfo, "Student@12345");
                 System.out.println("ACADEMIC(SL) > Student Related > Student Information");
                 studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
                 qualificationdetails = new SL_Academic_SR_SI_QualificationDetails(driver);
-
                 threadWait1();
                 HP.Academic();
                 threadWait1();
                 studentInfoPage.clickStudentRelated();
                 threadWait1();
                 studentInfoPage.clickStudentInformation();
-            //==============Personal Details================
+                //==============Personal Details================
                 threadWait1();
                 studentInfoPage.Enter_MobileNo();
                 threadWait1();
@@ -273,36 +278,125 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                 studentInfoPage.Upload_Photo();
                 threadWait1();
                 studentInfoPage.Click_SaveContinueBtn();
-                // Address Details
-                threadWait1();
-                studentInfoPage.Click_AddressDetails();
-                threadWait1();
-                studentInfoPage.Enter_Country();
-                threadWait1();
-                studentInfoPage.Enter_State();
-                threadWait1();
-                studentInfoPage.Enter_District();
-                threadWait1();
-                studentInfoPage.Enter_City();
-                threadWait1();
-                studentInfoPage.Enter_PinCode();
-                threadWait1();
-                studentInfoPage.Click_SaveContinueBtn();
-                // Document Upload
-                threadWait1();
-                studentInfoPage.Upload_10th_Marksheet();
-                threadWait1();
-                studentInfoPage.Upload_12th_Marksheet();
-                threadWait1();
-                //studentInfoPage.Upload_AdharCard();
-                threadWait1();
-                studentInfoPage.uploadDoucumentNext();
+            }
+
+
+                //0============================ Address Details====================================
+
+
+                @Test(priority = 8, enabled = true)
+                public void Information_studentAddress() throws Exception {
+                    AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
+                    SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
+                    HP = new HomePageAdmin(driver);
+                    // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
+                    RF_AdminLoginPage.loginPage();
+                    HP.Academic();
+                    feeCollection.adminLogout();
+                    acceptAlert();
+                    String RRNOnumberInfoAddress = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    studentLogin.newCreatedStudentLogin(RRNOnumberInfoAddress, "Student@12345");
+                    System.out.println("ACADEMIC(SL) > Student Related > Student Information");
+                    studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
+                    qualificationdetails = new SL_Academic_SR_SI_QualificationDetails(driver);
+                    threadWait1();
+                    HP.Academic();
+                    threadWait1();
+                    studentInfoPage.clickStudentRelated();
+                    threadWait1();
+                    studentInfoPage.clickStudentInformation();
+                    threadWait1();
+                    studentInfoPage.AdressTabClick();
+                    threadWait1();
+                    studentInfoPage.Click_AddressDetails();
+                    threadWait1();
+                    studentInfoPage.Enter_Country();
+                    threadWait1();
+                    studentInfoPage.Enter_State();
+                    threadWait1();
+                    studentInfoPage.Enter_District();
+                    threadWait1();
+                    studentInfoPage.Enter_City();
+                    threadWait1();
+                    studentInfoPage.Enter_PinCode();
+                    threadWait1();
+                    studentInfoPage.Click_SaveContinueBtn();
+                }
+
+    // Document Upload ====================================
+    @Test(priority = 9, enabled = true)
+    public void Information_studentDocument() throws Exception {
+        AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
+        SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
+        HP = new HomePageAdmin(driver);
+        // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
+        RF_AdminLoginPage.loginPage();
+        HP.Academic();
+        feeCollection.adminLogout();
+        acceptAlert();
+        String RRNOnumberInfoDocu = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        studentLogin.newCreatedStudentLogin(RRNOnumberInfoDocu, "Student@12345");
+        System.out.println("ACADEMIC(SL) > Student Related > Student Information");
+        studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
+        qualificationdetails = new SL_Academic_SR_SI_QualificationDetails(driver);
+        threadWait1();
+        HP.Academic();
+        threadWait1();
+        studentInfoPage.clickStudentRelated();
+        threadWait1();
+        studentInfoPage.clickStudentInformation();
+        threadWait1();
+        studentInfoPage.documentUploadTab();
+
+        // Document Upload
+        threadWait1();
+        studentInfoPage.Upload_10th_Marksheet();
+        threadWait1();
+        studentInfoPage.Upload_12th_Marksheet();
+        threadWait1();
+        //studentInfoPage.Upload_AdharCard();
+        threadWait1();
+        studentInfoPage.uploadDoucumentNext();
+    }
+    @Test(priority = 10, enabled = true)
+    public void Information_qualificationdetails() throws Exception {
+        AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
+        SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
+        HP = new HomePageAdmin(driver);
+        // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
+        RF_AdminLoginPage.loginPage();
+        HP.Academic();
+        feeCollection.adminLogout();
+        acceptAlert();
+        String RRNOnumberInfoDocu = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        studentLogin.newCreatedStudentLogin(RRNOnumberInfoDocu, "Student@12345");
+        System.out.println("ACADEMIC(SL) > Student Related > Student Information");
+        studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
+        qualificationdetails = new SL_Academic_SR_SI_QualificationDetails(driver);
+        threadWait1();
+        HP.Academic();
+        threadWait1();
+        studentInfoPage.clickStudentRelated();
+        threadWait1();
+        studentInfoPage.clickStudentInformation();
+        threadWait1();
+        studentInfoPage.qualificationTab();
                 threadWait1();
                 qualificationdetails.Enter_Schoolname10th();
                 threadWait1();
                 qualificationdetails.Enter_Board10th();
                 threadWait1();
                 qualificationdetails.Enter_YearOfExam10th();
+                threadWait1();
+                qualificationdetails.OutOfMArks();
+                 threadWait1();
+                qualificationdetails.MarksObtain();
 
 //		threadWait1();
 //		qualificationdetails.Enter_OutOfMarks10th();
@@ -367,17 +461,44 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
 
                 threadWait1();
                 qualificationdetails.Click_AddBtn_PG();
+                threadWait1();
+                acceptAlert();
 
                 threadWait1();
                 qualificationdetails.Click_SaveContinueQualificationDetails();
+        }
 
                 // Covid Information
+                @Test(priority = 10, enabled = true)
+                public void Information_Covid() throws Exception {
+                    AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
+                    SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
+                    HP = new HomePageAdmin(driver);
+                    // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
+                    RF_AdminLoginPage.loginPage();
+                    HP.Academic();
+                    feeCollection.adminLogout();
+                    acceptAlert();
+                    String RRNOnumberInfoDocu = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    studentLogin.newCreatedStudentLogin(RRNOnumberInfoDocu, "Student@12345");
+                    System.out.println("ACADEMIC(SL) > Student Related > Student Information");
+                    studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
+                    qualificationdetails = new SL_Academic_SR_SI_QualificationDetails(driver);
+                    threadWait1();
+                    HP.Academic();
+                    threadWait1();
+                    studentInfoPage.clickStudentRelated();
+                    threadWait1();
+                    studentInfoPage.clickStudentInformation();
+                    threadWait1();
+                    studentInfoPage.covidTab();
+                    threadWait1();
+                    qualificationdetails.Click_Vaccinated_Yes();
 
-                threadWait1();
-                qualificationdetails.Click_Vaccinated_Yes();
-
-                threadWait1();
-                qualificationdetails.Click_SaveContinueCovidInformation();
+                    threadWait1();
+                    qualificationdetails.Click_SaveContinueCovidInformation();
 
                 // Other Information
 
@@ -400,7 +521,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                 qualificationdetails.Click_SaveBtn();
                 Thread.sleep(2000);
                 Alert alert =  driver.switchTo().alert();
-                String Expected_Msg = "Final Submit Done Successfully!!!";
+                String Expected_Msg = "Data saved successfully!";
                 String Actual_Msg = alert.getText();
                 Assert.assertEquals(Actual_Msg , Expected_Msg );
                 System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);

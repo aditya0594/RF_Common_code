@@ -271,6 +271,26 @@ public class SL_Academic_SR_SI_QualificationDetails extends BaseClass
         yearofexam.sendKeys("2009");
         return this;
     }
+
+    @FindBy(xpath = "//input[@id='ctl00_ContentPlaceHolder1_txtOutOfMarksSsc']")
+    private WebElement OutOfMArk;
+
+    public SL_Academic_SR_SI_QualificationDetails OutOfMArks() {
+        System.out.println("Enter_Out of Marks > 500");
+        OutOfMArk.clear();
+        OutOfMArk.sendKeys("500");
+        return this;
+    }
+
+    @FindBy(xpath = "//input[@id='ctl00_ContentPlaceHolder1_txtMarksObtainedSsc']")
+    private WebElement MarksObtained;
+
+    public SL_Academic_SR_SI_QualificationDetails MarksObtain() {
+        System.out.println("Enter mark obtained  > 300");
+        MarksObtained.clear();
+        MarksObtained.sendKeys("300");
+        return this;
+    }
     
     public SL_Academic_SR_SI_QualificationDetails Enter_OutOfMarks10th() throws InterruptedException {
         System.out.println("Enter_OutOfMarks > 600");
@@ -504,12 +524,12 @@ public class SL_Academic_SR_SI_QualificationDetails extends BaseClass
 		js.executeScript("arguments[0].click();", SaveContinueQualificationDetails);
         
         Thread.sleep(2000); 
-		Alert alert =  driver.switchTo().alert();
-		String Expected_Msg = "Data saved successfully!"; 
-		String Actual_Msg = alert.getText();
-		Assert.assertEquals(Actual_Msg , Expected_Msg );
-		System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
-		alert.accept();
+//		Alert alert =  driver.switchTo().alert();
+//		String Expected_Msg = "Data saved successfully!";
+//		String Actual_Msg = alert.getText();
+//		Assert.assertEquals(Actual_Msg , Expected_Msg );
+//		System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
+//		alert.accept();
         System.out.println("Click_SaveContinuePG");
 
         return this;

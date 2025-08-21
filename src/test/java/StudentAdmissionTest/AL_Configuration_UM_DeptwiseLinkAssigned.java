@@ -67,6 +67,7 @@ public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
         By studentInformation = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst231']");
      driver.findElement(By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst52']")).click();
         // Get all expandable menu items (with '+')
+        Thread.sleep(2000);
         WebElement studentRelatedWeb = driver.findElement(studentRelated);
         Actions actions = new Actions(driver);
         actions.moveToElement(studentRelatedWeb).click().perform();
