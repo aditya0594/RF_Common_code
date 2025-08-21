@@ -33,12 +33,14 @@ public class AL_Stores_Rpt_DepartmentwiseIssueReport extends BaseClass {
 		return this;
 	}
 	public AL_Stores_Rpt_DepartmentwiseIssueReport Select_FromDate() {
-		System.out.println("Enter From Date"); 
+		System.out.println("Enter From Date");
+		waitForVisibility(fromdate);
 		sendKeys(fromdate,"01/01/2021");
 		return this;
 	}
 	public AL_Stores_Rpt_DepartmentwiseIssueReport Select_ToDate() {
 		System.out.println("Enter To Date");
+		waitForVisibility(todate);
 		sendKeys(todate,"19/12/2024");
 		return this;
 	}

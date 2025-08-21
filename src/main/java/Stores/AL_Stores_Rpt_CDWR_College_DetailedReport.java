@@ -39,12 +39,14 @@ public class AL_Stores_Rpt_CDWR_College_DetailedReport  extends BaseClass  {
 	
 	public AL_Stores_Rpt_CDWR_College_DetailedReport ClickOn_ClgOrDeptWiseItemReport1() {
 		System.out.println(" College Or Department Wise Item Report ");
+		waitForVisibility(ClgOrDeptWiseItemReport);
 		ClgOrDeptWiseItemReport.click();
 		return this;
 	}
 	
 	public AL_Stores_Rpt_CDWR_College_DetailedReport ClickOn_ClgOrDeptWiseItemReportCollege() {
 		System.out.println(" College Or Department Wise Item Report College Radio Button ");
+		waitForVisibility(College);
 		College.click();
 		return this;
 	}
@@ -108,6 +110,7 @@ public class AL_Stores_Rpt_CDWR_College_DetailedReport  extends BaseClass  {
 	
 	public AL_Stores_Rpt_CDWR_College_DetailedReport ClickOn_ClgOrDeptWiseItemReportDetailed() {
 		System.out.println(" Click ClgOrDeptWiseItemReport Detailed Report ");
+		waitUntilElementIsClickable(DetailedReport);
 		DetailedReport.click();
 		return this;
 	}

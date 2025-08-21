@@ -26,6 +26,7 @@ public class AL_Stores_Rpt_CDWR_MainStore_SummaryReport   extends BaseClass {
 	
 	public AL_Stores_Rpt_CDWR_MainStore_SummaryReport ClickOn_ClgOrDeptWiseItemReport1() {
 		System.out.println(" College Or Department Wise Item Report ");
+		waitUntilElementIsClickable(ClgOrDeptWiseItemReport);
 		ClgOrDeptWiseItemReport.click();
 		return this;
 	}

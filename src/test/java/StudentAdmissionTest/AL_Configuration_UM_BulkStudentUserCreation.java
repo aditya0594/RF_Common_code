@@ -1,4 +1,4 @@
-package extraFiles;
+package StudentAdmissionTest;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 //public class BulkStudentUserCreation extends BaseClass {
-public class BulkStudentUserCreation  {
+public class AL_Configuration_UM_BulkStudentUserCreation {
 
 //	LoginPageAdmin loginPage;
 //	HomePageAdmin homePage;

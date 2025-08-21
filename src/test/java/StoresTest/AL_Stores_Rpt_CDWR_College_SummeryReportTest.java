@@ -52,32 +52,18 @@ public class AL_Stores_Rpt_CDWR_College_SummeryReportTest extends BaseClass {
 		RF_AdminLoginPage.loginPage();
 		System.out.println("Stores->Reports->College Or Department Wise Item Report->Summary report");
 
-		Thread.sleep(2000);
 		homePageAdmin.STORE();
-
 		Thread.sleep(2000);
 		homePageAdmin.Select_StoreReports();
-
-		Thread.sleep(2000);
 		aL_Stores_Rpt_ClgOrDeptWiseItemReportClgSummeryReport.ClickOn_ClgOrDeptWiseItemReport1();
-
-		Thread.sleep(2000);
 		aL_Stores_Rpt_ClgOrDeptWiseItemReportClgSummeryReport.ClickOn_ClgOrDeptWiseItemReportCollege();
-
-		Thread.sleep(2000);
 		aL_Stores_Rpt_ClgOrDeptWiseItemReportClgSummeryReport.Select_ClgDropdown();
-
-		Thread.sleep(2000);
 		aL_Stores_Rpt_ClgOrDeptWiseItemReportClgSummeryReport.ClickOn_ClgOrDeptWiseItemReportSummmery();
-		
-
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		switchToNextWindow();
-
-
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		pdfutility.downloadPDF(driver, "Store - College Or Department Wise Item Report - Summery Report");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		pdfutility.readPDF("Store - College Or Department Wise Item Report - Summery Report", "ALMIRAH");
 
 		// Item Name

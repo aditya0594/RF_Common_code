@@ -1,15 +1,14 @@
 package StudentAdmissionTest;
 
-import RFCCAcademic.AL_Academic_AP_NewStudent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utility.BaseClass;
 
-public class SL_NewCreated_StudentLogin extends BaseClass {
+public class SL_Login_SetLogin extends BaseClass {
 
 
-    public SL_NewCreated_StudentLogin(WebDriver rdriver) {
+    public SL_Login_SetLogin(WebDriver rdriver) {
         driver = rdriver;
         PageFactory.initElements(rdriver, this);
     }

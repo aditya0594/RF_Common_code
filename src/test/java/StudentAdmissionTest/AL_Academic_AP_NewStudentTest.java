@@ -8,11 +8,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.qa.pages.HomePageAdmin;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.testng.annotations.Listeners;
 import pojo.Browser;
 import pom.RF_AdminLoginPage;
 import utility.*;
@@ -20,7 +17,7 @@ import utility.*;
 import java.io.IOException;
 import java.lang.reflect.Method;
 //@Listeners(utility.RetryAnalyzer.class)
-public class AP_New_StudentTest extends BaseClass {
+public class AL_Academic_AP_NewStudentTest extends BaseClass {
 
     ExtentReports reports;
     ExtentTest test;
@@ -63,7 +60,7 @@ public class AP_New_StudentTest extends BaseClass {
         Thread.sleep(4000);
         RF_AdminLoginPage.loginPage();
         AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
-        SL_NewCreated_StudentLogin studentLogin = new SL_NewCreated_StudentLogin(driver);
+        SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
         System.out.println("ACADEMIC > Admission Process > New Student");
 
         HP.Academic();
@@ -213,7 +210,7 @@ public class AP_New_StudentTest extends BaseClass {
             HP = new HomePageAdmin(driver);
             RF_AdminLoginPage.loginPage();
             HP.Academic();
-            AL_Dept_wise_Link_Assigned deptWise = new AL_Dept_wise_Link_Assigned(driver);
+            AL_Configuration_UM_DeptwiseLinkAssigned deptWise = new AL_Configuration_UM_DeptwiseLinkAssigned(driver);
             //  String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
             //   System.out.println("Student name extracted from Excel: "+ StudentName);
             deptWise.deptWiseLinked(StudentName);
@@ -224,7 +221,7 @@ public class AP_New_StudentTest extends BaseClass {
         @Test(priority = 6, enabled = true)
         public void studentLogin() throws Exception {
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
-            SL_NewCreated_StudentLogin studentLogin = new SL_NewCreated_StudentLogin(driver);
+            SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
             String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
             System.out.println("Student name extracted from Excel: " + RRNOnumber);
             HP = new HomePageAdmin(driver);
@@ -241,7 +238,7 @@ public class AP_New_StudentTest extends BaseClass {
             @Test(priority = 7, enabled = true)
             public void Information_studentInfoEdit() throws Exception {
                 AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
-                SL_NewCreated_StudentLogin studentLogin = new SL_NewCreated_StudentLogin(driver);
+                SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
                 HP = new HomePageAdmin(driver);
                 RF_AdminLoginPage.loginPage();
                 HP.Academic();

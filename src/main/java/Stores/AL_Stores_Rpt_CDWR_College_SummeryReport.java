@@ -66,6 +66,7 @@ public AL_Stores_Rpt_CDWR_College_SummeryReport Select_DeptDropdown() {
 	  
 	public AL_Stores_Rpt_CDWR_College_SummeryReport ClickOn_ClgOrDeptWiseItemReportSummmery() {
 		System.out.println(" Click ClgOrDeptWiseItemReport summary Report ");
+		waitUntilElementIsClickable(SummeryReport);
 		SummeryReport.click();
 		return this;
 	}

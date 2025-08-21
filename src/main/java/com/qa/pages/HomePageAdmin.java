@@ -509,12 +509,11 @@ public class HomePageAdmin extends BaseClass {
 		System.out.println("Click on Transaction option"); 
 		return this;
 	}
-	public HomePageAdmin Select_StoreReports() {
+	public void Select_StoreReports() {
 		System.out.println("Reports submenu selected");
-		Actions action = new Actions(driver); 
+		Actions action = new Actions(driver);
 		action.moveToElement(reports);
 		action.click().build().perform();
-		return this;
 	}
 //****************************** Finance **************************************************
 	@FindBy(linkText = "Finance") private WebElement FINANCE;

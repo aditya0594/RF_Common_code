@@ -46,19 +46,13 @@ public class AL_Stores_Rpt_CDWR_MainStore_SummaryReportTest extends BaseClass {
 		pdfutility = new PDFUtility(driver);
 
 		test = reports.createTest("AL_Stores_Rpt_FAR_Detailed");
-		Thread.sleep(2000);
 		RF_AdminLoginPage.loginPage();
 		System.out.println("Stores->Reports->College Or Department Wise Item Report");
 
-		Thread.sleep(2000);
 		homePageAdmin.STORE();
-
 		Thread.sleep(2000);
 		homePageAdmin.Select_StoreReports();
-
-		Thread.sleep(4000);
 		aL_Stores_Rpt_ClgOrDeptWiseItemReportClgMainStoreDetailed.ClickOn_ClgOrDeptWiseItemReport1();
-
 		/*
 		 * Thread.sleep(4000);
 		 * aL_Stores_Rpt_ClgOrDeptWiseItemReportClgMainStoreDetailed.Select_FromDate();
@@ -67,17 +61,12 @@ public class AL_Stores_Rpt_CDWR_MainStore_SummaryReportTest extends BaseClass {
 		 * aL_Stores_Rpt_ClgOrDeptWiseItemReportClgMainStoreDetailed.Select_ToDate();
 		 */
 
-		Thread.sleep(4000);
 		aL_Stores_Rpt_ClgOrDeptWiseItemReportClgMainStoreDetailed.ClickOn_ClgOrDeptWiseItemReportDetailed();
-		
-
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		switchToNextWindow();
-
-
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		pdfutility.downloadPDF(driver, "Store - College Or Department Wise Item Report Deatiled Report");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		pdfutility.readPDF("Store - College Or Department Wise Item Report Deatiled Report", "Item Serial Number");
 
 	}

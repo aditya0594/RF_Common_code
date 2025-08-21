@@ -1,11 +1,8 @@
 package FeedBackTest;
 
 import Administration.AL_Administration_FM_Rpt_MR_CompleteFilesReport;
-import RFCCAcademic.AL_Academic_AP_NewStudent;
 import RFCCAcademic.SL_Academic_SR_StudentInformation;
-import StudentAdmissionTest.AL_Academics_FR_FeeCollection;
 import StudentAdmissionTest.SL_Academic_SR_SI_QualificationDetails;
-import StudentAdmissionTest.SL_NewCreated_StudentLogin;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.qa.pages.HomePageAdmin;
@@ -18,12 +15,13 @@ import org.testng.annotations.Test;
 import pojo.Browser;
 import pom.RF_AdminLoginPage;
 import utility.BaseClass;
+import utility.ExcelUtility;
 import utility.PDFUtility;
 import utility.Reports;
 
 import java.lang.reflect.Method;
 
-public class AL_FeedBack_Type_Master_Add_edit_Test extends BaseClass {
+public class AL_AD_FB_Type_Master_AddTest extends BaseClass {
 
 
     ExtentReports reports;
@@ -32,7 +30,7 @@ public class AL_FeedBack_Type_Master_Add_edit_Test extends BaseClass {
     HomePageAdmin homePageAdmin;
     PDFUtility pdfutility;
 
-    AL_FeedBack_Type_Master_Add_edit feedback;
+    AL_AD_FB_Type_Master_Add_edit feedback;
     SL_Academic_SR_StudentInformation studentInfoPage;
     SL_Academic_SR_SI_QualificationDetails qualificationdetails;
     AL_Administration_FM_Rpt_MR_CompleteFilesReport aL_Administration_FM_Rpt_MR_CompleteFilesReport;
@@ -56,25 +54,32 @@ public class AL_FeedBack_Type_Master_Add_edit_Test extends BaseClass {
 //        }
     }
     String feedBackTypetext = "Feedback Level automation" + Random4DigitString();
+
+    //  Excel/FeedBackExcel.xlsx
+
+
     @Test(priority = 1, enabled = true)
     public void FeedBack_Add() throws Exception {
 
-        feedback = new AL_FeedBack_Type_Master_Add_edit(driver);
+        feedback = new AL_AD_FB_Type_Master_Add_edit(driver);
         test = reports.createTest("AL_FeedBack_Type_Master_Add_edit_Test");
         HP = new HomePageAdmin(driver);
         // Set data row to use for this test
         //ewStudentPage.setDataRow(dataRow);
         Thread.sleep(4000);
+        feedback.writeNameAtLastRow(feedBackTypetext);
         RF_AdminLoginPage.loginPage();
+
         HP.Academic();
         feedback.feedbackSelect();
         feedback.FeedbackMasterSelect();
-        feedback.feedBackTypeSelect(feedBackTypetext);
+        feedback.feedBackTypSelect(feedBackTypetext);
+
         feedback.feedBackModeSelect("Normal/Induction");
         feedback.userTypeSelect();
         feedback.addNote("This is a test note. Added by Automation");
         feedback.submitbtn();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Alert alert =  driver.switchTo().alert();
         String Expected_Msg = "Record Saved Successfully!";
         String Actual_Msg = alert.getText();
@@ -87,7 +92,7 @@ public class AL_FeedBack_Type_Master_Add_edit_Test extends BaseClass {
     @Test(priority = 2, enabled = true)
     public void FeedBack_edit() throws Exception {
 
-        feedback = new AL_FeedBack_Type_Master_Add_edit(driver);
+        feedback = new AL_AD_FB_Type_Master_Add_edit(driver);
         test = reports.createTest("AL_FeedBack_Type_Master_Add_edit_Test");
         HP = new HomePageAdmin(driver);
         // Set data row to use for this test
@@ -97,11 +102,14 @@ public class AL_FeedBack_Type_Master_Add_edit_Test extends BaseClass {
         HP.Academic();
         feedback.feedbackSelect();
         feedback.FeedbackMasterSelect();
-        feedback.searchBox("Feedback Level automation4492");
+        //feedback.searchBox("Feedback Level automation4492");
+        String feedbackNameFromExcel = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/FeedBackExcel.xlsx", "FeedbackName");
+        System.out.println("Student name extracted from Excel: " + feedbackNameFromExcel);
+        feedback.searchBox(feedbackNameFromExcel);
         feedback.editBtn();
-        feedback.feedBackTypeSelectedit("Feedback Level automation4492_edited");
-        feedback.CourseType("Course Teacher");
-        feedback.userTypeSelect();
+        feedback.feedBackTypeSelectedit(feedbackNameFromExcel+"_edited");
+        feedback.feedBackModeSelect("Course Teacher");
+        feedback.CourseType();
         feedback.addNote("This is a test note. Added by Automation edited");
         feedback.submitbtn();
         Thread.sleep(1000);

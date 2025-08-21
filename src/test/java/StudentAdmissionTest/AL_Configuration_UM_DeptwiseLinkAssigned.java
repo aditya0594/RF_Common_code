@@ -1,22 +1,14 @@
 package StudentAdmissionTest;
 
-import RFCCAcademic.AL_Academic_AP_NewStudent;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utility.BaseClass;
 
-import java.time.Duration;
-import java.util.List;
+public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
 
-import static RFCCAcademic.AL_Academic_AP_NewStudent.loader;
-
-public class AL_Dept_wise_Link_Assigned extends BaseClass {
-
-    public AL_Dept_wise_Link_Assigned(WebDriver rdriver) {
+    public AL_Configuration_UM_DeptwiseLinkAssigned(WebDriver rdriver) {
         driver = rdriver;
         PageFactory.initElements(rdriver, this);
     }

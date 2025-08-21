@@ -44,28 +44,15 @@ public class AL_Stores_Rpt_DepartmentwiseIssueReportTest extends BaseClass {
 		pdfutility = new PDFUtility(driver);
 		
 		test=reports.createTest("aL_Stores_Rpt_DepartmentwiseIssueReportTest");
-		
-		Thread.sleep(2000);	
+
 		RF_AdminLoginPage.loginPage();
 		System.out.println("Stores->Reports->Department wise Issue Report");
-		
+		homePageAdmin.STORE();
 		Thread.sleep(2000);
-		homePageAdmin.STORE(); 
-		
-		Thread.sleep(2000);
-		homePageAdmin.Select_StoreReports
-		();
-		
-		Thread.sleep(4000);
+		homePageAdmin.Select_StoreReports();
 		aL_Stores_Rpt_DepartmentwiseIssueReport.click_departmentwiseIssuereport();
-        
-        Thread.sleep(2000);
-        aL_Stores_Rpt_DepartmentwiseIssueReport.Select_FromDate(); 
-		
-		Thread.sleep(3000);
+        aL_Stores_Rpt_DepartmentwiseIssueReport.Select_FromDate();
 		aL_Stores_Rpt_DepartmentwiseIssueReport.Select_ToDate();
-		
-		Thread.sleep(2000);
         aL_Stores_Rpt_DepartmentwiseIssueReport.Click_SubmitBtn();
 		
 		Thread.sleep(5000);
