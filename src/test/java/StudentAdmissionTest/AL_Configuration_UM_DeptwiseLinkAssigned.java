@@ -63,19 +63,31 @@ public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
        // waitForVisibilityBy(CheckboxforSelect);
         clickBy(CheckboxforSelect);
 
-        By studentRelated = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst224']");
-        By studentInformation = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst231']");
-     driver.findElement(By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst52']")).click();
+        By ExpandAcademic = By.linkText("Academic");
+        By studentReletedExpand = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinksn225']//img[contains(@alt,'Expand')]");
+        By studentRelated = By.linkText("Student Related");
+        By studentInformation = By.linkText("Student Information");
+        By studentInformationcheck = By.xpath("//a[text()='Student Information']/preceding-sibling::input[@type='checkbox']");
+       driver.findElement(By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst52']")).click();
         // Get all expandable menu items (with '+')
+
         Thread.sleep(2000);
+
         WebElement studentRelatedWeb = driver.findElement(studentRelated);
         Actions actions = new Actions(driver);
+
         actions.moveToElement(studentRelatedWeb).click().perform();
+
         WebElement studentInformationele =  driver.findElement(studentInformation);
-        WebElement checkboxStudentInformation  = driver.findElement(By.id("ctl00_ContentPlaceHolder1_tvLinksn231CheckBox"));
+       // WebElement checkboxStudentInformation  = driver.findElement(By.id("ctl00_ContentPlaceHolder1_tvLinksn231CheckBox"));
         actions.moveToElement(studentInformationele);
-        actions.click(checkboxStudentInformation).perform();
+        Thread.sleep(1000);
+        action.click(driver.findElement(studentInformationcheck)).perform();
+
+
+       // actions.click(checkboxStudentInformation).perform();
         clickBy(submitbtn);
+        Thread.sleep(1000);
 
 
         Alert alert = driver.switchTo().alert();

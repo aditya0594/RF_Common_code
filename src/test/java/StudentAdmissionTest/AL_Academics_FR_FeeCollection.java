@@ -188,7 +188,7 @@ public class AL_Academics_FR_FeeCollection extends BaseClass {
     public void filterButton() throws InterruptedException {
         System.out.println("Click on the filter button ");
         Thread.sleep(3000);
-        waitUntilElementIsClickableBy(filterBtn);
+      //  waitUntilElementIsClickableBy(filterBtn);
         clickBy(filterBtn);
     }
 

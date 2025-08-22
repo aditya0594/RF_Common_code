@@ -2,11 +2,7 @@ package StudentAdmissionTest;
 
 import java.io.File;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -129,6 +125,9 @@ public class SL_Academic_SR_SI_QualificationDetails extends BaseClass
 		    
 		    @FindBy(id = "ctl00_ContentPlaceHolder1_rdVaccinated") 
 		    private WebElement vaccination_yes;
+
+             @FindBy(id = "ctl00_ContentPlaceHolder1_rdNotVaccinated")
+            private WebElement vaccination_No;
 		    
 		    @FindBy(id = "ctl00_ContentPlaceHolder1_txtFirstDoseVaccName") 
 		    private WebElement vaccinname1st;
@@ -174,7 +173,7 @@ public class SL_Academic_SR_SI_QualificationDetails extends BaseClass
 		    
 		    @FindBy(id = "ctl00_ContentPlaceHolder1_btnSave") 
 		    private WebElement saveBtn;
-		    
+
 		    
 		    
 		    
@@ -537,12 +536,19 @@ public class SL_Academic_SR_SI_QualificationDetails extends BaseClass
     
     // Covid Information
     
-    public SL_Academic_SR_SI_QualificationDetails Click_Vaccinated_Yes() {
-    	vaccination_yes.click();
-        System.out.println("Click_Vaccinated_Yes"); 
+    public SL_Academic_SR_SI_QualificationDetails Click_Vaccinated_No() {
+    	vaccination_No.click();
+        System.out.println("Click_Vaccinated_No");
         return this;
     }
-    
+
+    public SL_Academic_SR_SI_QualificationDetails Click_Vaccinated_Yes() {
+        vaccination_yes.click();
+        System.out.println("Click_Vaccinated_Yes");
+        return this;
+    }
+
+
     public SL_Academic_SR_SI_QualificationDetails Click_SaveContinueCovidInformation() {
     	js.executeScript("arguments[0].click();", saveContinueCovidInformation);
         System.out.println("Click_SaveContinueCovidInformation"); 
@@ -590,9 +596,64 @@ public class SL_Academic_SR_SI_QualificationDetails extends BaseClass
         System.out.println("Enter_BankAddress > "+num);  
         return this;
     }
-    
+
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtBankAddress")
+    private WebElement IAgreeCheckBox;
+    public SL_Academic_SR_SI_QualificationDetails I_AgreeCheckBox() {
+        System.out.println("Click_AgreeCheckBox");
+        IAgreeCheckBox.click();
+        return this;
+    }
+
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtSportName")
+    private WebElement sportNametextbox;
+    public SL_Academic_SR_SI_QualificationDetails sportName() throws InterruptedException {
+        Thread.sleep(1000);
+        scrollIntoElement(sportNametextbox);
+        System.out.println("Click_SportName");
+        sportNametextbox.clear();
+        sportNametextbox.sendKeys("Cricket");
+        return this;
+    }
+    @FindBy(id = "select2-ctl00_ContentPlaceHolder1_ddlSportLevel-container")
+    private WebElement sportNameLevel;
+    public SL_Academic_SR_SI_QualificationDetails sportLevel() throws InterruptedException {
+
+        String level = "State";
+        Thread.sleep(1000);
+        driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlSportLevel-container")).click();
+        driver.findElement(By.xpath("//span/span/input")).sendKeys(level);
+        driver.findElement(By.xpath("//span/span/input")).sendKeys(Keys.ENTER);
+        System.out.println("Enter_StatusPG > "+level);
+        return this;
+    }
+
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtSportName")
+    private WebElement sportaddbtn;
+    public SL_Academic_SR_SI_QualificationDetails sportAddButton() {
+        System.out.println("Click sportAddButton");
+        sportaddbtn.click();
+        return this;
+    }
+
+
+    @FindBy(id = "ctl00_ContentPlaceHolder1_txtSportAchieve")
+    private WebElement sportAchivementtextbox1;
+    public SL_Academic_SR_SI_QualificationDetails sportAchivement() {
+        System.out.println("Click_Sport Achivement");
+        sportAchivementtextbox1.clear();
+        sportAchivementtextbox1.sendKeys("Got Rank 1 in state level");
+
+        return this;
+    }
+
+
+
+
     public SL_Academic_SR_SI_QualificationDetails Click_SaveBtn() throws InterruptedException {
-    	saveBtn.click();
+    	Thread.sleep(2000);
+        scrollIntoElement(saveBtn);
+        saveBtn.click();
         System.out.println("Click_SaveBtn");    
         
         Thread.sleep(2000); 

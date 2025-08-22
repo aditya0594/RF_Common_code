@@ -62,7 +62,12 @@ public class AL_AD_FB_Question_EditTest extends BaseClass {
         question.feedBackQuestion();
         String feedbackNameFromExcel = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/FeedBackExcel.xlsx", "FeedbackName");
         System.out.println("Student name extracted from Excel: " + feedbackNameFromExcel);
-        question.setFeedbackQuestionTypeSelect(feedbackNameFromExcel);
+       // question.setFeedbackQuestionTypeSelect(feedbackNameFromExcel);
+        question.searchFeedbackEdit(feedbackNameFromExcel);
+
+
+
+
         question.feedBackQuestionFieldAdd("This is the question for the test automation ");
         question.setAnsOptionType("Objective");
         question.sequenceField("1");

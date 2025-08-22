@@ -176,7 +176,7 @@ public class BaseClass {
 
 	@AfterTest
 	public void afterTest() {
-		//driver.quit();
+		driver.quit();
 	}
 
 	public String getCurrentTime() {

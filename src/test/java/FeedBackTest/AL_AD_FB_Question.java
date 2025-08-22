@@ -224,6 +224,18 @@ public class AL_AD_FB_Question extends BaseClass {
     }
 
 
+    /// =======================Edit ====================
+
+    By searchFeedback = By.xpath("//input[@class='form-control form-control-sm']");
+    public void searchFeedbackEdit(String FeedbackName){
+        System.out.println("click on submit button ");
+        sendKeysBy(searchFeedback,FeedbackName);
+        clickBy(quesubmitBtn);
+    }
+
+
+
+
 
 
 

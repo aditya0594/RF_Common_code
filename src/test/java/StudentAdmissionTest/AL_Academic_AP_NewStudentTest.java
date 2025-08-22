@@ -44,13 +44,13 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
     }
     @AfterMethod
     public void closeBrowser() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
 
-    /*@Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = true)
     public void New_Student_create() throws Exception {
 
         newStudentPage = new AL_Academic_AP_NewStudent(driver);
@@ -153,7 +153,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
 
         }
 
-       //===========================Fee Receipt==========
+       ////===========================Fee Receipt==========
         @Test(priority = 3, enabled = true)
         public void FeeReceipt() throws Exception {
          String StudentNamefees = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
@@ -203,7 +203,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
             feeCollection.submitSectionEnrollmentEnroll();
             BulkStudentUserCreation bulkStudentcreate = new BulkStudentUserCreation(driver);
             bulkStudentcreate.User_able_to_Bulk_Student_User_Creation(StudentNamePost);
-        }*/
+        }
 
         // ========================department wise Linked assigned  ==============
         @Test(priority = 5, enabled = true)
@@ -225,7 +225,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         public void studentLogin() throws Exception {
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
             SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
-            String RRNOnumberStudentLogin = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+            String RRNOnumberStudentLogin = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
             System.out.println("Student name extracted from Excel: " + RRNOnumberStudentLogin);
             HP = new HomePageAdmin(driver);
             RF_AdminLoginPage.loginPage();
@@ -474,8 +474,8 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                     AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
                     SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
                     HP = new HomePageAdmin(driver);
-                    // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-                    String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                   // ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
                     System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
                     RF_AdminLoginPage.loginPage();
                     HP.Academic();
@@ -495,7 +495,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                     threadWait1();
                     studentInfoPage.covidTab();
                     threadWait1();
-                    qualificationdetails.Click_Vaccinated_Yes();
+                    qualificationdetails.Click_Vaccinated_No();
 
                     threadWait1();
                     qualificationdetails.Click_SaveContinueCovidInformation();
@@ -516,12 +516,22 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
 
                 threadWait1();
                 qualificationdetails.Enter_BankAddress();
+                    threadWait1();
+                    qualificationdetails.I_AgreeCheckBox();
+                    threadWait1();
+                    qualificationdetails.sportName();
+                    threadWait1();
+                    qualificationdetails.sportLevel();
+                    threadWait1();
+                    qualificationdetails.sportAchivement();
+                    threadWait1();
+                    qualificationdetails.sportAddButton();
 
                 threadWait1();
                 qualificationdetails.Click_SaveBtn();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 Alert alert =  driver.switchTo().alert();
-                String Expected_Msg = "Data saved successfully!";
+                String Expected_Msg = "Other Information Saved Successfully!";
                 String Actual_Msg = alert.getText();
                 Assert.assertEquals(Actual_Msg , Expected_Msg );
                 System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
