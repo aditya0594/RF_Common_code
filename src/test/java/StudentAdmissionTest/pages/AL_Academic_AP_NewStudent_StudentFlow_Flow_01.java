@@ -1,5 +1,7 @@
-package RFCCAcademic;
+package StudentAdmissionTest.pages;
 
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -7,24 +9,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import utility.BaseClass;
 
+import java.io.*;
 import java.time.Duration;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-import org.testng.Assert;
-import utility.BaseClass;
+public class AL_Academic_AP_NewStudent_StudentFlow_Flow_01 extends BaseClass {
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import utility.ExcelUtility;
-
-import java.io.*;
-
-public class AL_Academic_AP_NewStudent extends BaseClass {
-
-    public AL_Academic_AP_NewStudent(WebDriver rdriver) {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01(WebDriver rdriver) {
         driver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
@@ -39,8 +35,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     @FindBy(linkText = "New Student")
     private WebElement NewStudent;
 
-    @FindBy(linkText = "Pre Admission")
-    private WebElement preAdmission;
+
 
     @FindBy(linkText = "Demand Creation")
     private WebElement demandCreation;
@@ -124,13 +119,22 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     // WebDriverWait for explicit waits
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public static void waitForVisibilityBy(By e) {
+        WebElement e1 = driver.findElement(e);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOf(e1));
+    }
 
-    /**
-     * Navigate to Academic menu
-     *
-     * @return this class instance for method chaining
-     */
-    public AL_Academic_AP_NewStudent academic() {
+    public static void waitUntilElementIsClickableBy(By e) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Wait));
+        wait.until(ExpectedConditions.elementToBeClickable(e));
+    }
+    public static void sendKeysBy(By e, String text) {
+        waitForVisibilityBy(e);
+        driver.findElement(e).sendKeys(text);
+    }
+
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 academic() {
         System.out.println("Admin ACADEMIC menu selected");
         Actions action = new Actions(driver);
         action.moveToElement(ACADEMIC).build().perform();
@@ -142,7 +146,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent admissionProcess() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 admissionProcess() {
         System.out.println("Admission Process submenu selected");
         AdmissionProcess.click();
         return this;
@@ -153,43 +157,120 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent newStudent() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 newStudent() {
         System.out.println("New Student option selected");
         NewStudent.click();
         return this;
     }
 
-    public AL_Academic_AP_NewStudent preAdmission() {
-        System.out.println("Pre Admission option selected");
-        preAdmission.click();
-        return this;
-    }
-
-    public AL_Academic_AP_NewStudent demandCreationMenu() {
-        System.out.println("Demand creation option selected");
-        demandCreation.click();
-        return this;
-    }
-
-
-    /**
-     * Click on New Student button
-     *
-     * @return this class instance for method chaining
-     */
-    public AL_Academic_AP_NewStudent clickNewStudentButton() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 clickNewStudentButton() {
         System.out.println("Click on New Student Button");
         click(btnNewStudent);
         return this;
     }
 
-    /**
-     * Enter student full name with hardcoded value
-     *
-     * @return this class instance for method chaining
-     */
+    public static String getLastValueFromColumn(String relativePath, String columnName) {
+        String filePath = System.getProperty("user.dir") + "/src/test/resources/" + relativePath;
+        try (InputStream fis = new FileInputStream(filePath);
+             Workbook workbook = new XSSFWorkbook(fis)) {
 
-    public AL_Academic_AP_NewStudent enterStudentName(String studentName) {
+            Sheet sheet = workbook.getSheetAt(0);
+            Row headerRow = sheet.getRow(0);
+            if (headerRow == null) return null;
+
+            int columnIndex = -1;
+
+            // Find the index of the target column
+            for (Cell cell : headerRow) {
+                if (cell.getStringCellValue().trim().equalsIgnoreCase(columnName.trim())) {
+                    columnIndex = cell.getColumnIndex();
+                    break;
+                }
+            }
+
+            if (columnIndex == -1) {
+                System.out.println("Column '" + columnName + "' not found.");
+                return null;
+            }
+
+            // Iterate from the last row upwards to find the last non-empty cell in that column
+            for (int i = sheet.getLastRowNum(); i > 0; i--) {
+                Row row = sheet.getRow(i);
+                if (row == null) continue;
+
+                Cell cell = row.getCell(columnIndex, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                String value = getCellValueAsString(cell);
+
+                if (!value.isEmpty()) {
+                    return value;
+                }
+            }
+
+            return null; // No non-empty cell found
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    // Helper to convert cell to String
+    private static String getCellValueAsString(Cell cell) {
+        if (cell == null) return "";
+        switch (cell.getCellType()) {
+            case STRING: return cell.getStringCellValue();
+            case NUMERIC:
+                if (DateUtil.isCellDateFormatted(cell))
+                    return cell.getDateCellValue().toString();
+                else
+                    return String.valueOf((long) cell.getNumericCellValue());
+            case BOOLEAN: return String.valueOf(cell.getBooleanCellValue());
+            case FORMULA: return cell.getCellFormula();
+            case BLANK: return "";
+            default: return "";
+        }
+    }
+
+    private static final String FILE_NAME = "src/test/resources/Excel/NewStudents.xlsx";
+    public static void writeStudentDataToExcel(
+            String studentName, String fatherName, String mobileNumber, String alternateMobileNumber,
+            String email,String RRNOnumber) throws IOException {
+
+        File file = new File(FILE_NAME);
+        Workbook workbook;
+        Sheet sheet;
+
+        if (file.exists()) {
+            try (FileInputStream fis = new FileInputStream(file)) {
+                workbook = new XSSFWorkbook(fis);
+                sheet = workbook.getSheetAt(0);
+            }
+        } else {
+            workbook = new XSSFWorkbook();
+            sheet = workbook.createSheet("StudentData");
+            Row header = sheet.createRow(0);
+            String[] headers = {
+                    "Student Name", "Father Name", "Mobile Number", "Alternate Mobile Number", "Email",
+            };
+            for (int i = 0; i < headers.length; i++) {
+                header.createCell(i).setCellValue(headers[i]);
+            }
+        }
+
+        // Append at the next empty row
+        int rowCount = sheet.getLastRowNum() + 1;
+        Row row = sheet.createRow(rowCount);
+        row.createCell(0).setCellValue(studentName);
+        row.createCell(1).setCellValue(fatherName);
+        row.createCell(2).setCellValue(mobileNumber);
+        row.createCell(3).setCellValue(alternateMobileNumber);
+        row.createCell(4).setCellValue(email);
+        row.createCell(5).setCellValue(RRNOnumber);
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            workbook.write(fos);
+        }
+        workbook.close();
+    }
+
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterStudentName(String studentName) {
 
         System.out.println("Entering student name: " + studentName);
         wait.until(ExpectedConditions.elementToBeClickable(txtStudentName));
@@ -200,7 +281,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     }
 
 
-    public AL_Academic_AP_NewStudent enterFatherName(String fatherName) {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterFatherName(String fatherName) {
 
         System.out.println("Entering father's name: " + fatherName);
         txtFatherName.click();
@@ -212,7 +293,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String mobileNumber = generateMobileNumber();
 
-    public AL_Academic_AP_NewStudent enterMobileNumber(String mobileNumber) {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterMobileNumber(String mobileNumber) {
 
         System.out.println("Entering mobile number: " + mobileNumber);
         txtMobileNumber.click();
@@ -222,7 +303,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     }
 
 
-    public AL_Academic_AP_NewStudent enterAlternateMobileNumber(String alternateMobileNumber) {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterAlternateMobileNumber(String alternateMobileNumber) {
 
         System.out.println("Entering alternate mobile number: " + alternateMobileNumber);
         txtAlternateMobileNumber.click();
@@ -238,7 +319,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      */
 
 
-    public AL_Academic_AP_NewStudent enterEmailId(String email) {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterEmailId(String email) {
 
         System.out.println("Entering email ID: " + email);
         waitUntilElementIsClickable(txtEmailId);
@@ -250,7 +331,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String nationalityName = "Indian";
 
-    public AL_Academic_AP_NewStudent selectNationality() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectNationality() {
 
         System.out.println("Selecting nationality: " + nationalityName);
         waitUntilElementIsClickable(nationality);
@@ -268,7 +349,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String stateName = "Maharashtra";
 
-    public AL_Academic_AP_NewStudent selectState() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectState() {
 
         System.out.println("Selecting State: " + stateName);
         waitUntilElementIsClickable(state);
@@ -294,18 +375,10 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
 
     String DistrictName = "Nagpur";
-    public static void waitForVisibilityBy(By e) {
-        WebElement e1 = driver.findElement(e);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(e1));
-    }
-    public static void waitUntilElementIsClickableBy(By e) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Wait));
-        wait.until(ExpectedConditions.elementToBeClickable(e));
-    }
 
-    public AL_Academic_AP_NewStudent selectDistrict() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectDistrict() throws InterruptedException {
         loader();
+
         System.out.println("Selecting District: " + DistrictName);
         waitUntilElementIsClickableBy(districtDropdown);
         dropdownByEnter(districtDropdown, dropdownInput, "Nagpur");
@@ -314,7 +387,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String cityName = "NAGPUR";
 
-    public AL_Academic_AP_NewStudent selectCity() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectCity() throws InterruptedException {
 
         loader();
         System.out.println("Selecting city: " + cityName);
@@ -323,7 +396,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         return this;
     }
 
-    public AL_Academic_AP_NewStudent clickGender() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 clickGender() {
         System.out.println("Selecting Gender: Male");
         waitUntilElementIsClickable(gender);
         click(gender);
@@ -348,7 +421,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String schooltext = "Crescent School of Architecture";
 
-    public AL_Academic_AP_NewStudent SchoolInstitution() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 SchoolInstitution() throws InterruptedException {
         loader();
 
         System.out.println("Selecting school: " + school);
@@ -358,7 +431,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String degreeoption = "Bachelor of Architecture";
 
-    public AL_Academic_AP_NewStudent degreeSelect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 degreeSelect() throws InterruptedException {
         loader();
 
         System.out.println("Selecting degree: " + school);
@@ -370,7 +443,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String branch = "Architecture";
 
-    public AL_Academic_AP_NewStudent branchselect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 branchselect() throws InterruptedException {
         loader();
 
         System.out.println("Selecting branch: " + branch);
@@ -382,7 +455,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String admissionth = "CAP 1";
 
-    public AL_Academic_AP_NewStudent admissionThroughSelect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 admissionThroughSelect() throws InterruptedException {
         loader();
 
         System.out.println("Selecting Admission Through: " + admissionth);
@@ -394,7 +467,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String admissiontypetxt = "REGULAR";
 
-    public AL_Academic_AP_NewStudent admissionType() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 admissionType() throws InterruptedException {
         loader();
 
         System.out.println("Selecting Admission Type: " + admissiontypetxt);
@@ -406,7 +479,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String admissionYeartxt = "First Year";
 
-    public AL_Academic_AP_NewStudent admissionYear() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 admissionYear() throws InterruptedException {
 
         Thread.sleep(2000);
         System.out.println("Selecting Admission Year: " + admissionYeartxt);
@@ -418,7 +491,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String semestertxt = "I";
 
-    public AL_Academic_AP_NewStudent semesterselect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 semesterselect() throws InterruptedException {
 
         System.out.println("Selecting Admission Year: " + semestertxt);
         Thread.sleep(1000);
@@ -429,7 +502,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String admissionBranchtext = "2024-25";
 
-    public AL_Academic_AP_NewStudent admissionBranchSelect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 admissionBranchSelect() throws InterruptedException {
 
         System.out.println("Selecting Admission Branch: " + admissionBranchtext);
         Thread.sleep(2000);
@@ -479,28 +552,28 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     String admissioncategorytext = "General/OC";
 
-    public AL_Academic_AP_NewStudent admissionCategorySelect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 admissionCategorySelect() throws InterruptedException {
 
         System.out.println("Selecting Admission category: " + admissioncategorytext);
         dropdownByEnter(admissioncategoryDropdown, dropdownInput, admissioncategorytext);
         return this;
     }
 
-    public AL_Academic_AP_NewStudent DateOFEntrySelect() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 DateOFEntrySelect() {
         String DateofEntryselect = "12/08/2025";
         System.out.println("Selecting Date of Entry: " + DateofEntryselect);
         driver.findElement(DateOFEntryField).sendKeys(Keys.TAB); //DateOFEntryField
         return this;
     }
 
-    public AL_Academic_AP_NewStudent paymentTypeSelect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 paymentTypeSelect() throws InterruptedException {
         String paymentTypetext = "50% OBC";
         System.out.println("Selecting Payment type: " + paymentTypetext);
         dropdownByEnter(paymentTypeField, dropdownInput, paymentTypetext);
         return this;
     }
 
-    public AL_Academic_AP_NewStudent receptTypeSelect() throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 receptTypeSelect() throws InterruptedException {
         String receiptTypeFieldtext = "Admission Fee";
         System.out.println("Selecting Payment type: " + receiptTypeFieldtext);
         dropdownByEnter(paymentTypeField, dropdownInput, receiptTypeFieldtext);
@@ -522,7 +595,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         //clickBy(sessionfield);
     }
 
-    public AL_Academic_AP_NewStudent sessionSelection(String sessionTypeFieldtext) throws InterruptedException {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 sessionSelection(String sessionTypeFieldtext) throws InterruptedException {
         //String sessionTypeFieldtext = "2023-2024";
         Thread.sleep(2000);
 
@@ -537,7 +610,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     By submitStundentBtn = By.id("ctl00_ContentPlaceHolder1_btnSave");
 
-    public AL_Academic_AP_NewStudent SubmitStudent() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 SubmitStudent() {
         System.out.println("Submitting the student ");
         loader();
         waitUntilElementIsClickableBy(submitStundentBtn);
@@ -549,6 +622,119 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
 
     //================================Demand============================================
 
+    By singleStudentDemandClick = By.xpath("//a[@href='#tab_2']");
+    By searchCriteriaClick = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlSearch-container']");
+    By searchname = By.id("ctl00_ContentPlaceHolder1_txtSearch");
+    By searchbutton = By.id("ctl00_ContentPlaceHolder1_btnSearch");
+    By clickOnSearchStudent = By.xpath("//a[@id='ctl00_ContentPlaceHolder1_lvStudent_ctrl0_lnkId']");
+    By demandVerifyText = By.xpath("//*[contains(text(),'CREATED')]");
+    By createDemandbutton = By.id("ctl00_ContentPlaceHolder1_btnCreateDemand");
+    By semesterselectDemandDropdown = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlForSemesterN-container']");
+    By receptTypeSelectdemandDropDown = By.xpath("//span[@id='select2-ctl00_ContentPlaceHolder1_ddlRecType-container']");
+
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 singleStudentDemand() {
+        System.out.println("Click on the single student demand option");
+        waitUntilElementIsClickableBy(singleStudentDemandClick);
+        clickBy(singleStudentDemandClick);
+        return this;
+    }
+
+    public void searchCreatria() throws InterruptedException {
+        System.out.println("Search By name ");
+        waitUntilElementIsClickableBy(searchCriteriaClick);
+        dropdownByEnter(searchCriteriaClick, dropdownInput, "NAME");
+        Thread.sleep(1000);
+    }
+
+    public void searchStringName(String name) {
+        System.out.println("Enter Student name: " + name);
+        loader();
+        waitUntilElementIsClickableBy(searchname);
+        sendKeysBy(searchname, name);
+        driver.findElement(searchname).sendKeys(Keys.TAB);
+    }
+
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 searchBtn() {
+        System.out.println("Click on the search button");
+        waitUntilElementIsClickableBy(searchname);
+        clickBy(searchbutton);
+        //loader();
+        return this;
+    }
+
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 clickonSearchStudent() {
+        System.out.println("Click on the searched Student Name");
+        waitUntilElementIsClickableBy(clickOnSearchStudent);
+        clickBy(clickOnSearchStudent);
+        return this;
+    }
+
+    public void verifyDemandStatus() throws InterruptedException {
+        System.out.println("Verify the demand status");
+        Thread.sleep(1000);
+        String demandStatus = driver.findElement(demandVerifyText).getText();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(demandVerifyText));
+        Assert.assertEquals(demandStatus, "CREATED");
+    }
+
+    public void CreateDemandbutton() throws InterruptedException {
+        System.out.println("Click on the create demand button");
+        waitUntilElementIsClickableBy(createDemandbutton);
+        scrollIntoElementBy(createDemandbutton);
+        clickBy(createDemandbutton);
+        /*Alert alert = driver.switchTo().alert();
+        String Expected_Msg = "Demand successfully created for selected students";
+        String Actual_Msg = alert.getText();
+        Assert.assertEquals(Actual_Msg , Expected_Msg );
+        System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);]
+        alert.accept();*/
+        acceptAlert();
+    }
+
+    public void sessionSelectiondemand(String sessionTypeFieldtext) throws InterruptedException {
+
+        System.out.println("Selecting Admission category: " + sessionTypeFieldtext);
+        By element = By.xpath("(//span[@class='select2-selection select2-selection--single'] //*[normalize-space()='Please Select'])[10]");
+        clickBy(element);
+        dropdownByEnter(element, dropdownInput, sessionTypeFieldtext);
+        clickBy(semesterselectDemandDropdown);
+
+    }
+
+
+    public void semesterselectDemand() throws InterruptedException {
+
+        Thread.sleep(1000);
+
+        System.out.println("Selecting Admission category: " + semestertxt);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(semesterselectDemandDropdown));
+        clickBy(semesterselectDemandDropdown);
+        dropdownByEnter(semesterselectDemandDropdown, dropdownInput, semestertxt);
+       // clickBy(receptTypeSelectdemandDropDown);
+        WebElement element1 = driver.findElement(By.xpath("(//i[@class='fa fa-angle-down'])[15]"));
+        waitUntilElementIsClickable(element1);
+        Thread.sleep(1000);
+
+    }
+
+    String receiptSelectText = "Admission Fee";
+
+    public void receptTypeSelectdemand() throws InterruptedException {
+        System.out.println("Selecting Recept Type: receiptSelectText ");
+        WebElement element = driver.findElement(By.xpath("(//i[@class='fa fa-angle-down'])[15]"));
+        Actions action = new Actions(driver);
+        Thread.sleep(1000);
+        action.moveToElement(element).click().perform();
+        action.moveToElement(element).click().perform();
+        Thread.sleep(1000);
+        System.out.println("Selecting Admission category: " + receiptSelectText);
+
+        Thread.sleep(1000);
+        dropdownByEnter(receptTypeSelectdemandDropDown, dropdownInput, receiptSelectText);
+    }
+
 
     //---------------------------------old-----------------------------------------
 
@@ -558,7 +744,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectSession() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectSession() {
         String sessionSelect = "2023-2024";
         System.out.println("Selecting session: " + sessionSelect);
         Select sessionSelectSelect = new Select(session);
@@ -571,7 +757,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectSchool() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectSchool() {
         String schoolName = "Crescent School of Architecture";
         System.out.println("Selecting school: " + schoolName);
         Select schoolSelect = new Select(school);
@@ -584,7 +770,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectDegree() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectDegree() {
         String degreeName = "Bachelor of Architecture";
         System.out.println("Selecting degree: " + degreeName);
         Select degreeSelect = new Select(degree);
@@ -593,7 +779,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
     }
 
 
-    public AL_Academic_AP_NewStudent selectAdmThrough() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectAdmThrough() {
         String admThroughName = "CAP 1";
         System.out.println("Selecting Admission Through: " + admThroughName);
         Select admthroughSelect = new Select(admthrough);
@@ -601,7 +787,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         return this;
     }
 
-    public AL_Academic_AP_NewStudent selectAdmType() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectAdmType() {
         String admTypeName = "REGULAR";
         System.out.println("Selecting Admission Type: " + admTypeName);
         Select admtypeSelect = new Select(admType);
@@ -609,7 +795,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
         return this;
     }
 
-    public AL_Academic_AP_NewStudent selectYear() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectYear() {
         String yearName = "Second Year";
         System.out.println("Selecting Year: " + yearName);
         Select yearSelect = new Select(year);
@@ -622,7 +808,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectSemester() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectSemester() {
         String semesterName = "III";
         System.out.println("Selecting semester: " + semesterName);
         Select semesterSelect = new Select(semester);
@@ -635,7 +821,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectBatch() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectBatch() {
         String batch = "2024-25";
         System.out.println("Selecting batch: " + batch);
         Select batchSelect = new Select(ddlBatch);
@@ -648,7 +834,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent enterDateOfBirth() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterDateOfBirth() {
         String dateOfBirth = "18/03/2000";
         System.out.println("Entering date of birth: " + dateOfBirth);
         txtDateOfBirth.clear();
@@ -661,7 +847,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectCategory() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectCategory() {
         String category = "OBC/BC";
         System.out.println("Selecting category: " + category);
         Select categorySelect = new Select(ddlCategory);
@@ -674,7 +860,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent enterDateOfReporting() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 enterDateOfReporting() {
         String dateOfReporting = "24/08/2024";
         System.out.println("Entering date of reporting: " + dateOfReporting);
         txtDateOfReporting.clear();
@@ -687,7 +873,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent selectPaymentType() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 selectPaymentType() {
         String paymentType = "50% OBC";
         System.out.println("Selecting payment type: " + paymentType);
         Select paymentTypeSelect = new Select(ddlPaymentType);
@@ -700,7 +886,7 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent scrollToBottom() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 scrollToBottom() {
         System.out.println("Scrolling to the bottom of the page");
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         return this;
@@ -711,20 +897,19 @@ public class AL_Academic_AP_NewStudent extends BaseClass {
      *
      * @return this class instance for method chaining
      */
-    public AL_Academic_AP_NewStudent clickSubmit() {
+    public AL_Academic_AP_NewStudent_StudentFlow_Flow_01 clickSubmit() {
         System.out.println("Clicking submit button");
         btnSubmit.sendKeys(Keys.ENTER);
         return this;
     }
 
-    private static final String FILE_NAME = "AL_Academic_AP_NewStudent_StudentData.xlsx";
-
+    private static final String FILE_NAME_excel = "src/test/resources/Excel/NewStudents.xlsx";
     public static void writeStudentDataToExcel(
             String firstName, String lastName, String email, String mobileNo, String studentId,
             String gender, String campus, String studyLevel, String school, String program,
             String semester, String modality, String intake) throws IOException {
 
-        File file = new File(FILE_NAME);
+        File file = new File(FILE_NAME_excel);
         Workbook workbook;
         Sheet sheet;
 

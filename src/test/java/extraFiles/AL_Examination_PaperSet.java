@@ -1,4 +1,4 @@
-package ExaminationTest;
+package extraFiles;
 
 import java.lang.reflect.Method;
 

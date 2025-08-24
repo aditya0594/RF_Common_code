@@ -21,6 +21,8 @@ import utility.Reports;
 
 import java.lang.reflect.Method;
 
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.getLastValueFromColumn;
+
 public class AL_AD_FB_Type_Master_EditTest extends BaseClass {
 
 
@@ -71,7 +73,7 @@ public class AL_AD_FB_Type_Master_EditTest extends BaseClass {
         feedback.feedbackSelect();
         feedback.FeedbackMasterSelect();
         //feedback.searchBox("Feedback Level automation4492");
-        String feedbackNameFromExcel = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/FeedBackExcel.xlsx", "FeedbackName");
+        String feedbackNameFromExcel = getLastValueFromColumn("src/test/resources/Excel/FeedBackExcel.xlsx", "FeedbackName");
         System.out.println("Student name extracted from Excel: " + feedbackNameFromExcel);
         feedback.searchBox(feedbackNameFromExcel);
         feedback.editBtn();

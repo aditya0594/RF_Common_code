@@ -3,6 +3,8 @@ package FeedBackTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.qa.pages.HomePageAdmin;
+import org.openqa.selenium.Alert;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +17,9 @@ import utility.PDFUtility;
 import utility.Reports;
 
 import java.lang.reflect.Method;
+
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.getLastValueFromColumn;
+import static utility.BaseClass.Random4DigitString;
 
 public class AL_AD_FB_Question_EditTest extends BaseClass {
 
@@ -47,7 +52,7 @@ public class AL_AD_FB_Question_EditTest extends BaseClass {
     }
     String feedBackTypetext = "Feedback Level automation" + Random4DigitString();
     @Test(priority = 1, enabled = true)
-    public void feedbackQuestions() throws Exception {
+    public void feedbackQuestionsEdit() throws Exception {
 
         feedback = new AL_AD_FB_Type_Master_Add_edit(driver);
         question = new AL_AD_FB_Question(driver);
@@ -60,28 +65,24 @@ public class AL_AD_FB_Question_EditTest extends BaseClass {
         HP.Academic();
         feedback.feedbackSelect();
         question.feedBackQuestion();
-        String feedbackNameFromExcel = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/FeedBackExcel.xlsx", "FeedbackName");
+        String feedbackNameFromExcel = getLastValueFromColumn("Excel/FeedBackExcel.xlsx", "FeedbackName");
         System.out.println("Student name extracted from Excel: " + feedbackNameFromExcel);
        // question.setFeedbackQuestionTypeSelect(feedbackNameFromExcel);
         question.searchFeedbackEdit(feedbackNameFromExcel);
-
-
-
-
-        question.feedBackQuestionFieldAdd("This is the question for the test automation ");
+        question.questionEditBtn();
+        question.feedBackQuestionFieldAdd("This is the question for the test automation_edit");
         question.setAnsOptionType("Objective");
-        question.sequenceField("1");
+        question.sequenceField("2");
         question.headQuestion("Assessment of Support Services");
-        question.answerOpt("Yes","1","No","2");
-        question.submitbtn();
-//        Thread.sleep(1000);
-//        Alert alert =  driver.switchTo().alert();
-//        String Expected_Msg = "Feedback Question Saved Successfully";
-//        String Actual_Msg = alert.getText();
-//        Assert.assertEquals(Actual_Msg , Expected_Msg );
-//        System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
-//        alert.accept();
-
+        question.answerOptEdit("Yes_edited","1","No_edited","2");
+        question.updatebtn();
+        Thread.sleep(1000);
+        Alert alert =  driver.switchTo().alert();
+        String Expected_Msg = "Question Updated successfully";
+        String Actual_Msg = alert.getText();
+        Assert.assertEquals(Actual_Msg , Expected_Msg );
+        System.out.println("Actual Message - " + Actual_Msg+ "\n"+ "Expected Message - " + Expected_Msg);
+        alert.accept();
     }
 
 

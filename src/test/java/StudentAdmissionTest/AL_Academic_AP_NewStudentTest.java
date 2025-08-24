@@ -4,11 +4,11 @@ import Administration.AL_Administration_FM_Rpt_MR_CompleteFilesReport;
 import RFCCAcademic.AL_Academic_AP_NewStudent;
 import RFCCAcademic.SL_Academic_SR_StudentInformation;
 import RFCC_Extra.BulkStudentUserCreation;
+import StudentAdmissionTest.pages.AL_Academic_PA_DemandCreation_StudentFlow_Flow_02;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.qa.pages.HomePageAdmin;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pojo.Browser;
@@ -17,6 +17,10 @@ import utility.*;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.getLastValueFromColumn;
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.writeStudentDataToExcel;
+
 //@Listeners(utility.RetryAnalyzer.class)
 public class AL_Academic_AP_NewStudentTest extends BaseClass {
 
@@ -27,6 +31,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
     PDFUtility pdfutility;
 
     AL_Academic_AP_NewStudent newStudentPage;
+    AL_Academic_PA_DemandCreation_StudentFlow_Flow_02 demandCreation;
     SL_Academic_SR_StudentInformation studentInfoPage;
     SL_Academic_SR_SI_QualificationDetails qualificationdetails;
     AL_Administration_FM_Rpt_MR_CompleteFilesReport aL_Administration_FM_Rpt_MR_CompleteFilesReport;
@@ -87,7 +92,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         newStudentPage.enterEmailId(email);
 
         try {
-            ExcelUtility.writeStudentDataToExcel(
+            writeStudentDataToExcel(
                     studentName,
                     fatherName,
                     mobileNumber,
@@ -123,7 +128,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         newStudentPage.SubmitStudent();
         Thread.sleep(3000);
         }
-    String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+    String StudentName = getLastValueFromColumn("Excel/NewStudents.xlsx", "StudentName");
 
 
     //==========demand=================
@@ -132,31 +137,32 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
             public void demandCreation() throws Exception {
               HP = new HomePageAdmin(driver);
             newStudentPage = new AL_Academic_AP_NewStudent(driver);
+
             test = reports.createTest("aL_Academic_AP_NewStudentTest_Row");
             RF_AdminLoginPage.loginPage();
             HP.Academic();
             newStudentPage.preAdmission();
             newStudentPage.demandCreationMenu();
-            String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+            String StudentName = getLastValueFromColumn("Excel/NewStudents.xlsx", "StudentName");
             System.out.println("Student name extracted from Excel: " + StudentName);
-            newStudentPage.singleStudentDemand();
-            newStudentPage.searchCreatria();
-            newStudentPage.searchStringName(StudentName);
-            newStudentPage.searchBtn();
-            newStudentPage.clickonSearchStudent();
+              demandCreation.singleStudentDemand();
+              demandCreation.searchCreatria();
+              demandCreation.searchStringName(StudentName);
+              demandCreation.searchBtn();
+              demandCreation.clickonSearchStudent();
             newStudentPage.sessiontitle();
-            newStudentPage.sessionSelectiondemand("2023-2024 ( 2023-2024 )");
-            newStudentPage.semesterselectDemand();
-            newStudentPage.receptTypeSelectdemand();
-            newStudentPage.verifyDemandStatus();
-            newStudentPage.CreateDemandbutton();
+              demandCreation.sessionSelectiondemand("2023-2024 ( 2023-2024 )");
+              demandCreation.semesterselectDemand();
+              demandCreation.receptTypeSelectdemand();
+              demandCreation.verifyDemandStatus();
+              demandCreation.CreateDemandbutton();
 
         }
 
        ////===========================Fee Receipt==========
         @Test(priority = 3, enabled = true)
         public void FeeReceipt() throws Exception {
-         String StudentNamefees = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+         String StudentNamefees = getLastValueFromColumn("Excel/NewStudents.xlsx", "StudentName");
          System.out.println("Student name extracted from Excel: "+ StudentNamefees);
             HP = new HomePageAdmin(driver);
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
@@ -180,7 +186,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
     //===========================Post Admission =====================================
         @Test(priority = 4, enabled = true)
         public void PostAdmission() throws Exception {
-            String StudentNamePost = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+            String StudentNamePost = getLastValueFromColumn("Excel/NewStudents.xlsx", "StudentName");
             System.out.println("Student name extracted from Excel: " + StudentNamePost);
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
             HP = new HomePageAdmin(driver);
@@ -196,25 +202,27 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
             feeCollection.filterButton();
             feeCollection.filterNameForTable(StudentNamePost);
 
-            String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+            String RRNOnumber = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
             System.out.println("Student name extracted from Excel: " + RRNOnumber);
             feeCollection.enterUnqiueRRNO(RRNOnumber);
 
             feeCollection.submitSectionEnrollmentEnroll();
             BulkStudentUserCreation bulkStudentcreate = new BulkStudentUserCreation(driver);
             bulkStudentcreate.User_able_to_Bulk_Student_User_Creation(StudentNamePost);
+
+            //this is extra created new file
         }
 
         // ========================department wise Linked assigned  ==============
         @Test(priority = 5, enabled = true)
         public void deptWiseLinked() throws Exception {
             HP = new HomePageAdmin(driver);
-            String StudentNamedept = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+            String StudentNamedept = getLastValueFromColumn("Excel/NewStudents.xlsx", "StudentName");
             System.out.println("Student name extracted from Excel: " + StudentNamedept);
             RF_AdminLoginPage.loginPage();
             HP.Academic();
             AL_Configuration_UM_DeptwiseLinkAssigned deptWise = new AL_Configuration_UM_DeptwiseLinkAssigned(driver);
-            //  String StudentName = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
+            //  String StudentName = getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "StudentName");
             //   System.out.println("Student name extracted from Excel: "+ StudentName);
             deptWise.deptWiseLinked(StudentNamedept);
         }
@@ -225,7 +233,7 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         public void studentLogin() throws Exception {
             AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
             SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
-            String RRNOnumberStudentLogin = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+            String RRNOnumberStudentLogin = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
             System.out.println("Student name extracted from Excel: " + RRNOnumberStudentLogin);
             HP = new HomePageAdmin(driver);
             RF_AdminLoginPage.loginPage();
@@ -243,14 +251,14 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                 AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
                 SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
                 HP = new HomePageAdmin(driver);
-                // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-                String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                // String RRNOnumberInfo = getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                String RRNOnumberInfo = "AD1697"; //getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
                 System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
                 RF_AdminLoginPage.loginPage();
                 HP.Academic();
                 feeCollection.adminLogout();
                 acceptAlert();
-                String RRNOnumber = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                String RRNOnumber = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
                 studentLogin.newCreatedStudentLogin(RRNOnumberInfo, "Student@12345");
                 System.out.println("ACADEMIC(SL) > Student Related > Student Information");
                 studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
@@ -289,14 +297,14 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                     AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
                     SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
                     HP = new HomePageAdmin(driver);
-                    // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-                    String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    // String RRNOnumberInfo = getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfo = "AD1697"; //getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
                     System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
                     RF_AdminLoginPage.loginPage();
                     HP.Academic();
                     feeCollection.adminLogout();
                     acceptAlert();
-                    String RRNOnumberInfoAddress = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfoAddress = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
                     studentLogin.newCreatedStudentLogin(RRNOnumberInfoAddress, "Student@12345");
                     System.out.println("ACADEMIC(SL) > Student Related > Student Information");
                     studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
@@ -331,14 +339,14 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
         SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
         HP = new HomePageAdmin(driver);
-        // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-        String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+         String RRNOnumberInfo = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
+      //  String RRNOnumberInfo = "AD1697"; //getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
         System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
         RF_AdminLoginPage.loginPage();
         HP.Academic();
         feeCollection.adminLogout();
         acceptAlert();
-        String RRNOnumberInfoDocu = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        String RRNOnumberInfoDocu = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
         studentLogin.newCreatedStudentLogin(RRNOnumberInfoDocu, "Student@12345");
         System.out.println("ACADEMIC(SL) > Student Related > Student Information");
         studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
@@ -367,14 +375,14 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
         AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
         SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
         HP = new HomePageAdmin(driver);
-        // String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-        String RRNOnumberInfo = "AD1697"; //ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+         String RRNOnumberInfo = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
+      //  String RRNOnumberInfo = "AD1697"; //getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
         System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
         RF_AdminLoginPage.loginPage();
         HP.Academic();
         feeCollection.adminLogout();
         acceptAlert();
-        String RRNOnumberInfoDocu = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+        String RRNOnumberInfoDocu = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
         studentLogin.newCreatedStudentLogin(RRNOnumberInfoDocu, "Student@12345");
         System.out.println("ACADEMIC(SL) > Student Related > Student Information");
         studentInfoPage = new SL_Academic_SR_StudentInformation(driver);
@@ -474,14 +482,14 @@ public class AL_Academic_AP_NewStudentTest extends BaseClass {
                     AL_Academics_FR_FeeCollection feeCollection = new AL_Academics_FR_FeeCollection(driver);
                     SL_Login_SetLogin studentLogin = new SL_Login_SetLogin(driver);
                     HP = new HomePageAdmin(driver);
-                    String RRNOnumberInfo = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
-                   // ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfo = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
+                   // getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
                     System.out.println("Student name extracted from Excel: " + RRNOnumberInfo);
                     RF_AdminLoginPage.loginPage();
                     HP.Academic();
                     feeCollection.adminLogout();
                     acceptAlert();
-                    String RRNOnumberInfoDocu = ExcelUtility.getLastValueFromColumn("src/test/resources/Excel/NewStudents.xlsx", "RRNO");
+                    String RRNOnumberInfoDocu = getLastValueFromColumn("Excel/NewStudents.xlsx", "RRNO");
                     studentLogin.newCreatedStudentLogin(RRNOnumberInfoDocu, "Student@12345");
                     System.out.println("ACADEMIC(SL) > Student Related > Student Information");
                     studentInfoPage = new SL_Academic_SR_StudentInformation(driver);

@@ -9,6 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.BaseClass;
 
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.sendKeysBy;
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.waitUntilElementIsClickableBy;
+
 public class AL_AD_FB_Question extends BaseClass {
 
     public AL_AD_FB_Question(WebDriver rdriver) {
@@ -163,10 +166,12 @@ public class AL_AD_FB_Question extends BaseClass {
     }
 
 
-    By feedbackQution = By.id("ctl00_ContentPlaceHolder1_txtQuestion");
-    public AL_AD_FB_Question feedBackQuestionFieldAdd(String Question) {
+    By feedbackQuestiontext = By.id("ctl00_ContentPlaceHolder1_txtQuestion");
+    public AL_AD_FB_Question feedBackQuestionFieldAdd(String Question) throws InterruptedException {
         System.out.println("Enter the question ");
-        sendKeysBy(feedbackQution, Question);
+        Thread.sleep(1000);
+        clearTextBy(feedbackQuestiontext);
+        sendKeysBy(feedbackQuestiontext, Question);
         return this;
     }
 
@@ -182,7 +187,8 @@ public class AL_AD_FB_Question extends BaseClass {
 
     By SequenceNoField = By.id("ctl00_ContentPlaceHolder1_txtseqno");
     public AL_AD_FB_Question sequenceField(String sequence) {
-        System.out.println("Enter the question ");
+        System.out.println("Enter the sequence number ");
+        clearTextBy(SequenceNoField);
         sendKeysBy(SequenceNoField, sequence);
         return this;
     }
@@ -216,6 +222,22 @@ public class AL_AD_FB_Question extends BaseClass {
         return this;
     }
 
+
+    public AL_AD_FB_Question answerOptEdit(String Answers1, String Value1 , String Answers2, String Value2) {
+        System.out.println("Enter the answer option editing :  ");
+        clearTextBy(answerField1);
+        sendKeysBy(answerField1, Answers1);
+        waitUntilElementIsClickableBy(valueField1);
+        clearTextBy(valueField1);
+        sendKeysBy(valueField1, Value1);
+        clearTextBy(answerField2);
+        sendKeysBy(answerField2, Answers2);
+        waitUntilElementIsClickableBy(valueField2);
+        clearTextBy(valueField2);
+        sendKeysBy(valueField2, Value2);
+        return this;
+    }
+
     By quesubmitBtn = By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnSubmit']");
     public void submitbtn()   {
         System.out.println("click on submit button ");
@@ -224,28 +246,57 @@ public class AL_AD_FB_Question extends BaseClass {
     }
 
 
+
+
     /// =======================Edit ====================
 
     By searchFeedback = By.xpath("//input[@class='form-control form-control-sm']");
-    public void searchFeedbackEdit(String FeedbackName){
-        System.out.println("click on submit button ");
-        sendKeysBy(searchFeedback,FeedbackName);
-        clickBy(quesubmitBtn);
+    public void searchFeedbackEdit(String FeedbackName) throws InterruptedException {
+        System.out.println("Searching for feedback: " + FeedbackName);
+        scrollIntoElementBy(searchFeedback);
+        clearTextBy(searchFeedback);
+        sendKeysBy(searchFeedback, FeedbackName);
+        Thread.sleep(2000); // Wait for search results to load
+    }
+
+    By editbtn = By.xpath("//input[contains(@id,'ctl00_ContentPlaceHolder1_lvQuestion_ctrl') and @value='Edit']");
+    By scrolltop = By.xpath("//span[@id='ctl00_ContentPlaceHolder1_lblDynamicPageTitle']");
+    public void questionEditBtn() throws InterruptedException {
+        System.out.println("click on searched edit button ");
+        Thread.sleep(2000);
+        waitUntilElementIsClickableBy(editbtn);
+        clickBy(editbtn);
+        Thread.sleep(2000);
+        scrollIntoElementBy(scrolltop);
+        Thread.sleep(1000);
+    }
+
+    By queUpdateBtn= By.xpath("//input[@id='ctl00_ContentPlaceHolder1_btnSubmit']");
+    public void updatebtn()   {
+        System.out.println("click on update button ");
+        scrollIntoElementBy(queUpdateBtn);
+        clickBy(queUpdateBtn);
     }
 
 
+    /// =======================Delete ====================
 
+    public void searchFeedbackDelete(String FeedbackName) throws InterruptedException {
+        System.out.println("Searching for feedback to delete: " + FeedbackName);
+        scrollIntoElementBy(searchFeedback);
+        clearTextBy(searchFeedback);
+        sendKeysBy(searchFeedback, FeedbackName);
+        Thread.sleep(2000); // Wait for search results to load
+    }
 
-
-
-
-
-
-
-
-
-
-
+    By deletebtn = By.xpath("//input[contains(@id,'ctl00_ContentPlaceHolder1_lvQuestion_ctrl') and @value='Delete']");
+    public void questionDeleteBtn() throws InterruptedException {
+        System.out.println("click on searched delete button ");
+        Thread.sleep(2000);
+        waitUntilElementIsClickableBy(deletebtn);
+        clickBy(deletebtn);
+        Thread.sleep(1000);
+    }
 
 
 }

@@ -1,10 +1,11 @@
-package ExaminationTest;
+package extraFiles;
 
 import java.awt.AWTException;
 import java.awt.HeadlessException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
+import RFCCExtra.AL_Examination_Convocation_ConvocationMaster;
 import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -13,8 +14,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
-import Examination.AL_Examination_Convocation_ConvocationMaster;
 import com.qa.pages.HomePageAdmin;
 import pojo.Browser;
 import pom.RF_AdminLoginPage;

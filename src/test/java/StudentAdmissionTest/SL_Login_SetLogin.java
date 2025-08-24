@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utility.BaseClass;
 
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.sendKeysBy;
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.waitUntilElementIsClickableBy;
+
 public class SL_Login_SetLogin extends BaseClass {
 
 

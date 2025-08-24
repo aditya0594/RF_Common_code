@@ -16,6 +16,8 @@ import utility.BaseClass;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.sendKeysBy;
+
 public class AL_AD_FB_Type_Master_Add_edit extends BaseClass {
     static String FILE_PAth= "src/test/resources/Excel/FeedBackExcel.xlsx";
     public static void writeNameAtLastRow(String name) throws Exception {

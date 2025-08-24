@@ -26,6 +26,8 @@ import org.testng.annotations.AfterTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import static RFCCAcademic.AL_Academic_AP_NewStudent.waitForVisibilityBy;
+
 public class BaseClass {
 
 	public static WebDriver driver;
@@ -96,20 +98,20 @@ public class BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(e));
 	}
-	public void waitForVisibilityBy(By e) {
-		WebElement e1 = driver.findElement(e);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOf(e1));
-	}
+//	public static void waitForVisibilityBy(By e) {
+//		WebElement e1 = driver.findElement(e);
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.visibilityOf(e1));
+//	}
 
 	public void waitUntilElementIsClickable(WebElement e) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Wait));
 		wait.until(ExpectedConditions.elementToBeClickable(e));
 	}
-	public void waitUntilElementIsClickableBy(By e) {
+	/*public static void waitUntilElementIsClickableBy(By e) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Wait));
 		wait.until(ExpectedConditions.elementToBeClickable(e));
-	}
+	}*/
 
 	public void click(WebElement e) {
 		waitForVisibility(e);
@@ -125,10 +127,10 @@ public class BaseClass {
 		waitForVisibility(e);
 		e.sendKeys(text);
 	}
-	public void sendKeysBy(By e, String text) {
-		waitForVisibilityBy(e);
-		driver.findElement(e).sendKeys(text);
-	}
+//	public static void sendKeysBy(By e, String text) {
+//		waitForVisibilityBy(e);
+//		driver.findElement(e).sendKeys(text);
+//	}
 
 	public void clearText(WebElement e) {
 		waitForVisibility(e);

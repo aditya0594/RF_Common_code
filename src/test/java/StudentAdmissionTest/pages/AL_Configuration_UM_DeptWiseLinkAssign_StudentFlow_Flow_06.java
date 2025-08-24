@@ -1,4 +1,4 @@
-package StudentAdmissionTest;
+package StudentAdmissionTest.pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -8,9 +8,9 @@ import utility.BaseClass;
 
 import static StudentAdmissionTest.pages.AL_Academic_AP_NewStudent_StudentFlow_Flow_01.sendKeysBy;
 
-public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
+public class AL_Configuration_UM_DeptWiseLinkAssign_StudentFlow_Flow_06 extends BaseClass {
 
-    public AL_Configuration_UM_DeptwiseLinkAssigned(WebDriver rdriver) {
+    public AL_Configuration_UM_DeptWiseLinkAssign_StudentFlow_Flow_06(WebDriver rdriver) {
         driver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
@@ -25,7 +25,7 @@ public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
         System.out.println("click  on the User Management");
         driver.findElement(By.linkText("User Management")).click();
         driver.findElement(By.linkText("Dept. Wise Link Assign")).click();
-       // loader();
+        // loader();
         System.out.println( "select user type : ");
         driver.findElement(By.id("select2-ctl00_ContentPlaceHolder1_ddlUser-container")).click();
         driver.findElement(By.xpath("//span/span/input")).sendKeys("Student");
@@ -62,7 +62,7 @@ public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
 
         System.out.println("Enter the student name  : "+ StudentName);
         sendKeysBy(searchString,StudentName);
-       // waitForVisibilityBy(CheckboxforSelect);
+        // waitForVisibilityBy(CheckboxforSelect);
         clickBy(CheckboxforSelect);
 
         By ExpandAcademic = By.linkText("Academic");
@@ -70,7 +70,7 @@ public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
         By studentRelated = By.linkText("Student Related");
         By studentInformation = By.linkText("Student Information");
         By studentInformationcheck = By.xpath("//a[text()='Student Information']/preceding-sibling::input[@type='checkbox']");
-       driver.findElement(By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst52']")).click();
+        driver.findElement(By.xpath("//a[@id='ctl00_ContentPlaceHolder1_tvLinkst52']")).click();
         // Get all expandable menu items (with '+')
 
         Thread.sleep(2000);
@@ -81,13 +81,13 @@ public class AL_Configuration_UM_DeptwiseLinkAssigned extends BaseClass {
         actions.moveToElement(studentRelatedWeb).click().perform();
 
         WebElement studentInformationele =  driver.findElement(studentInformation);
-       // WebElement checkboxStudentInformation  = driver.findElement(By.id("ctl00_ContentPlaceHolder1_tvLinksn231CheckBox"));
+        // WebElement checkboxStudentInformation  = driver.findElement(By.id("ctl00_ContentPlaceHolder1_tvLinksn231CheckBox"));
         actions.moveToElement(studentInformationele);
         Thread.sleep(1000);
         action.click(driver.findElement(studentInformationcheck)).perform();
 
 
-       // actions.click(checkboxStudentInformation).perform();
+        // actions.click(checkboxStudentInformation).perform();
         clickBy(submitbtn);
         Thread.sleep(1000);
 
